@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FINA Points Calculator — World Aquatics Points, 2026 Base Times</title>
+<meta name="description" content="Score any swim on the World Aquatics (FINA) points scale using the official 2026 base times. Long course and short course, men and women, instant result.">
+<link rel="canonical" href="https://timeswimconvertor.com/fina-points-calculator">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#0b2b45">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TimeSwimConvertor">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://timeswimconvertor.com/fina-points-calculator">
+<meta property="og:title" content="FINA Points Calculator — World Aquatics Points, 2026 Base Times">
+<meta property="og:description" content="Score any swim on the World Aquatics (FINA) points scale using the official 2026 base times. Long course and short course.">
+<meta property="og:image" content="https://timeswimconvertor.com/fina-points-explainer-poster.jpg">
+<meta property="og:image:width" content="1280"><meta property="og:image:height" content="720">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FINA Points Calculator — World Aquatics Points, 2026 Base Times">
+<meta name="twitter:description" content="Score any swim on the World Aquatics (FINA) points scale using the official 2026 base times.">
+<meta name="twitter:image" content="https://timeswimconvertor.com/fina-points-explainer-poster.jpg">
+<link rel="alternate" hreflang="en" href="https://timeswimconvertor.com/fina-points-calculator">
+<link rel="alternate" hreflang="x-default" href="https://timeswimconvertor.com/fina-points-calculator">
+<style>
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font:400 17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#15212e;background:#fff}
+h1,h2,h3{line-height:1.22;letter-spacing:-.021em;margin:0;font-weight:700}
+h1{font-size:clamp(1.85rem,4.8vw,2.85rem);letter-spacing:-.034em}
+h2{font-size:clamp(1.45rem,3.1vw,1.95rem);margin:3.1rem 0 .9rem}
+h3{font-size:clamp(1.11rem,2.1vw,1.28rem);margin:2.1rem 0 .6rem}
+p{margin:0 0 1.05rem}
+a{color:#0a6ea8}a:hover{color:#064c75}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.prose{max-width:720px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* header */
+.site-head{border-bottom:1px solid #e7ecf1;background:#fff}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:1.02rem;color:#0b2b45;text-decoration:none;letter-spacing:-.02em}
+.brand svg{display:block;flex:none}
+.nav{display:flex;gap:26px;font-size:.93rem}
+.nav a{color:#4a5b6d;text-decoration:none;font-weight:500}
+.nav a:hover{color:#0b2b45}
+.nav a[aria-current]{color:#0b2b45;font-weight:700;box-shadow:inset 0 -2px 0 #5cc5e8}.site-foot .ftools{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;margin:0 0 1rem;padding:0 0 1rem;border-bottom:1px solid #e7ecf1;list-style:none;font-size:.88rem}.site-foot .ftools a{text-decoration:none}@media(max-width:920px){.site-head .wrap{height:auto;display:block;padding-top:.6rem}.site-head .brand{display:inline-flex;margin-bottom:.1rem}.nav{max-width:100%;min-width:0;gap:1.15rem;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:.5rem 0 .7rem;line-height:1.1}.nav::-webkit-scrollbar{display:none}.nav{-webkit-mask-image:linear-gradient(to right,#000 88%,rgba(0,0,0,.15));mask-image:linear-gradient(to right,#000 88%,rgba(0,0,0,.15))}.nav a{white-space:nowrap;flex:none}}
+
+/* hero */
+.hero{background:linear-gradient(176deg,#0b2b45 0%,#124063 56%,#14506f 100%);color:#fff;padding:clamp(2rem,4.6vw,3.1rem) 0 clamp(2.2rem,5vw,3.2rem);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto 0 -1px 0;height:120px;background:radial-gradient(120% 100% at 50% 100%,rgba(255,255,255,.07),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{color:#fff;max-width:16ch}
+.hero-sub{margin:.75rem 0 0;max-width:52ch;color:#bcd6e9;font-size:1rem}
+
+/* calculator — compact */
+.calc{margin-top:1.5rem;max-width:860px;background:#fff;color:#15212e;border-radius:14px;padding:clamp(.85rem,2.1vw,1.2rem);box-shadow:0 1px 2px rgba(9,30,50,.1),0 14px 34px -12px rgba(5,22,38,.42)}
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:.65rem}
+.field{display:flex;flex-direction:column;gap:.26rem;min-width:0}
+.field label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#5b6d80}
+select,input[type=text]{font:inherit;font-size:.93rem;padding:.46rem .55rem;border:1.5px solid #d3dce5;border-radius:8px;background:#fff;color:#15212e;width:100%;min-width:0}
+select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%235b6d80' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .55rem center;padding-right:1.7rem}
+select:focus,input:focus,summary:focus-visible,.jump:focus-visible{outline:none;border-color:#0a6ea8;box-shadow:0 0 0 3px rgba(10,110,168,.17)}
+.time-row{display:flex;align-items:center;gap:.22rem}
+.time-row input{text-align:center;padding-left:.2rem;padding-right:.2rem;font-variant-numeric:tabular-nums}
+.time-row span{color:#8798a8;font-weight:700;font-size:.9rem}
+.calc-note{margin:.6rem 0 0;font-size:.775rem;color:#6b7c8d}
+.calc-note b{color:#15212e}
+.results{margin-top:.85rem;border-top:1px solid #e7ecf1;padding-top:.85rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:.55rem}
+.res{background:#f4f8fb;border:1px solid #e1ebf3;border-radius:9px;padding:.6rem .7rem}
+.res.is-source{background:#0b2b45;border-color:#0b2b45}
+.res-k{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#5b6d80;display:flex;align-items:center;gap:.35rem}
+.res.is-source .res-k{color:#8fb6d3}
+.res-v{font-size:clamp(1.3rem,3.2vw,1.52rem);font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin-top:.05rem;color:#0b2b45}
+.res.is-source .res-v{color:#fff}
+.res-d{font-size:.72rem;color:#6b7c8d;margin-top:.05rem}
+.res.is-source .res-d{color:#8fb6d3}
+.tag{font-size:.56rem;font-weight:700;letter-spacing:.06em;background:#dbe8f2;color:#2d5f84;padding:.08rem .3rem;border-radius:4px}
+.res.is-source .tag{background:rgba(255,255,255,.17);color:#cde3f3}
+.err{margin-top:.8rem;background:#fdf1ee;border:1px solid #f3cfc4;color:#9b3a1d;padding:.6rem .75rem;border-radius:8px;font-size:.85rem}
+
+/* video under the calculator */
+.vidwrap{max-width:860px;margin:1.1rem 0 0}
+.vidhead{display:flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#8fc0dd;margin-bottom:.55rem}
+.vidhead svg{flex:none}
+.vidwrap video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:13px;background:#07223a;box-shadow:0 14px 34px -14px rgba(5,22,38,.55)}
+.vidcap{margin:.5rem 0 0;font-size:.8rem;color:#8fb6d3}
+
+/* layout */
+.body-grid{display:grid;grid-template-columns:250px minmax(0,1fr);gap:clamp(1.5rem,4vw,3.4rem);padding:clamp(1.8rem,4vw,3rem) 0 3.5rem;align-items:start}
+@media(max-width:900px){.body-grid{grid-template-columns:minmax(0,1fr)}}
+.body-grid>*{min-width:0}
+
+/* TOC */
+.toc{border:1px solid #e3eaf1;border-radius:12px;background:#fafcfd;padding:1.05rem 1.15rem}
+@media(min-width:901px){.toc{position:sticky;top:18px;max-height:calc(100vh - 36px);overflow-y:auto}}
+.toc-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.toc-h{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#5b6d80;margin:0}
+.toc-toggle{flex:none;width:26px;height:26px;margin:-4px -5px -4px 0;border:0;border-radius:7px;
+ background:transparent;color:#5b6d80;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.toc-toggle:hover{background:#eef3f8;color:#0b2b45}
+.toc-toggle svg{transition:transform .2s ease}
+.toc[data-min="1"] .toc-toggle svg{transform:rotate(-90deg)}
+.toc[data-min="1"] #toc-list{display:none}
+.toc>ol{margin-top:.6rem}
+@media(prefers-reduced-motion:reduce){.toc-toggle svg{transition:none}}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:0}
+.toc>ol>li>a{font-weight:600}
+.toc>ol>li>a::before{content:counter(toc) ".";color:#9aabbb;font-weight:700;margin-right:.45rem}
+.toc a{display:block;padding:.3rem 0;color:#33475c;text-decoration:none;font-size:.9rem;line-height:1.42}
+.toc a:hover{color:#0a6ea8}
+.toc ol ol{padding-left:1.15rem}
+.toc ol ol li{counter-increment:none}
+.toc ol ol a{font-size:.855rem;color:#5b6d80;padding:.2rem 0}
+.toc ol ol a::before{content:"–";margin-right:.4rem;color:#b3c1cd}
+
+/* content */
+.lede{font-size:1.1rem;color:#3b4d60}
+h2[id],h3[id]{scroll-margin-top:16px}
+table{border-collapse:collapse;width:100%;margin:1.1rem 0 1.4rem;font-size:.9rem;font-variant-numeric:tabular-nums;display:block;overflow-x:auto}
+caption{text-align:left;font-size:.84rem;color:#6b7c8d;margin-bottom:.45rem}
+th,td{border-bottom:1px solid #e7ecf1;padding:.52rem .7rem;text-align:left;white-space:nowrap}
+th{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.055em;color:#5b6d80;background:#f8fafc}
+tbody tr:hover{background:#fafcfd}
+tbody th{background:#fbfdfe;font-size:.73rem;color:#2d5f84;letter-spacing:.07em}
+.eq{background:#f4f8fb;border-left:3px solid #0a6ea8;border-radius:0 9px 9px 0;padding:.8rem 1rem;margin:1.1rem 0;font-size:.95rem}
+.eq code{font:600 .95em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#0b2b45}
+.eq p{margin:0 0 .4rem}.eq p:last-child{margin:0}
+ul.plain{padding-left:1.15rem;margin:0 0 1.1rem}
+ul.plain li{margin-bottom:.42rem}
+.callout{background:#fffaf2;border:1px solid #f0e0c6;border-radius:11px;padding:.95rem 1.1rem;margin:1.3rem 0;font-size:.94rem}
+.callout strong{color:#8a5a12}
+
+/* figures: pool diagrams */
+figure{margin:1.3rem 0 1.5rem}
+figure svg{display:block;width:100%;max-width:100%;height:auto;border-radius:11px;background:#0d3a5a}
+figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
+
+/* FAQ accordion */
+.faq{border-top:1px solid #e7ecf1}
+.faq details{border-bottom:1px solid #e7ecf1}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;gap:.8rem;padding:1rem 0}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary h3{margin:0;font-size:1.06rem;flex:1}
+.faq summary:hover h3{color:#0a6ea8}
+.chev{flex:none;margin-top:.22rem;transition:transform .2s ease}
+.faq details[open] .chev{transform:rotate(180deg)}
+.faq details>p{margin:0 0 1.1rem;padding-right:2rem;color:#3b4d60}
+@media(prefers-reduced-motion:reduce){.chev{transition:none}}
+
+/* jump arrow */
+.jump{position:fixed;right:18px;bottom:18px;z-index:40;width:46px;height:46px;border-radius:50%;
+ border:1px solid rgba(255,255,255,.18);background:#0b2b45;color:#fff;cursor:pointer;
+ display:flex;align-items:center;justify-content:center;padding:0;
+ box-shadow:0 6px 20px -4px rgba(5,22,38,.5);transition:transform .2s ease,background .2s ease}
+.jump:hover{background:#14506f;transform:translateY(-2px)}
+.jump svg{transition:transform .25s ease}
+.jump.up svg{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.jump,.jump svg{transition:none}}
+
+.site-foot{border-top:1px solid #e7ecf1;padding:1.8rem 0;font-size:.87rem;color:#6b7c8d}
+.site-foot a{color:#4a5b6d;text-decoration:none;margin-right:1.1rem}
+.site-foot a:hover{color:#0b2b45}
+.crumb{font-size:.82rem;color:#6b7c8d;padding:.9rem 0 0}
+.crumb a{color:#4a5b6d;text-decoration:none}
+.crumb a:hover{color:#0b2b45}
+.related{border:1px solid #e3eaf1;border-radius:12px;background:#fafcfd;padding:1.1rem 1.25rem;margin:2.4rem 0 0}
+.related p.rh{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#5b6d80;margin:0 0 .6rem}
+.related ul{list-style:none;margin:0;padding:0}
+.related li{margin-bottom:.45rem}
+.related a{font-weight:600;text-decoration:none}
+.related a:hover{text-decoration:underline}
+.related span{color:#6b7c8d;font-weight:400}
+.big-res{margin-top:.9rem;border-top:1px solid #e7ecf1;padding-top:.9rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .9rem}
+.big-res .lbl{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#5b6d80;width:100%}
+.big-res .val{font-size:clamp(2rem,6vw,2.7rem);font-weight:700;letter-spacing:-.035em;font-variant-numeric:tabular-nums;color:#0b2b45;line-height:1.05}
+.big-res .unit{font-size:.9rem;color:#6b7c8d;font-weight:600}
+.big-res .delta{font-size:.85rem;font-weight:700;color:#0a6ea8;background:#eaf3f9;border-radius:6px;padding:.15rem .45rem}
+.subres{margin-top:.7rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:.5rem}
+.sr{background:#f4f8fb;border:1px solid #e1ebf3;border-radius:9px;padding:.5rem .65rem}
+.sr .k{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#5b6d80}
+.sr .v{font-size:1.08rem;font-weight:700;color:#0b2b45;font-variant-numeric:tabular-nums;margin-top:.05rem}
+.minicalc{border:1px solid #dfe8f0;border-radius:12px;background:#fafcfd;padding:1.05rem 1.15rem;margin:1.3rem 0}
+.minicalc .mh{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#5b6d80;margin:0 0 .7rem}
+.minicalc .mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.6rem}
+.minicalc .mout{margin-top:.8rem;border-top:1px solid #e7ecf1;padding-top:.7rem;font-size:.95rem}
+.minicalc .mout b{font-size:1.35rem;color:#0b2b45;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+</style>
+</head>
+<body id="top">
+<header class="site-head"><div class="wrap">
+  <a class="brand" href="/"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0b2b45"/><path d="M4 14.4c1.6-1.5 2.9-1.5 4.5 0s2.9 1.5 4.5 0 2.9-1.5 4.5 0" stroke="#5cc5e8" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M4 10.2c1.6-1.5 2.9-1.5 4.5 0s2.9 1.5 4.5 0 2.9-1.5 4.5 0" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" opacity=".85"/></svg>TimeSwimConvertor</a>
+  <nav class="nav" aria-label="Calculators"><a href="/">Converter</a><a href="/long-course-short-course-converter">LC &#8596; SC</a><a href="/yards-to-meters">Yards &#8596; m</a><a href="/uk-swim-converter">UK / ASA</a><a href="/swim-pace-calculator">Pace</a><a href="/split-calculator">Splits</a><a href="/fina-points-calculator" aria-current="page">Points</a><a href="/laps-in-a-mile-swimming">Laps</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <h1>FINA Points Calculator</h1>
+  <p class="hero-sub">Score any swim on the World Aquatics points scale, using the official 2026 base times.</p>
+  <div class="calc">
+    <form id="f" autocomplete="off"><div class="calc-grid">
+      <div class="field"><label for="course">Course</label>
+        <select id="course"><option value="LCM" selected>Long course — 50 m</option><option value="SCM">Short course — 25 m</option></select></div>
+      <div class="field"><label for="sex">Gender</label>
+        <select id="sex"><option value="M" selected>Men</option><option value="W">Women</option></select></div>
+      <div class="field"><label for="ev">Event</label><select id="ev"></select></div>
+      <div class="field"><label for="mm">Your time</label>
+        <div class="time-row">
+          <input type="text" id="mm" inputmode="numeric" maxlength="3" placeholder="00" aria-label="Minutes"><span>:</span>
+          <input type="text" id="ss" inputmode="numeric" maxlength="2" placeholder="00" aria-label="Seconds"><span>.</span>
+          <input type="text" id="hh" inputmode="numeric" maxlength="2" placeholder="00" aria-label="Hundredths">
+        </div></div>
+    </div></form>
+    <div id="err" class="err" hidden role="alert"></div>
+    <div id="out" class="big-res" aria-live="polite"></div>
+    <div id="sub" class="subres"></div>
+    <p class="calc-note">Official <b>World Aquatics 2026</b> base times. Points apply to metre pools only — a yards time must be <a href="/" style="color:#0a6ea8">converted to metres</a> first.</p>
+  </div>
+
+  <div class="vidwrap">
+    <p class="vidhead"><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6.4 4.9l4.4 3.1-4.4 3.1z" fill="currentColor"/></svg>How the points work — 90 seconds</p>
+    <video controls preload="none" playsinline width="1280" height="720" poster="fina-points-explainer-poster.jpg">
+      <source src="fina-points-explainer.mp4" type="video/mp4">
+      Your browser cannot play this video. The same explanation is written out below.
+    </video>
+    <p class="vidcap">Narrated: where the base time comes from, why the formula is cubed, what a score actually means, and how to read your own number.</p>
+  </div>
+</div></section>
+
+<div class="wrap"><p class="crumb"><a href="/">Swim time converter</a> › FINA points calculator</p></div>
+
+<div class="wrap body-grid">
+<aside class="toc" aria-labelledby="toc-h">
+  <div class="toc-top"><p class="toc-h" id="toc-h">Table of contents</p>
+  <button class="toc-toggle" id="toctog" type="button" aria-expanded="true" aria-controls="toc-list" aria-label="Hide table of contents" title="Hide table of contents">
+    <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  <ol id="toc-list">
+    <li><a href="#what">What FINA points are</a>
+      <ol><li><a href="#name">FINA points or World Aquatics points?</a></li><li><a href="#formula">The formula</a></li></ol></li>
+    <li><a href="#base">Where the base time comes from</a></li>
+    <li><a href="#meaning">What your score means</a></li>
+    <li><a href="#base-times">The 2026 base times</a>
+      <ol><li><a href="#lcm-base">Long course</a></li><li><a href="#scm-base">Short course</a></li></ol></li>
+    <li><a href="#worked">A worked example</a></li>
+    <li><a href="#faq">Frequently asked questions</a></li>
+  </ol>
+</aside>
+
+<main class="prose">
+<h2 id="what">What FINA points are</h2>
+<p class="lede">FINA points put every swim on one scale. A 50 breaststroke and a 1500 freestyle, a man and a woman, a 50-metre pool and a 25-metre pool — all of them come out as a single number you can compare directly. A thousand points is a world-record swim. Everything else sits below it.</p>
+<p>That is why meets use them to rank finals across events, why clubs use them to pick relay squads, and why swimmers use them to tell whether their 200 fly is really better than their 100 free.</p>
+
+<h3 id="name">FINA points or World Aquatics points?</h3>
+<p>The same thing. FINA renamed itself World Aquatics in 2022, so the official name is now World Aquatics Point Scoring. Most swimmers, meet programmes and software still say FINA points, and both terms refer to the identical table.</p>
+
+<h3 id="formula">The formula</h3>
+<p>One line, and it has not changed in years.</p>
+<div class="eq">
+  <p><code>P = 1000 × (B ÷ T)³</code></p>
+  <p><strong>P</strong> is your points, <strong>B</strong> is the official base time for that event in seconds, and <strong>T</strong> is your time in seconds. The result is truncated down to a whole number.</p>
+</div>
+<p>The cube is the part that surprises people. Points do not fall away in a straight line as your time gets slower — they fall away faster and faster. Swim ten per cent slower than the base time and you do not score 900, you score about 751.</p>
+
+<h2 id="base">Where the base time comes from</h2>
+<p>The base time for each event is the world record approved by World Aquatics at the start of the scoring period. Match it exactly and you score 1000.</p>
+<p>The two courses are set on different dates, which is why the tables have different validity windows:</p>
+<ul class="plain">
+  <li><strong>Long course</strong> base times are fixed at the end of the calendar year and run for the next calendar year.</li>
+  <li><strong>Short course</strong> base times are fixed at the end of August and run from 1 September for twelve months.</li>
+</ul>
+<p>Because records keep falling, the same swim scores slightly fewer points each time the table is refreshed. A score is therefore always tied to the year it was calculated in.</p>
+<div class="callout">
+  <p><strong>There is no yards table.</strong> World Aquatics points exist for 50-metre and 25-metre pools only. If your time is from a 25-yard pool, convert it to metres first and score the converted time — and remember the conversion is itself an estimate.</p>
+</div>
+
+<h2 id="meaning">What your score means</h2>
+<p>There is no official grading, but the scale is used consistently enough that these bands are a fair guide for an individual swim.</p>
+<table>
+  <caption>How FINA point scores are generally read.</caption>
+  <thead><tr><th>Points</th><th>Roughly</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">900+</th><td>World class — finals at a World Championships or Olympics</td></tr>
+    <tr><th scope="row">800–900</th><td>International level, national champion territory</td></tr>
+    <tr><th scope="row">700–800</th><td>Strong national level, national qualifying times</td></tr>
+    <tr><th scope="row">600–700</th><td>Regional standard, competitive club swimmer</td></tr>
+    <tr><th scope="row">500–600</th><td>Solid club level</td></tr>
+    <tr><th scope="row">400–500</th><td>Club swimmer, early competitive</td></tr>
+    <tr><th scope="row">Below 400</th><td>Developing or recreational</td></tr>
+  </tbody>
+</table>
+<p>Points say nothing about age. A fourteen-year-old and a thirty-year-old with the same time score the same, so the number compares performances, not potential. For age-group context you want time standards, not points.</p>
+
+<h2 id="base-times">The 2026 base times</h2>
+<p>These are the official World Aquatics figures the calculator uses. Seconds are shown for the longer events so you can check the arithmetic yourself.</p>
+
+<h3 id="lcm-base">Long course — 50 m pool</h3>
+<p>Valid 1 January 2026 to 31 December 2026.</p>
+<table>
+  <caption>World Aquatics 2026 base times, long course.</caption>
+  <thead><tr><th>Event</th><th>Men</th><th>Women</th></tr></thead>
+  <tbody id="lcmtab"></tbody>
+</table>
+
+<h3 id="scm-base">Short course — 25 m pool</h3>
+<p>Valid 1 September 2026 to 31 August 2027.</p>
+<table>
+  <caption>World Aquatics 2026 base times, short course.</caption>
+  <thead><tr><th>Event</th><th>Men</th><th>Women</th></tr></thead>
+  <tbody id="scmtab"></tbody>
+</table>
+
+<h2 id="worked">A worked example</h2>
+<p>A man swims 53.50 in the 100 freestyle, long course. The 2026 base time for that event is 46.40 seconds.</p>
+<div class="eq">
+  <p><code>P = 1000 × (46.40 ÷ 53.50)³</code></p>
+  <p>46.40 ÷ 53.50 = 0.86729. Cubed, that is 0.65237. Multiplied by 1000 and truncated: <strong>652 points</strong>.</p>
+</div>
+<p>To go the other way — the time you need for a target score — rearrange it:</p>
+<div class="eq">
+  <p><code>T = B ÷ (P ÷ 1000)^⅓</code></p>
+  <p>For 700 points in the same event: 46.40 ÷ 0.8879 = <strong>52.26</strong>.</p>
+</div>
+<p>The calculator shows that ladder automatically, so you can see what 500, 600, 700 and 800 points look like in your own event.</p>
+
+<h2 id="faq">Frequently asked questions</h2>
+<div class="faq">
+  <details open><summary><h3 id="q-what">What are FINA points?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>A single scale for comparing swims across different events, distances, strokes, genders and pool sizes. Each event has an official base time worth 1000 points, and your swim scores 1000 × (base ÷ your time)³. They are now officially called World Aquatics points.</p></details>
+
+  <details><summary><h3 id="q-calc">How are FINA points calculated?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Divide the base time by your time, cube the result, multiply by 1000 and round down. For a 53.50 in the men's long course 100 freestyle against a 46.40 base, that is 1000 × (46.40 ÷ 53.50)³ = 652 points.</p></details>
+
+  <details><summary><h3 id="q-good">What is a good FINA points score?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Over 900 is world class. 700 to 800 is strong national level. 500 to 600 is a solid club swimmer, and 400 to 500 is early competitive. There is no official grading, but these bands are used consistently across the sport.</p></details>
+
+  <details><summary><h3 id="q-update">How often do the base times change?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Once a year for each course. Long course base times are set at the end of December and run for the calendar year. Short course base times are set at the end of August and run from 1 September. Because records fall, the same swim scores slightly fewer points under each new table.</p></details>
+
+  <details><summary><h3 id="q-yards">Can I get FINA points for a yards time?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Not directly. World Aquatics publishes base times for 50-metre and 25-metre pools only. Convert your short course yards time to short course metres first, then score the converted time — but treat the result as an estimate, because the conversion is one too.</p></details>
+
+  <details><summary><h3 id="q-1000">Can you score more than 1000 points?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Yes. The base time is the world record at the start of the scoring period, so any swim faster than it scores above 1000. Published points tables run past 1100 for exactly that reason.</p></details>
+</div>
+
+<div class="related"><p class="rh">More tools</p><ul>
+  <li><a href="/">Swim time converter</a> <span>— SCY, SCM and LCM side by side</span></li>
+  <li><a href="/long-course-short-course-converter">Long course to short course converter</a> <span>— one direction at a time</span></li>
+  <li><a href="/swim-pace-calculator">Swim pace calculator</a> <span>— pace per 100, speed and CSS</span></li>
+  <li><a href="/yards-to-meters">Yards to meters swimming converter</a></li>
+</ul></div>
+</main></div>
+
+<footer class="site-foot" id="end"><div class="wrap">
+    <ul class="ftools"><li><a href="/">Converter</a></li><li><a href="/long-course-short-course-converter">LC &#8596; SC</a></li><li><a href="/yards-to-meters">Yards &#8596; m</a></li><li><a href="/uk-swim-converter">UK / ASA</a></li><li><a href="/swim-pace-calculator">Pace</a></li><li><a href="/split-calculator">Splits</a></li><li><span aria-current="page">Points</span></li><li><a href="/laps-in-a-mile-swimming">Laps</a></li></ul>
+  <a href="/">Home</a><a href="/about">About</a><a href="/privacy">Privacy</a><a href="/contact">Contact</a>
+  <p style="margin:.9rem 0 0">Base times are the official World Aquatics figures for the 2026 scoring period. Check the current table before using a score for entry.</p>
+</div></footer>
+
+<button class="jump" id="jump" type="button" aria-label="Jump to the bottom of the page">
+  <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.6v10.2M3.6 8.6L8 13l4.4-4.4" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+<script>
+(function(){"use strict";
+/* Official World Aquatics 2026 base times, seconds. [event label, men, women] */
+var BASE={
+ LCM:[["50 Freestyle",20.91,23.61],["100 Freestyle",46.40,51.71],["200 Freestyle",102.00,112.23],
+      ["400 Freestyle",219.96,234.18],["800 Freestyle",452.12,484.12],["1500 Freestyle",870.67,920.48],
+      ["50 Backstroke",23.55,26.86],["100 Backstroke",51.60,57.13],["200 Backstroke",111.92,123.14],
+      ["50 Breaststroke",25.95,29.16],["100 Breaststroke",56.88,64.13],["200 Breaststroke",125.48,137.55],
+      ["50 Butterfly",22.27,24.43],["100 Butterfly",49.45,54.60],["200 Butterfly",110.34,121.81],
+      ["200 Medley",112.69,125.70],["400 Medley",242.50,263.65]],
+ SCM:[["50 Freestyle",19.90,22.83],["100 Freestyle",44.84,49.93],["200 Freestyle",98.61,109.36],
+      ["400 Freestyle",212.25,230.25],["800 Freestyle",440.46,474.00],["1500 Freestyle",846.88,908.24],
+      ["50 Backstroke",22.11,25.23],["100 Backstroke",48.16,54.02],["200 Backstroke",105.12,117.33],
+      ["50 Breaststroke",24.95,28.37],["100 Breaststroke",55.28,62.36],["200 Breaststroke",119.52,132.50],
+      ["50 Butterfly",21.32,23.72],["100 Butterfly",47.68,52.71],["200 Butterfly",106.85,119.32],
+      ["100 Medley",49.28,55.11],["200 Medley",108.88,121.63],["400 Medley",234.81,255.48]]
+};
+var $=function(i){return document.getElementById(i)};
+var course=$("course"),sex=$("sex"),ev=$("ev"),mm=$("mm"),ss=$("ss"),hh=$("hh"),
+    out=$("out"),sub=$("sub"),err=$("err");
+function fmt(s){
+  if(!isFinite(s)||s<=0)return"—";
+  s=Math.round(s*100)/100;
+  var m=Math.floor(s/60),r=s-m*60,t=r.toFixed(2);
+  if(r<10)t="0"+t;
+  return m>0?m+":"+t:r.toFixed(2);
+}
+function fillEvents(){
+  var list=BASE[course.value],keep=ev.value,h="";
+  for(var i=0;i<list.length;i++)h+='<option value="'+i+'">'+list[i][0]+'</option>';
+  ev.innerHTML=h;
+  var byName=-1;
+  if(keep!==""&&keep!=null){
+    // keep the same event name across courses where it exists
+    var prevName=ev.getAttribute("data-name");
+    if(prevName)for(var j=0;j<list.length;j++)if(list[j][0]===prevName)byName=j;
+  }
+  ev.value = byName>=0 ? byName : 1;
+  ev.setAttribute("data-name",list[ev.value][0]);
+}
+function baseTime(){
+  var e=BASE[course.value][parseInt(ev.value,10)||0];
+  return {name:e[0], b: sex.value==="M"?e[1]:e[2]};
+}
+function render(){
+  var bt=baseTime();
+  ev.setAttribute("data-name",bt.name);
+  var m=parseInt(mm.value||"0",10),s=parseInt(ss.value||"0",10),h=parseInt(hh.value||"0",10);
+  if(isNaN(m))m=0;if(isNaN(s))s=0;if(isNaN(h))h=0;
+  var T=m*60+s+h/100;
+  err.hidden=true; sub.innerHTML="";
+  if(T<=0){out.innerHTML="";return}
+  if(s>59){err.textContent="Seconds must be 59 or less.";err.hidden=false;out.innerHTML="";return}
+  var pts=Math.floor(1000*Math.pow(bt.b/T,3));
+  out.innerHTML='<span class="lbl">'+(sex.value==="M"?"Men":"Women")+' · '+bt.name+' · '+course.value+'</span>'+
+    '<span class="val">'+pts+'</span><span class="unit">points</span>'+
+    '<span class="delta">base '+fmt(bt.b)+'</span>';
+  var html='<div class="sr"><div class="k">Your time</div><div class="v">'+fmt(T)+'</div></div>';
+  [500,600,700,800,900].forEach(function(p){
+    var t=bt.b/Math.pow(p/1000,1/3);
+    html+='<div class="sr"><div class="k">'+p+' points</div><div class="v">'+fmt(t)+'</div></div>';
+  });
+  sub.innerHTML=html;
+}
+course.addEventListener("change",function(){fillEvents();render()});
+[sex,ev].forEach(function(n){n.addEventListener("change",render)});
+[mm,ss,hh].forEach(function(n){
+  n.addEventListener("input",function(){n.value=n.value.replace(/\D/g,"");render()});
+});
+fillEvents();mm.value="0";ss.value="53";hh.value="50";render();
+
+/* render the two base-time reference tables from the same data */
+function tab(id,key){
+  var rows=BASE[key],h="";
+  for(var i=0;i<rows.length;i++)
+    h+='<tr><th scope="row">'+rows[i][0]+'</th><td>'+fmt(rows[i][1])+'</td><td>'+fmt(rows[i][2])+'</td></tr>';
+  $(id).innerHTML=h;
+}
+tab("lcmtab","LCM"); tab("scmtab","SCM");
+
+/* toc + jump */
+var toc=document.querySelector(".toc"),tog=$("toctog");
+function setToc(min){
+  toc.setAttribute("data-min",min?"1":"0");
+  tog.setAttribute("aria-expanded",min?"false":"true");
+  var lbl=(min?"Show":"Hide")+" table of contents";
+  tog.setAttribute("aria-label",lbl);tog.setAttribute("title",lbl);
+  try{localStorage.setItem("tsc-toc",min?"1":"0")}catch(e){}
+}
+try{if(localStorage.getItem("tsc-toc")==="1")setToc(true)}catch(e){}
+tog.addEventListener("click",function(){setToc(toc.getAttribute("data-min")!=="1")});
+var jump=$("jump"),up=false;
+function sync(){
+  var y=window.pageYOffset||document.documentElement.scrollTop;
+  var n=y>(document.documentElement.scrollHeight-window.innerHeight)*0.55;
+  if(n===up)return;up=n;jump.classList.toggle("up",up);
+  jump.setAttribute("aria-label",up?"Back to the top of the page":"Jump to the bottom of the page");
+}
+jump.addEventListener("click",function(){window.scrollTo({top:up?0:document.body.scrollHeight,behavior:"smooth"})});
+var tick=false;
+window.addEventListener("scroll",function(){if(tick)return;tick=true;
+  window.requestAnimationFrame(function(){sync();tick=false})},{passive:true});
+sync();
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebSite","@id":"https://timeswimconvertor.com/#website","url":"https://timeswimconvertor.com/","name":"TimeSwimConvertor","inLanguage":"en"},
+{"@type":"WebPage","@id":"https://timeswimconvertor.com/fina-points-calculator#webpage","url":"https://timeswimconvertor.com/fina-points-calculator","name":"FINA Points Calculator — World Aquatics Points, 2026 Base Times","isPartOf":{"@id":"https://timeswimconvertor.com/#website"},"breadcrumb":{"@id":"https://timeswimconvertor.com/fina-points-calculator#breadcrumb"}},
+{"@type":"BreadcrumbList","@id":"https://timeswimconvertor.com/fina-points-calculator#breadcrumb","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Swim time converter","item":"https://timeswimconvertor.com/"},
+ {"@type":"ListItem","position":2,"name":"FINA points calculator","item":"https://timeswimconvertor.com/fina-points-calculator"}]},
+{"@type":"WebApplication","name":"FINA Points Calculator","url":"https://timeswimconvertor.com/fina-points-calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+{"@type":"VideoObject","name":"FINA points explained — the World Aquatics scoring formula","description":"A narrated guide to World Aquatics points: where the base time comes from, why the formula is cubed, what a score means, and why the same swim scores less each year.","thumbnailUrl":"https://timeswimconvertor.com/fina-points-explainer-poster.jpg","uploadDate":"2026-11-26","duration":"PT1M27S","contentUrl":"https://timeswimconvertor.com/fina-points-explainer.mp4","embedUrl":"https://timeswimconvertor.com/fina-points-calculator#top"},
+{"@type":"FAQPage","@id":"https://timeswimconvertor.com/fina-points-calculator#faq","mainEntity":[
+{"@type":"Question","name":"What are FINA points?","acceptedAnswer":{"@type":"Answer","text":"A single scale for comparing swims across different events, distances, strokes, genders and pool sizes. Each event has an official base time worth 1000 points, and your swim scores 1000 x (base divided by your time) cubed. They are now officially called World Aquatics points."}},
+{"@type":"Question","name":"How are FINA points calculated?","acceptedAnswer":{"@type":"Answer","text":"Divide the base time by your time, cube the result, multiply by 1000 and round down. For a 53.50 in the men's long course 100 freestyle against a 46.40 base, that is 652 points."}},
+{"@type":"Question","name":"What is a good FINA points score?","acceptedAnswer":{"@type":"Answer","text":"Over 900 is world class. 700 to 800 is strong national level. 500 to 600 is a solid club swimmer, and 400 to 500 is early competitive."}},
+{"@type":"Question","name":"How often do the base times change?","acceptedAnswer":{"@type":"Answer","text":"Once a year for each course. Long course base times are set at the end of December and run for the calendar year. Short course base times are set at the end of August and run from 1 September."}},
+{"@type":"Question","name":"Can I get FINA points for a yards time?","acceptedAnswer":{"@type":"Answer","text":"Not directly. World Aquatics publishes base times for 50-metre and 25-metre pools only. Convert your short course yards time to short course metres first, then score the converted time."}},
+{"@type":"Question","name":"Can you score more than 1000 points?","acceptedAnswer":{"@type":"Answer","text":"Yes. The base time is the world record at the start of the scoring period, so any swim faster than it scores above 1000. Published points tables run past 1100."}}
+]}]}
+</script>
+</body></html>

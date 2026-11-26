@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Swim Time Converter — SCY, SCM &amp; LCM in One Click</title>
+<meta name="description" content="Convert any swim time between 25-yard, 25-metre and 50-metre pools in one click. Official USA Swimming turn values, every stroke, instant results. Free.">
+<link rel="canonical" href="https://timeswimconvertor.com/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#0b2b45">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TimeSwimConvertor">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://timeswimconvertor.com/">
+<meta property="og:title" content="Swim Time Converter — SCY, SCM &amp; LCM in One Click">
+<meta property="og:description" content="Convert any swim time between 25-yard, 25-metre and 50-metre pools in one click. Official USA Swimming turn values, every stroke, instant results.">
+<meta property="og:image" content="https://timeswimconvertor.com/swim-time-converter-explainer-poster.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Swim Time Converter — SCY, SCM &amp; LCM in One Click">
+<meta name="twitter:description" content="Convert any swim time between 25-yard, 25-metre and 50-metre pools in one click. Official USA Swimming turn values, every stroke.">
+<meta name="twitter:image" content="https://timeswimconvertor.com/swim-time-converter-explainer-poster.jpg">
+<link rel="alternate" hreflang="en" href="https://timeswimconvertor.com/">
+<link rel="alternate" hreflang="it" href="https://timeswimconvertor.com/it/">
+<link rel="alternate" hreflang="es" href="https://timeswimconvertor.com/es/">
+<link rel="alternate" hreflang="pt" href="https://timeswimconvertor.com/pt/">
+<link rel="alternate" hreflang="fr" href="https://timeswimconvertor.com/fr/">
+<link rel="alternate" hreflang="ja" href="https://timeswimconvertor.com/ja/">
+<link rel="alternate" hreflang="x-default" href="https://timeswimconvertor.com/">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font:400 17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#15212e;background:#fff}
+h1,h2,h3{line-height:1.22;letter-spacing:-.021em;margin:0;font-weight:700}
+h1{font-size:clamp(1.85rem,4.8vw,2.85rem);letter-spacing:-.034em}
+h2{font-size:clamp(1.45rem,3.1vw,1.95rem);margin:3.1rem 0 .9rem}
+h3{font-size:clamp(1.11rem,2.1vw,1.28rem);margin:2.1rem 0 .6rem}
+p{margin:0 0 1.05rem}
+a{color:#0a6ea8}a:hover{color:#064c75}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.prose{max-width:720px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* header */
+.site-head{border-bottom:1px solid #e7ecf1;background:#fff}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:1.02rem;color:#0b2b45;text-decoration:none;letter-spacing:-.02em}
+.brand svg{display:block;flex:none}
+.nav{display:flex;gap:26px;font-size:.93rem}
+.nav a{color:#4a5b6d;text-decoration:none;font-weight:500}
+.nav a:hover{color:#0b2b45}
+.nav a[aria-current]{color:#0b2b45;font-weight:700;box-shadow:inset 0 -2px 0 #5cc5e8}.site-foot .ftools{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;margin:0 0 1rem;padding:0 0 1rem;border-bottom:1px solid #e7ecf1;list-style:none;font-size:.88rem}.site-foot .ftools a{text-decoration:none}@media(max-width:920px){.site-head .wrap{height:auto;display:block;padding-top:.6rem}.site-head .brand{display:inline-flex;margin-bottom:.1rem}.nav{max-width:100%;min-width:0;gap:1.15rem;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:.5rem 0 .7rem;line-height:1.1}.nav::-webkit-scrollbar{display:none}.nav{-webkit-mask-image:linear-gradient(to right,#000 88%,rgba(0,0,0,.15));mask-image:linear-gradient(to right,#000 88%,rgba(0,0,0,.15))}.nav a{white-space:nowrap;flex:none}}
+
+/* hero */
+.hero{background:linear-gradient(176deg,#0b2b45 0%,#124063 56%,#14506f 100%);color:#fff;padding:clamp(2rem,4.6vw,3.1rem) 0 clamp(2.2rem,5vw,3.2rem);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto 0 -1px 0;height:120px;background:radial-gradient(120% 100% at 50% 100%,rgba(255,255,255,.07),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{color:#fff;max-width:16ch}
+.hero-sub{margin:.75rem 0 0;max-width:52ch;color:#bcd6e9;font-size:1rem}
+
+/* calculator — compact */
+.calc{margin-top:1.5rem;max-width:860px;background:#fff;color:#15212e;border-radius:14px;padding:clamp(.85rem,2.1vw,1.2rem);box-shadow:0 1px 2px rgba(9,30,50,.1),0 14px 34px -12px rgba(5,22,38,.42)}
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:.65rem}
+.field{display:flex;flex-direction:column;gap:.26rem;min-width:0}
+.field label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#5b6d80}
+select,input[type=text]{font:inherit;font-size:.93rem;padding:.46rem .55rem;border:1.5px solid #d3dce5;border-radius:8px;background:#fff;color:#15212e;width:100%;min-width:0}
+select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%235b6d80' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .55rem center;padding-right:1.7rem}
+select:focus,input:focus,summary:focus-visible,.jump:focus-visible{outline:none;border-color:#0a6ea8;box-shadow:0 0 0 3px rgba(10,110,168,.17)}
+.time-row{display:flex;align-items:center;gap:.22rem}
+.time-row input{text-align:center;padding-left:.2rem;padding-right:.2rem;font-variant-numeric:tabular-nums}
+.time-row span{color:#8798a8;font-weight:700;font-size:.9rem}
+.calc-note{margin:.6rem 0 0;font-size:.775rem;color:#6b7c8d}
+.calc-note b{color:#15212e}
+.results{margin-top:.85rem;border-top:1px solid #e7ecf1;padding-top:.85rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:.55rem}
+.res{background:#f4f8fb;border:1px solid #e1ebf3;border-radius:9px;padding:.6rem .7rem}
+.res.is-source{background:#0b2b45;border-color:#0b2b45}
+.res-k{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#5b6d80;display:flex;align-items:center;gap:.35rem}
+.res.is-source .res-k{color:#8fb6d3}
+.res-v{font-size:clamp(1.3rem,3.2vw,1.52rem);font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin-top:.05rem;color:#0b2b45}
+.res.is-source .res-v{color:#fff}
+.res-d{font-size:.72rem;color:#6b7c8d;margin-top:.05rem}
+.res.is-source .res-d{color:#8fb6d3}
+.tag{font-size:.56rem;font-weight:700;letter-spacing:.06em;background:#dbe8f2;color:#2d5f84;padding:.08rem .3rem;border-radius:4px}
+.res.is-source .tag{background:rgba(255,255,255,.17);color:#cde3f3}
+.err{margin-top:.8rem;background:#fdf1ee;border:1px solid #f3cfc4;color:#9b3a1d;padding:.6rem .75rem;border-radius:8px;font-size:.85rem}
+
+/* video under the calculator */
+.vidwrap{max-width:860px;margin:1.1rem 0 0}
+.vidhead{display:flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#8fc0dd;margin-bottom:.55rem}
+.vidhead svg{flex:none}
+.vidwrap video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:13px;background:#07223a;box-shadow:0 14px 34px -14px rgba(5,22,38,.55)}
+.vidcap{margin:.5rem 0 0;font-size:.8rem;color:#8fb6d3}
+
+/* layout */
+.body-grid{display:grid;grid-template-columns:250px minmax(0,1fr);gap:clamp(1.5rem,4vw,3.4rem);padding:clamp(1.8rem,4vw,3rem) 0 3.5rem;align-items:start}
+@media(max-width:900px){.body-grid{grid-template-columns:minmax(0,1fr)}}
+.body-grid>*{min-width:0}
+
+/* TOC */
+.toc{border:1px solid #e3eaf1;border-radius:12px;background:#fafcfd;padding:1.05rem 1.15rem}
+@media(min-width:901px){.toc{position:sticky;top:18px;max-height:calc(100vh - 36px);overflow-y:auto}}
+.toc-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.toc-h{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#5b6d80;margin:0}
+.toc-toggle{flex:none;width:26px;height:26px;margin:-4px -5px -4px 0;border:0;border-radius:7px;
+ background:transparent;color:#5b6d80;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.toc-toggle:hover{background:#eef3f8;color:#0b2b45}
+.toc-toggle svg{transition:transform .2s ease}
+.toc[data-min="1"] .toc-toggle svg{transform:rotate(-90deg)}
+.toc[data-min="1"] #toc-list{display:none}
+.toc>ol{margin-top:.6rem}
+@media(prefers-reduced-motion:reduce){.toc-toggle svg{transition:none}}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:0}
+.toc>ol>li>a{font-weight:600}
+.toc>ol>li>a::before{content:counter(toc) ".";color:#9aabbb;font-weight:700;margin-right:.45rem}
+.toc a{display:block;padding:.3rem 0;color:#33475c;text-decoration:none;font-size:.9rem;line-height:1.42}
+.toc a:hover{color:#0a6ea8}
+.toc ol ol{padding-left:1.15rem}
+.toc ol ol li{counter-increment:none}
+.toc ol ol a{font-size:.855rem;color:#5b6d80;padding:.2rem 0}
+.toc ol ol a::before{content:"–";margin-right:.4rem;color:#b3c1cd}
+
+/* content */
+.lede{font-size:1.1rem;color:#3b4d60}
+h2[id],h3[id]{scroll-margin-top:16px}
+table{border-collapse:collapse;width:100%;margin:1.1rem 0 1.4rem;font-size:.9rem;font-variant-numeric:tabular-nums;display:block;overflow-x:auto}
+caption{text-align:left;font-size:.84rem;color:#6b7c8d;margin-bottom:.45rem}
+th,td{border-bottom:1px solid #e7ecf1;padding:.52rem .7rem;text-align:left;white-space:nowrap}
+th{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.055em;color:#5b6d80;background:#f8fafc}
+tbody tr:hover{background:#fafcfd}
+tbody th{background:#fbfdfe;font-size:.73rem;color:#2d5f84;letter-spacing:.07em}
+.eq{background:#f4f8fb;border-left:3px solid #0a6ea8;border-radius:0 9px 9px 0;padding:.8rem 1rem;margin:1.1rem 0;font-size:.95rem}
+.eq code{font:600 .95em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#0b2b45}
+.eq p{margin:0 0 .4rem}.eq p:last-child{margin:0}
+ul.plain{padding-left:1.15rem;margin:0 0 1.1rem}
+ul.plain li{margin-bottom:.42rem}
+.callout{background:#fffaf2;border:1px solid #f0e0c6;border-radius:11px;padding:.95rem 1.1rem;margin:1.3rem 0;font-size:.94rem}
+.callout strong{color:#8a5a12}
+
+/* figures: pool diagrams */
+figure{margin:1.3rem 0 1.5rem}
+figure svg{display:block;width:100%;max-width:100%;height:auto;border-radius:11px;background:#0d3a5a}
+figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
+
+/* FAQ accordion */
+.faq{border-top:1px solid #e7ecf1}
+.faq details{border-bottom:1px solid #e7ecf1}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;gap:.8rem;padding:1rem 0}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary h3{margin:0;font-size:1.06rem;flex:1}
+.faq summary:hover h3{color:#0a6ea8}
+.chev{flex:none;margin-top:.22rem;transition:transform .2s ease}
+.faq details[open] .chev{transform:rotate(180deg)}
+.faq details>p{margin:0 0 1.1rem;padding-right:2rem;color:#3b4d60}
+@media(prefers-reduced-motion:reduce){.chev{transition:none}}
+
+/* jump arrow */
+.jump{position:fixed;right:18px;bottom:18px;z-index:40;width:46px;height:46px;border-radius:50%;
+ border:1px solid rgba(255,255,255,.18);background:#0b2b45;color:#fff;cursor:pointer;
+ display:flex;align-items:center;justify-content:center;padding:0;
+ box-shadow:0 6px 20px -4px rgba(5,22,38,.5);transition:transform .2s ease,background .2s ease}
+.jump:hover{background:#14506f;transform:translateY(-2px)}
+.jump svg{transition:transform .25s ease}
+.jump.up svg{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.jump,.jump svg{transition:none}}
+
+.related{border:1px solid #e3eaf1;border-radius:12px;background:#fafcfd;padding:1.1rem 1.25rem;margin:2.4rem 0 0}
+.related p.rh{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#5b6d80;margin:0 0 .6rem}
+.related ul{list-style:none;margin:0;padding:0}
+.related li{margin-bottom:.45rem}
+.related a{font-weight:600;text-decoration:none}
+.related a:hover{text-decoration:underline}
+.related span{color:#6b7c8d;font-weight:400}
+.langbar{font-size:.82rem;color:#6b7c8d;padding:.9rem 0 0}
+.langbar a{color:#4a5b6d;text-decoration:none;margin-right:.9rem}
+.langbar a:hover{color:#0b2b45}
+.langbar a[aria-current]{color:#0b2b45;font-weight:700}
+.site-foot{border-top:1px solid #e7ecf1;padding:1.8rem 0;font-size:.87rem;color:#6b7c8d}
+.site-foot a{color:#4a5b6d;text-decoration:none;margin-right:1.1rem}
+.site-foot a:hover{color:#0b2b45}
+</style>
+</head>
+<body id="top">
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0b2b45"/><path d="M4 14.4c1.6-1.5 2.9-1.5 4.5 0s2.9 1.5 4.5 0 2.9-1.5 4.5 0" stroke="#5cc5e8" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M4 10.2c1.6-1.5 2.9-1.5 4.5 0s2.9 1.5 4.5 0 2.9-1.5 4.5 0" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" opacity=".85"/></svg>
+      TimeSwimConvertor
+    </a>
+    <nav class="nav" aria-label="Calculators"><a href="/" aria-current="page">Converter</a><a href="/long-course-short-course-converter">LC &#8596; SC</a><a href="/yards-to-meters">Yards &#8596; m</a><a href="/uk-swim-converter">UK / ASA</a><a href="/swim-pace-calculator">Pace</a><a href="/split-calculator">Splits</a><a href="/fina-points-calculator">Points</a><a href="/laps-in-a-mile-swimming">Laps</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Swim Time Converter</h1>
+    <p class="hero-sub">Enter one time. Get it in a 25-yard, 25-metre and 50-metre pool instantly.</p>
+
+    <div class="calc">
+      <form id="f" class="calc-grid" autocomplete="off">
+        <div class="field">
+          <label for="course">Your pool</label>
+          <select id="course">
+            <option value="SCY">25 yards (SCY)</option>
+            <option value="SCM">25 metres (SCM)</option>
+            <option value="LCM" selected>50 metres (LCM)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="stroke">Stroke</label>
+          <select id="stroke">
+            <option value="free" selected>Freestyle</option>
+            <option value="back">Backstroke</option>
+            <option value="breast">Breaststroke</option>
+            <option value="fly">Butterfly</option>
+            <option value="im">Individual medley</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="dist">Event</label>
+          <select id="dist"></select>
+        </div>
+        <div class="field">
+          <label for="mm">Your time</label>
+          <div class="time-row">
+            <input type="text" id="mm" inputmode="numeric" maxlength="2" placeholder="00" aria-label="Minutes">
+            <span>:</span>
+            <input type="text" id="ss" inputmode="numeric" maxlength="2" placeholder="00" aria-label="Seconds">
+            <span>.</span>
+            <input type="text" id="hh" inputmode="numeric" maxlength="2" placeholder="00" aria-label="Hundredths">
+          </div>
+        </div>
+      </form>
+      <div id="err" class="err" hidden role="alert"></div>
+      <div id="out" class="results" aria-live="polite"></div>
+      <p class="calc-note">Uses the <b>USA&nbsp;Swimming / Hy-Tek</b> turn-value method — the table most meets seed from.</p>
+    </div>
+
+    <!-- beginner explainer video -->
+    <div class="vidwrap">
+      <p class="vidhead">
+        <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6.4 4.9l4.4 3.1-4.4 3.1z" fill="currentColor"/></svg>
+        New to this? Watch first — 3 minutes
+      </p>
+      <video controls preload="none" playsinline width="1280" height="720"
+             poster="swim-time-converter-explainer-poster.jpg">
+        <source src="swim-time-converter-explainer.mp4" type="video/mp4">
+        Your browser cannot play this video. The same explanation is written out below.
+      </video>
+      <p class="vidcap">Narrated walkthrough: the three courses, why times differ, the turn values, a worked example, and how accurate a converted time really is.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><p class="langbar"><a href="/" hreflang="en" aria-current="page">English</a><a href="/it/" hreflang="it">Italiano</a><a href="/es/" hreflang="es">Español</a><a href="/pt/" hreflang="pt">Português</a><a href="/fr/" hreflang="fr">Français</a><a href="/ja/" hreflang="ja">日本語</a></p></div>
+
+<div class="wrap body-grid">
+
+  <aside class="toc" aria-labelledby="toc-h">
+    <div class="toc-top">
+      <p class="toc-h" id="toc-h">Table of contents</p>
+      <button class="toc-toggle" id="toctog" type="button" aria-expanded="true"
+              aria-controls="toc-list" aria-label="Hide table of contents" title="Hide table of contents">
+        <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <ol id="toc-list">
+      <li><a href="#how-it-works">How the swim time converter works</a>
+        <ol>
+          <li><a href="#courses">SCY, SCM and LCM explained</a></li>
+          <li><a href="#why-slower">Why pool length changes your time</a></li>
+        </ol>
+      </li>
+      <li><a href="#factors">Swim conversion factors and turn values</a>
+        <ol>
+          <li><a href="#turn-values">Turn value by stroke</a></li>
+          <li><a href="#every-event">Every event at a glance</a></li>
+          <li><a href="#distance-factors">Distance event factors</a></li>
+        </ol>
+      </li>
+      <li><a href="#by-hand">How to convert a swim time by hand</a>
+        <ol>
+          <li><a href="#yards-to-meters">Yards to metres (SCY to LCM)</a></li>
+          <li><a href="#sc-to-lc">Short course to long course</a></li>
+          <li><a href="#lc-to-sc">Long course to short course</a></li>
+        </ol>
+      </li>
+      <li><a href="#charts">Swim time conversion charts</a></li>
+      <li><a href="#accuracy">How accurate are converted times?</a></li>
+      <li><a href="#accepted">When meets accept a converted time</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </aside>
+
+  <main class="prose">
+
+    <h2 id="how-it-works">How the swim time converter works</h2>
+    <p class="lede">A 100 free in a 25-yard pool and a 100 free in a 50-metre pool are two different races. The distance is different, and so is the number of walls you get to push off. Converting a swim time means estimating what the same effort would have produced in the other pool.</p>
+    <p>This tool applies the turn-value method published by USA Swimming and built into Hy-Tek Team Manager, the software that seeds most meets in the United States. It multiplies your time by a course factor to handle the change in distance, then adds or subtracts a fixed number of seconds for every wall you gain or lose.</p>
+
+    <h3 id="courses">SCY, SCM and LCM explained</h3>
+    <p>Competitive swimming runs in three pool sizes. Drawn to the same scale, the difference is obvious — a 50-metre pool is more than twice the length of a 25-yard one.</p>
+
+    <figure>
+      <svg viewBox="0 0 680 250" role="img" aria-label="The three competition pool lengths drawn to scale: 25 yards is 22.86 metres, 25 metres, and 50 metres.">
+        <defs>
+          <linearGradient id="w" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1f7aa8"/><stop offset="1" stop-color="#0f4e73"/>
+          </linearGradient>
+        </defs>
+        <g font-family="system-ui,-apple-system,Segoe UI,sans-serif">
+          <!-- 25 yards -->
+          <text x="14" y="38" fill="#fff" font-size="19" font-weight="700">25 yards</text>
+          <text x="14" y="56" fill="#5cc5e8" font-size="12" font-weight="700" letter-spacing="1.4">SCY</text>
+          <rect x="112" y="18" width="229" height="46" rx="6" fill="url(#w)"/>
+          <path d="M112 33h229M112 49h229" stroke="#fff" stroke-opacity=".26" stroke-width="1.5"/>
+          <rect x="112" y="18" width="6" height="46" fill="#ffd98a"/><rect x="335" y="18" width="6" height="46" fill="#ffd98a"/>
+          <text x="352" y="47" fill="#cfe9f8" font-size="14" font-weight="600">22.86 m</text>
+          <!-- 25 metres -->
+          <text x="14" y="120" fill="#fff" font-size="19" font-weight="700">25 metres</text>
+          <text x="14" y="138" fill="#5cc5e8" font-size="12" font-weight="700" letter-spacing="1.4">SCM</text>
+          <rect x="112" y="100" width="250" height="46" rx="6" fill="url(#w)"/>
+          <path d="M112 115h250M112 131h250" stroke="#fff" stroke-opacity=".26" stroke-width="1.5"/>
+          <rect x="112" y="100" width="6" height="46" fill="#ffd98a"/><rect x="356" y="100" width="6" height="46" fill="#ffd98a"/>
+          <text x="373" y="129" fill="#cfe9f8" font-size="14" font-weight="600">25.00 m</text>
+          <!-- 50 metres -->
+          <text x="14" y="202" fill="#fff" font-size="19" font-weight="700">50 metres</text>
+          <text x="14" y="220" fill="#5cc5e8" font-size="12" font-weight="700" letter-spacing="1.4">LCM</text>
+          <rect x="112" y="182" width="500" height="46" rx="6" fill="url(#w)"/>
+          <path d="M112 197h500M112 213h500" stroke="#fff" stroke-opacity=".26" stroke-width="1.5"/>
+          <rect x="112" y="182" width="6" height="46" fill="#ffd98a"/><rect x="606" y="182" width="6" height="46" fill="#ffd98a"/>
+          <text x="623" y="211" fill="#cfe9f8" font-size="14" font-weight="600">50.00 m</text>
+        </g>
+      </svg>
+      <figcaption>The three competition courses at the same scale. Gold bars mark the walls.</figcaption>
+    </figure>
+
+    <table>
+      <caption>The three courses at a glance.</caption>
+      <thead><tr><th>Course</th><th>Pool</th><th>Lane length</th><th>Where it is standard</th><th>Lengths in a 100</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">SCY</th><td>25 yards</td><td>22.86 m</td><td>US high school, college, club</td><td>4</td></tr>
+        <tr><th scope="row">SCM</th><td>25 metres</td><td>25.00 m</td><td>Europe, Canada, World SC Champs</td><td>4</td></tr>
+        <tr><th scope="row">LCM</th><td>50 metres</td><td>50.00 m</td><td>Olympics, World Champs, summer</td><td>2</td></tr>
+      </tbody>
+    </table>
+
+    <p>Because a yard is 0.9144 metres, 100 yards is only 91.44 metres. That alone makes a metre race roughly nine per cent longer, which is where the familiar 1.11 factor comes from.</p>
+
+    <h3 id="why-slower">Why pool length changes your time</h3>
+    <p>Distance is only half the story. The other half is walls. A 100 in a short course pool has three turns; the same 100 long course has one. A turn is a push-off and an underwater, and both are faster than swimming on the surface — so every wall you lose costs you time.</p>
+
+    <figure>
+      <svg viewBox="0 0 680 212" role="img" aria-label="A 100 metre race in a 25 metre pool has four lengths and three turns. The same race in a 50 metre pool has two lengths and one turn.">
+        <g font-family="system-ui,-apple-system,Segoe UI,sans-serif">
+          <text x="14" y="28" fill="#fff" font-size="15" font-weight="700">100 m in a 25 m pool — 3 turns</text>
+          <rect x="14" y="40" width="652" height="48" rx="6" fill="url(#w)"/>
+          <path d="M177 40v48M340 40v48M503 40v48" stroke="#fff" stroke-opacity=".4" stroke-width="2" stroke-dasharray="5 5"/>
+          <g font-size="13" font-weight="700" text-anchor="middle">
+            <circle cx="177" cy="64" r="15" fill="#ffd98a"/><text x="177" y="69" fill="#5a3c00">1</text>
+            <circle cx="340" cy="64" r="15" fill="#ffd98a"/><text x="340" y="69" fill="#5a3c00">2</text>
+            <circle cx="503" cy="64" r="15" fill="#ffd98a"/><text x="503" y="69" fill="#5a3c00">3</text>
+          </g>
+          <text x="14" y="138" fill="#fff" font-size="15" font-weight="700">100 m in a 50 m pool — 1 turn</text>
+          <rect x="14" y="150" width="652" height="48" rx="6" fill="url(#w)"/>
+          <path d="M340 150v48" stroke="#fff" stroke-opacity=".4" stroke-width="2" stroke-dasharray="5 5"/>
+          <circle cx="340" cy="174" r="15" fill="#ffd98a"/>
+          <text x="340" y="179" fill="#5a3c00" font-size="13" font-weight="700" text-anchor="middle">1</text>
+        </g>
+      </svg>
+      <figcaption>Each bar is the same 100 metres of racing. Only the number of walls changes.</figcaption>
+    </figure>
+
+    <p>That is why a long course time is slower than the short course equivalent even after you adjust for distance, and why the penalty is not the same for every stroke. Breaststroke turns are worth the most, because the pull-out is far quicker than the stroke itself. Backstroke turns are worth the least.</p>
+
+    <h2 id="factors">Swim conversion factors and turn values</h2>
+    <p>The method uses two numbers: a course factor applied to the whole time, and a turn value applied once per wall gained or lost.</p>
+
+    <h3 id="turn-values">Turn value by stroke</h3>
+    <table>
+      <caption>Seconds added per wall lost when moving to a longer pool.</caption>
+      <thead><tr><th>Stroke</th><th>Per wall</th><th>50</th><th>100</th><th>200</th><th>400</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Freestyle</th><td>0.8 s</td><td>+0.8</td><td>+1.6</td><td>+3.2</td><td>+6.4</td></tr>
+        <tr><th scope="row">Backstroke</th><td>0.6 s</td><td>+0.6</td><td>+1.2</td><td>+2.4</td><td>—</td></tr>
+        <tr><th scope="row">Breaststroke</th><td>1.0 s</td><td>+1.0</td><td>+2.0</td><td>+4.0</td><td>—</td></tr>
+        <tr><th scope="row">Butterfly</th><td>0.7 s</td><td>+0.7</td><td>+1.4</td><td>+2.8</td><td>—</td></tr>
+        <tr><th scope="row">Individual medley</th><td>0.8 s</td><td>—</td><td>—</td><td>+3.2</td><td>+6.4</td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="every-event">Every event at a glance</h3>
+    <p>The complete set, so you can check any conversion by hand. T is your time in seconds.</p>
+    <table>
+      <caption>Full swim time conversion table — all strokes, all distances.</caption>
+      <thead><tr><th>Event</th><th>SCY → SCM</th><th>SCY → LCM</th><th>SCM → LCM</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" colspan="4">Freestyle</th></tr>
+        <tr><td>50</td><td>T × 1.11</td><td>T × 1.11 + 0.8</td><td>T + 0.8</td></tr>
+        <tr><td>100</td><td>T × 1.11</td><td>T × 1.11 + 1.6</td><td>T + 1.6</td></tr>
+        <tr><td>200</td><td>T × 1.11</td><td>T × 1.11 + 3.2</td><td>T + 3.2</td></tr>
+        <tr><td>500 y / 400 m</td><td>T × 0.8925 − 6.4</td><td>T × 0.8925</td><td>T + 6.4</td></tr>
+        <tr><td>1000 y / 800 m</td><td>T × 0.8925 − 12.8</td><td>T × 0.8925</td><td>T + 12.8</td></tr>
+        <tr><td>1650 y / 1500 m</td><td>T × 1.02 − 24.0</td><td>T × 1.02</td><td>T + 24.0</td></tr>
+        <tr><th scope="row" colspan="4">Backstroke</th></tr>
+        <tr><td>50</td><td>T × 1.11</td><td>T × 1.11 + 0.6</td><td>T + 0.6</td></tr>
+        <tr><td>100</td><td>T × 1.11</td><td>T × 1.11 + 1.2</td><td>T + 1.2</td></tr>
+        <tr><td>200</td><td>T × 1.11</td><td>T × 1.11 + 2.4</td><td>T + 2.4</td></tr>
+        <tr><th scope="row" colspan="4">Breaststroke</th></tr>
+        <tr><td>50</td><td>T × 1.11</td><td>T × 1.11 + 1.0</td><td>T + 1.0</td></tr>
+        <tr><td>100</td><td>T × 1.11</td><td>T × 1.11 + 2.0</td><td>T + 2.0</td></tr>
+        <tr><td>200</td><td>T × 1.11</td><td>T × 1.11 + 4.0</td><td>T + 4.0</td></tr>
+        <tr><th scope="row" colspan="4">Butterfly</th></tr>
+        <tr><td>50</td><td>T × 1.11</td><td>T × 1.11 + 0.7</td><td>T + 0.7</td></tr>
+        <tr><td>100</td><td>T × 1.11</td><td>T × 1.11 + 1.4</td><td>T + 1.4</td></tr>
+        <tr><td>200</td><td>T × 1.11</td><td>T × 1.11 + 2.8</td><td>T + 2.8</td></tr>
+        <tr><th scope="row" colspan="4">Individual medley</th></tr>
+        <tr><td>100</td><td>T × 1.11</td><td>not swum LCM</td><td>not swum LCM</td></tr>
+        <tr><td>200</td><td>T × 1.11</td><td>T × 1.11 + 3.2</td><td>T + 3.2</td></tr>
+        <tr><td>400</td><td>T × 1.11</td><td>T × 1.11 + 6.4</td><td>T + 6.4</td></tr>
+      </tbody>
+    </table>
+    <p>To go the other way, reverse the operations: subtract the seconds first, then divide by the factor.</p>
+
+    <h3 id="distance-factors">Distance event factors</h3>
+    <p>The distance events do not line up one-to-one between courses, so they carry their own factors instead of 1.11.</p>
+    <table>
+      <caption>Course factors between yards and metres.</caption>
+      <thead><tr><th>Events</th><th>Factor</th><th>Applies to</th></tr></thead>
+      <tbody>
+        <tr><td>50, 100, 200 and 400&nbsp;IM</td><td>1.11</td><td>Same nominal distance, both courses</td></tr>
+        <tr><td>500&nbsp;y ↔ 400&nbsp;m</td><td>0.8925</td><td>Freestyle only</td></tr>
+        <tr><td>1000&nbsp;y ↔ 800&nbsp;m</td><td>0.8925</td><td>Freestyle only</td></tr>
+        <tr><td>1650&nbsp;y ↔ 1500&nbsp;m</td><td>1.02</td><td>Freestyle only</td></tr>
+        <tr><td>SCM ↔ LCM, any event</td><td>1.00</td><td>Turn value only — distance is identical</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="by-hand">How to convert a swim time by hand</h2>
+    <p>Work in total seconds, apply the factor, then the walls, then convert back to minutes and seconds.</p>
+
+    <h3 id="yards-to-meters">Yards to metres (SCY to LCM)</h3>
+    <div class="eq">
+      <p><code>LCM = (SCY × factor) + turn value</code></p>
+      <p><strong>100 freestyle, 52.30 SCY.</strong> 52.30 × 1.11 = 58.05. Two walls lost × 0.8 s = 1.6. Result: <strong>59.65 LCM</strong>.</p>
+    </div>
+
+    <h3 id="sc-to-lc">Short course to long course (SCM to LCM)</h3>
+    <p>Here the distance is already identical, so there is no factor — only the walls.</p>
+    <div class="eq">
+      <p><code>LCM = SCM + turn value</code></p>
+      <p><strong>200 breaststroke, 2:28.40 SCM.</strong> 148.40 s + (4 walls × 1.0 s) = 152.40 s = <strong>2:32.40 LCM</strong>.</p>
+    </div>
+
+    <h3 id="lc-to-sc">Long course to short course</h3>
+    <p>Reverse the order: take the walls off first, then divide by the factor.</p>
+    <div class="eq">
+      <p><code>SCY = (LCM − turn value) ÷ factor</code></p>
+      <p><strong>100 backstroke, 1:08.00 LCM.</strong> 68.00 − 1.2 = 66.80. 66.80 ÷ 1.11 = <strong>60.18 SCY</strong>.</p>
+    </div>
+
+    <h2 id="charts">Swim time conversion charts</h2>
+    <p>Quick reference for the events swimmers convert most often. Use the converter above for anything not listed.</p>
+    <table>
+      <caption>Freestyle across all three courses.</caption>
+      <thead><tr><th>Event</th><th>SCY</th><th>SCM</th><th>LCM</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">50 free</th><td>24.00</td><td>26.64</td><td>27.44</td></tr>
+        <tr><th scope="row">100 free</th><td>52.00</td><td>57.72</td><td>59.32</td></tr>
+        <tr><th scope="row">200 free</th><td>1:52.00</td><td>2:04.32</td><td>2:07.52</td></tr>
+        <tr><th scope="row">500 y / 400 m free</th><td>5:00.00</td><td>4:21.35</td><td>4:27.75</td></tr>
+        <tr><th scope="row">1650 y / 1500 m free</th><td>17:00.00</td><td>16:56.40</td><td>17:20.40</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <caption>Form strokes, 100s, short course metres to long course metres.</caption>
+      <thead><tr><th>Event</th><th>SCM</th><th>LCM</th><th>Added</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">100 backstroke</th><td>1:00.00</td><td>1:01.20</td><td>+1.2 s</td></tr>
+        <tr><th scope="row">100 breaststroke</th><td>1:08.00</td><td>1:10.00</td><td>+2.0 s</td></tr>
+        <tr><th scope="row">100 butterfly</th><td>58.00</td><td>59.40</td><td>+1.4 s</td></tr>
+        <tr><th scope="row">200 IM</th><td>2:10.00</td><td>2:13.20</td><td>+3.2 s</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="accuracy">How accurate are converted swim times?</h2>
+    <p>A converted time is an estimate, not a result. The turn-value method applies one number per stroke to every swimmer, but the value of a wall is personal: a swimmer with a 12-metre underwater gains far more from short course than one who surfaces at five metres.</p>
+    <p>Expect a converted time to land within roughly two to three per cent of what you would actually swim. For context, the same swimmer in the same pool typically varies by around two per cent between meets a few weeks apart, so no conversion method can be meaningfully tighter than that.</p>
+    <div class="callout">
+      <p><strong>Where conversions drift most:</strong> strong underwater swimmers converting short course to long course, breaststrokers at any distance, and the 1650 to 1500 freestyle, where the two races are a different length as well as a different course.</p>
+    </div>
+
+    <h2 id="accepted">When meets accept a converted time</h2>
+    <p>Entry rules belong to the meet, not to the converter. Most US club and masters meets accept converted times for seeding, because Hy-Tek produces them from this same table. Championship meets and time standards are usually stricter and want a time swum in the course they are run in.</p>
+    <p>Converted times are also not records. A converted swim can seed you into a heat; it cannot set a mark. If you are entering a qualifying meet, check the meet information sheet before relying on a conversion.</p>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+
+      <details open>
+        <summary>
+          <h3 id="q-yards-meters">How do you convert swim times from yards to meters?</h3>
+          <svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p>Multiply your short course yards time by 1.11 to get short course metres, then add the turn value for your stroke and distance to reach long course metres. For a 100 freestyle that is your time × 1.11 + 1.6 seconds. The converter above does both steps at once.</p>
+      </details>
+
+      <details>
+        <summary>
+          <h3 id="q-why-1-11">Why is the swim conversion factor 1.11?</h3>
+          <svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p>A yard is 0.9144 metres, so a metre race is about 9.4 per cent longer. The factor is slightly above that because a yards pool also gives you more walls per 100, and the extra push-offs make yards times faster than distance alone explains.</p>
+      </details>
+
+      <details>
+        <summary>
+          <h3 id="q-sc-lc-difference">How much slower is long course than short course?</h3>
+          <svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p>For a 100, roughly one to two seconds between 25-metre and 50-metre pools, depending on stroke: 1.2 seconds for backstroke, 1.6 for freestyle, 2.0 for breaststroke. Between 25 yards and 50 metres the gap is much larger, because the distance changes too.</p>
+      </details>
+
+      <details>
+        <summary>
+          <h3 id="q-backstroke">Why is backstroke different from the other strokes?</h3>
+          <svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p>Backstroke carries the smallest turn value, 0.6 seconds per wall, because backstroke swimming speed is closer to underwater speed than in the other strokes. Breaststroke carries the largest, 1.0 second, since the pull-out is far faster than the stroke.</p>
+      </details>
+
+      <details>
+        <summary>
+          <h3 id="q-which-factors">Which conversion factors does this tool use?</h3>
+          <svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p>The USA Swimming turn-value set used by Hy-Tek Team Manager: a 1.11 course factor for the 50, 100, 200 and 400 IM, 0.8925 for 500 yards to 400 metres and 1000 to 800, 1.02 for 1650 to 1500, and turn values of 0.8 s freestyle, 0.6 s backstroke, 1.0 s breaststroke, 0.7 s butterfly and 0.8 s IM.</p>
+      </details>
+
+      <details>
+        <summary>
+          <h3 id="q-free">Is the swim time converter free?</h3>
+          <svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p>Yes. There is no sign-up and no limit on conversions. Everything runs in your browser, so your times are never sent anywhere.</p>
+      </details>
+
+    </div>
+
+    <div class="related">
+      <p class="rh">More converters</p>
+      <ul>
+        <li><a href="/long-course-short-course-converter">Long course to short course converter</a> <span>— 50 m to 25 m or 25 yards, one direction at a time</span></li>
+        <li><a href="/swim-pace-calculator">Swim pace calculator</a> <span>— pace per 100, speed and critical swim speed</span></li>
+        <li><a href="/fina-points-calculator">FINA points calculator</a> <span>— score a swim on the World Aquatics scale</span></li>
+        <li><a href="/yards-to-meters">Yards to meters swimming converter</a> <span>— the yards axis on its own</span></li>
+        <li><a href="/uk-swim-converter">UK swim converter</a> <span>— the British Swimming / ASA algorithm</span></li>
+        <li><a href="/split-calculator">Swim split calculator</a> <span>— race splits for a target time</span></li>
+        <li><a href="/laps-in-a-mile-swimming">How many laps is a mile?</a> <span>— lengths by pool size</span></li>
+      </ul>
+    </div>
+  </main>
+</div>
+
+<footer class="site-foot" id="end">
+  <div class="wrap">
+    <ul class="ftools"><li><span aria-current="page">Converter</span></li><li><a href="/long-course-short-course-converter">LC &#8596; SC</a></li><li><a href="/yards-to-meters">Yards &#8596; m</a></li><li><a href="/uk-swim-converter">UK / ASA</a></li><li><a href="/swim-pace-calculator">Pace</a></li><li><a href="/split-calculator">Splits</a></li><li><a href="/fina-points-calculator">Points</a></li><li><a href="/laps-in-a-mile-swimming">Laps</a></li></ul>
+    <a href="/about">About</a><a href="/privacy">Privacy</a><a href="/contact">Contact</a>
+    <p style="margin:.9rem 0 0">Converted times are estimates for planning and seeding. Always check your meet's entry rules.</p>
+  </div>
+</footer>
+
+<button class="jump" id="jump" type="button" aria-label="Jump to the bottom of the page">
+  <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.6v10.2M3.6 8.6L8 13l4.4-4.4" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script>
+(function(){
+"use strict";
+var TURN={free:.8,back:.6,breast:1,fly:.7,im:.8};
+var EV={
+ free:[{d:50,y:"50 y",m:"50 m",w:1,f:1.11},{d:100,y:"100 y",m:"100 m",w:2,f:1.11},{d:200,y:"200 y",m:"200 m",w:4,f:1.11},
+       {d:400,y:"500 y",m:"400 m",w:8,f:.8925},{d:800,y:"1000 y",m:"800 m",w:16,f:.8925},{d:1500,y:"1650 y",m:"1500 m",w:30,f:1.02}],
+ back:[{d:50,y:"50 y",m:"50 m",w:1,f:1.11},{d:100,y:"100 y",m:"100 m",w:2,f:1.11},{d:200,y:"200 y",m:"200 m",w:4,f:1.11}],
+ breast:[{d:50,y:"50 y",m:"50 m",w:1,f:1.11},{d:100,y:"100 y",m:"100 m",w:2,f:1.11},{d:200,y:"200 y",m:"200 m",w:4,f:1.11}],
+ fly:[{d:50,y:"50 y",m:"50 m",w:1,f:1.11},{d:100,y:"100 y",m:"100 m",w:2,f:1.11},{d:200,y:"200 y",m:"200 m",w:4,f:1.11}],
+ im:[{d:100,y:"100 y",m:"100 m",w:2,f:1.11,noLC:1},{d:200,y:"200 y",m:"200 m",w:4,f:1.11},{d:400,y:"400 y",m:"400 m",w:8,f:1.11}]
+};
+var $=function(i){return document.getElementById(i)};
+var course=$("course"),stroke=$("stroke"),dist=$("dist"),mm=$("mm"),ss=$("ss"),hh=$("hh"),out=$("out"),err=$("err");
+
+function fillEvents(){
+  var list=EV[stroke.value],keep=dist.value,h="";
+  for(var i=0;i<list.length;i++){
+    var e=list[i];
+    h+='<option value="'+e.d+'">'+((course.value==="SCY")?e.y:e.m)+'</option>';
+  }
+  dist.innerHTML=h;
+  if(keep&&dist.querySelector('option[value="'+keep+'"]'))dist.value=keep;
+  else dist.value=list[Math.min(1,list.length-1)].d;
+}
+function ev(){var l=EV[stroke.value];for(var i=0;i<l.length;i++)if(l[i].d==dist.value)return l[i];return l[0]}
+function fmt(s){
+  if(!isFinite(s)||s<=0)return"—";
+  s=Math.round(s*100)/100;
+  var m=Math.floor(s/60),r=s-m*60,t=r.toFixed(2);
+  if(r<10)t="0"+t;
+  return m>0?m+":"+t:r.toFixed(2);
+}
+function toLCM(sec,from,e){
+  var I=e.w*TURN[stroke.value];
+  if(from==="LCM")return sec;
+  if(from==="SCM")return sec+I;
+  return sec*e.f+((e.d>200&&stroke.value!=="im")?0:I);
+}
+function fromLCM(sec,to,e){
+  var I=e.w*TURN[stroke.value];
+  if(to==="LCM")return sec;
+  if(to==="SCM")return sec-I;
+  return(sec-((e.d>200&&stroke.value!=="im")?0:I))/e.f;
+}
+var META={SCY:"25 yd",SCM:"25 m",LCM:"50 m"};
+function render(){
+  var m=parseInt(mm.value||"0",10),s=parseInt(ss.value||"0",10),h=parseInt(hh.value||"0",10);
+  if(isNaN(m))m=0;if(isNaN(s))s=0;if(isNaN(h))h=0;
+  var total=m*60+s+h/100,e=ev();
+  err.hidden=true;
+  if(total<=0){out.innerHTML="";return}
+  if(s>59){err.textContent="Seconds must be 59 or less.";err.hidden=false;out.innerHTML="";return}
+  var lcm=toLCM(total,course.value,e),html="",order=["SCY","SCM","LCM"];
+  for(var i=0;i<order.length;i++){
+    var c=order[i];
+    if(c==="LCM"&&e.noLC)continue;
+    var val=(c===course.value)?total:fromLCM(lcm,c,e);
+    html+='<div class="res'+(c===course.value?' is-source':'')+'">'
+      +'<div class="res-k">'+c+(c===course.value?' <span class="tag">YOUR TIME</span>':'')+'</div>'
+      +'<div class="res-v">'+fmt(val)+'</div>'
+      +'<div class="res-d">'+((c==="SCY")?e.y:e.m)+' · '+META[c]+'</div></div>';
+  }
+  out.innerHTML=html;
+}
+stroke.addEventListener("change",function(){dist.value="";fillEvents();render()});
+course.addEventListener("change",function(){fillEvents();render()});
+dist.addEventListener("change",render);
+[mm,ss,hh].forEach(function(n){
+  n.addEventListener("input",function(){n.value=n.value.replace(/\D/g,"");render()});
+});
+fillEvents();mm.value="1";ss.value="05";hh.value="00";render();
+
+/* table of contents: minimise */
+var toc=document.querySelector(".toc"),tog=$("toctog");
+function setToc(min){
+  toc.setAttribute("data-min",min?"1":"0");
+  tog.setAttribute("aria-expanded",min?"false":"true");
+  var lbl=(min?"Show":"Hide")+" table of contents";
+  tog.setAttribute("aria-label",lbl); tog.setAttribute("title",lbl);
+  try{localStorage.setItem("tsc-toc",min?"1":"0")}catch(e){}
+}
+try{if(localStorage.getItem("tsc-toc")==="1")setToc(true)}catch(e){}
+tog.addEventListener("click",function(){setToc(toc.getAttribute("data-min")!=="1")});
+
+/* jump arrow: down to the end, then back to top */
+var jump=$("jump"),up=false;
+function sync(){
+  var y=window.pageYOffset||document.documentElement.scrollTop;
+  var n=y>(document.documentElement.scrollHeight-window.innerHeight)*0.55;
+  if(n===up)return;
+  up=n;
+  jump.classList.toggle("up",up);
+  jump.setAttribute("aria-label",up?"Back to the top of the page":"Jump to the bottom of the page");
+}
+jump.addEventListener("click",function(){
+  var t=up?0:document.body.scrollHeight;
+  window.scrollTo({top:t,behavior:"smooth"});
+});
+var tick=false;
+window.addEventListener("scroll",function(){
+  if(tick)return;tick=true;
+  window.requestAnimationFrame(function(){sync();tick=false});
+},{passive:true});
+sync();
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebSite","@id":"https://timeswimconvertor.com/#website","url":"https://timeswimconvertor.com/","name":"TimeSwimConvertor","inLanguage":"en"},
+{"@type":"WebPage","@id":"https://timeswimconvertor.com/#webpage","url":"https://timeswimconvertor.com/","name":"Swim Time Converter — SCY, SCM & LCM in One Click","isPartOf":{"@id":"https://timeswimconvertor.com/#website"},"description":"Convert any swim time between 25-yard, 25-metre and 50-metre pools in one click.","breadcrumb":{"@id":"https://timeswimconvertor.com/#breadcrumb"}},
+{"@type":"BreadcrumbList","@id":"https://timeswimconvertor.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://timeswimconvertor.com/"}]},
+{"@type":"WebApplication","name":"Swim Time Converter","url":"https://timeswimconvertor.com/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+{"@type":"VideoObject","name":"Swim Time Converter — how converting a swim time works","description":"A narrated beginner's guide: the three competition courses, why the same swim gives three different times, the turn value for each stroke, a worked conversion, the distance-event factors, and how accurate a converted time is.","thumbnailUrl":"https://timeswimconvertor.com/swim-time-converter-explainer-poster.jpg","uploadDate":"2026-11-26","duration":"PT3M12S","contentUrl":"https://timeswimconvertor.com/swim-time-converter-explainer.mp4","embedUrl":"https://timeswimconvertor.com/#top"},
+{"@type":"FAQPage","@id":"https://timeswimconvertor.com/#faq","mainEntity":[
+{"@type":"Question","name":"How do you convert swim times from yards to meters?","acceptedAnswer":{"@type":"Answer","text":"Multiply your short course yards time by 1.11 to get short course metres, then add the turn value for your stroke and distance to reach long course metres. For a 100 freestyle that is your time x 1.11 + 1.6 seconds."}},
+{"@type":"Question","name":"Why is the swim conversion factor 1.11?","acceptedAnswer":{"@type":"Answer","text":"A yard is 0.9144 metres, so a metre race is about 9.4 per cent longer. The factor is slightly above that because a yards pool also gives you more walls per 100, and the extra push-offs make yards times faster than distance alone explains."}},
+{"@type":"Question","name":"How much slower is long course than short course?","acceptedAnswer":{"@type":"Answer","text":"For a 100, roughly one to two seconds between 25-metre and 50-metre pools: 1.2 seconds for backstroke, 1.6 for freestyle, 2.0 for breaststroke. Between 25 yards and 50 metres the gap is larger, because the distance changes too."}},
+{"@type":"Question","name":"Why is backstroke different from the other strokes?","acceptedAnswer":{"@type":"Answer","text":"Backstroke carries the smallest turn value, 0.6 seconds per wall, because backstroke swimming speed is closer to underwater speed than in the other strokes. Breaststroke carries the largest, 1.0 second, since the pull-out is far faster than the stroke."}},
+{"@type":"Question","name":"Which conversion factors does this tool use?","acceptedAnswer":{"@type":"Answer","text":"The USA Swimming turn-value set used by Hy-Tek Team Manager: a 1.11 course factor for the 50, 100, 200 and 400 IM, 0.8925 for 500 yards to 400 metres and 1000 to 800, 1.02 for 1650 to 1500, and turn values of 0.8 s freestyle, 0.6 s backstroke, 1.0 s breaststroke, 0.7 s butterfly and 0.8 s IM."}},
+{"@type":"Question","name":"Is the swim time converter free?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is no sign-up and no limit on conversions. Everything runs in your browser, so your times are never sent anywhere."}}
+]}]}
+</script>
+
+</body>
+</html>

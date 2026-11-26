@@ -1,0 +1,20 @@
+# Old timeswimconverter.com URLs -> their new homes.
+# Only matters if you restore the old domain or point it here; harmless otherwise.
+/yards-to-meters/                                        /yards-to-meters              301
+/uk-swim-converter/                                      /uk-swim-converter            301
+/split-calculator/                                       /split-calculator             301
+/scy-to-lcm/                                             /yards-to-meters              301
+/lcm-to-scy/                                             /yards-to-meters              301
+/scm-to-scy/                                             /yards-to-meters              301
+/swim-time-usa/                                          /                             301
+/de/                                                     /                             301
+/blog/yards-to-meters-swimming-conversion-explained/     /yards-to-meters              301
+/blog/meters-to-yards-time-conversion/                   /yards-to-meters              301
+/blog/scy-to-lcm-swim-time-conversion-guide/             /yards-to-meters              301
+/blog/asa-swim-time-conversion-calculator/               /uk-swim-converter            301
+/blog/uk-swim-time-converter-asa-swim-england/           /uk-swim-converter            301
+/blog/long-course-to-short-course-conversion-calculator/ /long-course-short-course-converter 301
+/blog/swim-pace-calculator-split-strategy-guide/         /swim-pace-calculator         301
+/blog/usa-swimming-time-conversion-cut-times/            /                             301
+/blog/physics-of-swimming-turns-underwaters-scy-lcm/     /                             301
+/blog/*                                                  /                             301
