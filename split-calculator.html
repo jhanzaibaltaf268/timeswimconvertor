@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Swim Split Calculator — Race Splits for Any Target Time</title>
-<meta name="description" content="Turn a target time into the splits that get you there. Even, negative and front-loaded pacing, per 50 or per 100, for any distance and pool. Free.">
+<meta name="description" content="Swim split calculator for metres or yards: calculate swim split times per 25, 50 or 100 with even, negative or race-profile pacing. Free.">
 <link rel="canonical" href="https://timeswimconvertor.com/split-calculator">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta name="theme-color" content="#0b2b45"><meta name="color-scheme" content="light">
@@ -217,16 +217,18 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
   <button class="toc-toggle" id="toctog" type="button" aria-expanded="true" aria-controls="toc-list" aria-label="Hide table of contents" title="Hide table of contents">
     <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
   <ol id="toc-list">
-    <li><a href="#splits">Splits, and the table</a></li>
+    <li><a href="#splits">Swim splits and the split table</a></li>
     <li><a href="#strategy">The three pacing plans</a>
       <ol><li><a href="#even">Even</a></li><li><a href="#neg">Negative split</a></li><li><a href="#race">Race profile</a></li></ol></li>
     <li><a href="#which">Which to use for your event</a></li>
+    <li><a href="#calc-splits">How to calculate split times</a></li>
+    <li><a href="#examples">Worked split examples</a></li>
     <li><a href="#faq">Frequently asked questions</a></li>
   </ol>
 </aside>
 
 <main class="prose">
-<h2 id="splits">Splits, and the table</h2>
+<h2 id="splits">Swim splits and the split times table</h2>
 <p class="lede">A split is the clock reading as you pass a point in the race. Swimmers use them two ways: the cumulative time, which is what the scoreboard shows, and the individual split, which is what that particular 50 actually took. The calculator gives you both, because coaches ask for both.</p>
 <p>The full table appears below the calculator once you enter a time. Read down the cumulative column to know what the clock should say as you push off each wall, and down the split column to know how fast each length has to be.</p>
 <div id="table-slot"></div>
@@ -263,6 +265,49 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
   <p><strong>Rehearse the splits, do not just read them.</strong> A target split only helps if you can feel it. Swim the set at that pace with the clock in front of you until the number and the feeling match — that is what makes it repeatable on race day.</p>
 </div>
 
+<h2 id="calc-splits">How to calculate swim split times</h2>
+<p>Start with even pacing: count the splits (race distance ÷ split length), then divide the target time by that number. A 4:00 400 split every 50 is 240 seconds ÷ 8 = 30.00 a split. Negative split and race profile plans move time between the splits while the total stays the same.</p>
+<h2 id="examples">Split times in swimming: worked examples</h2>
+<p>Each column is an individual split, not the running total. The figures come from the same pacing model as the calculator.</p>
+<h3 id="ex100">100 split times</h3>
+<table>
+  <caption>100 m in 1:00.00, split every 25.</caption>
+  <thead><tr><th>At</th><th>Even</th><th>Negative split</th><th>Race profile</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">25 m</th><td>15.00</td><td>15.15</td><td>14.44</td></tr>
+    <tr><th scope="row">50 m</th><td>15.00</td><td>15.05</td><td>15.34</td></tr>
+    <tr><th scope="row">75 m</th><td>15.00</td><td>14.95</td><td>15.34</td></tr>
+    <tr><th scope="row">100 m</th><td>15.00</td><td>14.85</td><td>14.89</td></tr>
+  </tbody>
+</table>
+
+<h3 id="ex200">200 split times</h3>
+<table>
+  <caption>200 m in 2:30.00, split every 50.</caption>
+  <thead><tr><th>At</th><th>Even</th><th>Negative split</th><th>Race profile</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">50 m</th><td>37.50</td><td>37.88</td><td>36.09</td></tr>
+    <tr><th scope="row">100 m</th><td>37.50</td><td>37.63</td><td>38.34</td></tr>
+    <tr><th scope="row">150 m</th><td>37.50</td><td>37.38</td><td>38.34</td></tr>
+    <tr><th scope="row">200 m</th><td>37.50</td><td>37.13</td><td>37.23</td></tr>
+  </tbody>
+</table>
+
+<h3 id="yards">Swim split calculator for yards (SCY)</h3>
+<p>The arithmetic is the same in a 25-yard pool: pick the yard distance, such as 200, 500, 1000 or 1650, and read the splits as yard splits.</p>
+<table>
+  <caption>500 y in 5:30.00, split every 100.</caption>
+  <thead><tr><th>At</th><th>Even</th><th>Negative split</th><th>Race profile</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">100 y</th><td>1:06.00</td><td>1:06.66</td><td>1:03.27</td></tr>
+    <tr><th scope="row">200 y</th><td>1:06.00</td><td>1:06.33</td><td>1:07.08</td></tr>
+    <tr><th scope="row">300 y</th><td>1:06.00</td><td>1:06.00</td><td>1:07.31</td></tr>
+    <tr><th scope="row">400 y</th><td>1:06.00</td><td>1:05.67</td><td>1:07.08</td></tr>
+    <tr><th scope="row">500 y</th><td>1:06.00</td><td>1:05.34</td><td>1:05.26</td></tr>
+  </tbody>
+</table>
+
+
 <h2 id="faq">Frequently asked questions</h2>
 <div class="faq">
   <details open><summary><h3 id="q1">How do you calculate swim splits?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
@@ -282,6 +327,10 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
 
   <details><summary><h3 id="q6">Can I use these splits in training?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
   <p>Yes, and that is the best use for them. Take the target split, swim repeats at exactly that number with the clock in front of you, and keep going until it feels automatic. A split you can hit on demand in training is one you can hit in a race.</p></details>
+  <details><summary><h3 id="q7">Does the swim split calculator work for yards?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Yes. Splits depend on the distance and the target time, so choose 200, 500, 1000 or 1650 and treat the results as yard splits. The 100, 200 and 400 work in either unit.</p></details>
+  <details><summary><h3 id="q8">Can I predict a 50 time from a 25 split?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Not by simply doubling it. The first 25 includes the start dive and is faster than the second, so doubling it gives a quicker 50 than you are likely to swim. The calculator starts at 100.</p></details>
 </div>
 
 <div class="related"><p class="rh">More tools</p><ul>
@@ -409,7 +458,9 @@ sync();
 {"@type":"Question","name":"Should my first 50 be the fastest?","acceptedAnswer":{"@type":"Answer","text":"In anything up to a 200, yes - the dive makes it faster whether you plan it or not. From the 400 up, a first 50 much quicker than the rest usually means you went out too hard."}},
 {"@type":"Question","name":"What is the difference between a split and a cumulative time?","acceptedAnswer":{"@type":"Answer","text":"The cumulative time is the clock reading at that point in the race. The split is how long that section took on its own."}},
 {"@type":"Question","name":"How much slower should the first half be for a negative split?","acceptedAnswer":{"@type":"Answer","text":"About one per cent either side of even is a sensible target. Much more than two per cent and you are starting too slowly and leaving time in the pool."}},
-{"@type":"Question","name":"Can I use these splits in training?","acceptedAnswer":{"@type":"Answer","text":"Yes, and that is the best use for them. Swim repeats at exactly the target split with the clock in front of you until it feels automatic."}}
+{"@type":"Question","name":"Can I use these splits in training?","acceptedAnswer":{"@type":"Answer","text":"Yes, and that is the best use for them. Swim repeats at exactly the target split with the clock in front of you until it feels automatic."}},
+{"@type":"Question","name":"Does the swim split calculator work for yards?","acceptedAnswer":{"@type":"Answer","text":"Yes. Splits depend on the distance and the target time, so choose 200, 500, 1000 or 1650 and treat the results as yard splits. The 100, 200 and 400 work in either unit."}},
+{"@type":"Question","name":"Can I predict a 50 time from a 25 split?","acceptedAnswer":{"@type":"Answer","text":"Not by simply doubling it. The first 25 includes the start dive and is faster than the second, so doubling it gives a quicker 50 than you are likely to swim. The calculator starts at 100."}}
 ]}]}
 </script>
 </body></html>

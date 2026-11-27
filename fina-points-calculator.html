@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>FINA Points Calculator — 2026 World Aquatics Points</title>
-<meta name="description" content="Score any swim on the World Aquatics (FINA) points scale using the official 2026 base times. Long course and short course, men and women, instant result.">
+<meta name="description" content="FINA points calculator, now World Aquatics points: score any swim with the 2026 base times, long or short course, and see the time needed for each score.">
 <link rel="canonical" href="https://timeswimconvertor.com/fina-points-calculator">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="theme-color" content="#0b2b45">
@@ -245,6 +245,8 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
     <li><a href="#base-times">The 2026 base times</a>
       <ol><li><a href="#lcm-base">Long course</a></li><li><a href="#scm-base">Short course</a></li></ol></li>
     <li><a href="#worked">A worked example</a></li>
+    <li><a href="#wa-calc">World Aquatics points calculator</a></li>
+    <li><a href="#points-time">Points to time chart</a></li>
     <li><a href="#faq">Frequently asked questions</a></li>
   </ol>
 </aside>
@@ -322,9 +324,42 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
 <p>To go the other way — the time you need for a target score — rearrange it:</p>
 <div class="eq">
   <p><code>T = B ÷ (P ÷ 1000)^⅓</code></p>
-  <p>For 700 points in the same event: 46.40 ÷ 0.8879 = <strong>52.26</strong>.</p>
+  <p>For 700 points in the same event: 46.40 ÷ 0.8879 = <strong>52.26</strong>. Because points are rounded down, you need 52.25 or faster to see 700.</p>
 </div>
 <p>The calculator shows that ladder automatically, so you can see what 500, 600, 700 and 800 points look like in your own event.</p>
+
+<h2 id="wa-calc">How to use the World Aquatics points calculator</h2>
+<p>Pick long course or short course, then men or women, the event and your time. The score appears with the base time used and the times needed for 500 to 900 points. For the governing tables, see the official <a href="https://www.worldaquatics.com/swimming/points" rel="noopener">World Aquatics swimming points page</a>.</p>
+<h2 id="points-time">Points to time chart (2026, long course)</h2>
+<p>Because scores are rounded down, each figure here is the slowest time, to a hundredth, that still earns the points.</p>
+<h3 id="pt-men">Men</h3>
+<table>
+  <caption>Men, long course 2026: slowest time that scores each total.</caption>
+  <thead><tr><th>Event</th><th>500</th><th>600</th><th>700</th><th>800</th><th>900</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">50 Freestyle</th><td>26.34</td><td>24.79</td><td>23.54</td><td>22.52</td><td>21.65</td></tr>
+    <tr><th scope="row">100 Freestyle</th><td>58.46</td><td>55.01</td><td>52.25</td><td>49.98</td><td>48.05</td></tr>
+    <tr><th scope="row">200 Freestyle</th><td>2:08.51</td><td>2:00.93</td><td>1:54.87</td><td>1:49.87</td><td>1:45.64</td></tr>
+    <tr><th scope="row">100 Backstroke</th><td>1:05.01</td><td>1:01.17</td><td>58.11</td><td>55.58</td><td>53.44</td></tr>
+    <tr><th scope="row">100 Breaststroke</th><td>1:11.66</td><td>1:07.43</td><td>1:04.06</td><td>1:01.27</td><td>58.91</td></tr>
+    <tr><th scope="row">100 Butterfly</th><td>1:02.30</td><td>58.62</td><td>55.69</td><td>53.26</td><td>51.21</td></tr>
+  </tbody>
+</table>
+
+<h3 id="pt-women">Women</h3>
+<table>
+  <caption>Women, long course 2026: slowest time that scores each total.</caption>
+  <thead><tr><th>Event</th><th>500</th><th>600</th><th>700</th><th>800</th><th>900</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">50 Freestyle</th><td>29.74</td><td>27.99</td><td>26.59</td><td>25.43</td><td>24.45</td></tr>
+    <tr><th scope="row">100 Freestyle</th><td>1:05.15</td><td>1:01.30</td><td>58.23</td><td>55.70</td><td>53.55</td></tr>
+    <tr><th scope="row">200 Freestyle</th><td>2:21.40</td><td>2:13.06</td><td>2:06.39</td><td>2:00.89</td><td>1:56.24</td></tr>
+    <tr><th scope="row">100 Backstroke</th><td>1:11.97</td><td>1:07.73</td><td>1:04.34</td><td>1:01.54</td><td>59.17</td></tr>
+    <tr><th scope="row">100 Breaststroke</th><td>1:20.79</td><td>1:16.03</td><td>1:12.22</td><td>1:09.08</td><td>1:06.42</td></tr>
+    <tr><th scope="row">100 Butterfly</th><td>1:08.79</td><td>1:04.73</td><td>1:01.49</td><td>58.81</td><td>56.55</td></tr>
+  </tbody>
+</table>
+
 
 <h2 id="faq">Frequently asked questions</h2>
 <div class="faq">
@@ -345,6 +380,10 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
 
   <details><summary><h3 id="q-1000">Can you score more than 1000 points?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
   <p>Yes. The base time is the world record at the start of the scoring period, so any swim faster than it scores above 1000. Published points tables run past 1100 for exactly that reason.</p></details>
+  <details><summary><h3 id="q-wa">Is this a World Aquatics points calculator?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Yes. FINA points and World Aquatics points are the same system under the old and new names, and this calculator uses the 2026 base times. It is an independent tool, not an official World Aquatics service.</p></details>
+  <details><summary><h3 id="q-700">What time do I need for 700 points?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>It depends on the event, sex and course. In the men's long course 100 freestyle in 2026 it is 52.25 or faster, and in the women's it is 58.23 or faster.</p></details>
 </div>
 
 <div class="related"><p class="rh">More tools</p><ul>
@@ -485,7 +524,9 @@ sync();
 {"@type":"Question","name":"What is a good FINA points score?","acceptedAnswer":{"@type":"Answer","text":"Over 900 is world class. 700 to 800 is strong national level. 500 to 600 is a solid club swimmer, and 400 to 500 is early competitive."}},
 {"@type":"Question","name":"How often do the base times change?","acceptedAnswer":{"@type":"Answer","text":"Once a year for each course. Long course base times are set at the end of December and run for the calendar year. Short course base times are set at the end of August and run from 1 September."}},
 {"@type":"Question","name":"Can I get FINA points for a yards time?","acceptedAnswer":{"@type":"Answer","text":"Not directly. World Aquatics publishes base times for 50-metre and 25-metre pools only. Convert your short course yards time to short course metres first, then score the converted time."}},
-{"@type":"Question","name":"Can you score more than 1000 points?","acceptedAnswer":{"@type":"Answer","text":"Yes. The base time is the world record at the start of the scoring period, so any swim faster than it scores above 1000. Published points tables run past 1100."}}
+{"@type":"Question","name":"Can you score more than 1000 points?","acceptedAnswer":{"@type":"Answer","text":"Yes. The base time is the world record at the start of the scoring period, so any swim faster than it scores above 1000. Published points tables run past 1100."}},
+{"@type":"Question","name":"Is this a World Aquatics points calculator?","acceptedAnswer":{"@type":"Answer","text":"Yes. FINA points and World Aquatics points are the same system under the old and new names, and this calculator uses the 2026 base times. It is an independent tool, not an official World Aquatics service."}},
+{"@type":"Question","name":"What time do I need for 700 points?","acceptedAnswer":{"@type":"Answer","text":"It depends on the event, sex and course. In the men's long course 100 freestyle in 2026 it is 52.25 or faster, and in the women's it is 58.23 or faster."}}
 ]}]}
 </script>
 </body></html>

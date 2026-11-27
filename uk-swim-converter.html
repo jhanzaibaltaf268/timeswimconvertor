@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>UK Swim Time Converter — Swim England / ASA Algorithm</title>
-<meta name="description" content="Convert SCM to LCM and back with the British Swimming equivalent time algorithm UK clubs use for county and regional entries. All strokes.">
+<meta name="description" content="UK swim time converter: convert short course to long course (SC to LC) and back with the British Swimming equivalent time algorithm. All strokes, free.">
 <link rel="canonical" href="https://timeswimconvertor.com/uk-swim-converter">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta name="theme-color" content="#0b2b45"><meta name="color-scheme" content="light">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website"><meta property="og:site_name" content="TimeSwimConvertor">
 <meta property="og:locale" content="en_GB"><meta property="og:url" content="https://timeswimconvertor.com/uk-swim-converter">
 <meta property="og:title" content="UK Swim Time Converter — Swim England / ASA Algorithm">
-<meta property="og:description" content="Convert SCM to LCM and back with the British Swimming equivalent time algorithm UK clubs use for county and regional entries. All strokes.">
+<meta property="og:description" content="UK swim time converter: convert short course to long course (SC to LC) and back with the British Swimming equivalent time algorithm. All strokes, free.">
 <link rel="alternate" hreflang="en" href="https://timeswimconvertor.com/uk-swim-converter"><link rel="alternate" hreflang="x-default" href="https://timeswimconvertor.com/uk-swim-converter">
 <style>
 
@@ -224,7 +224,8 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
       <ol><li><a href="#formula">The equivalent time formula</a></li><li><a href="#why-speed">Why your speed changes the gain</a></li></ol></li>
     <li><a href="#factors">Turn factors by event</a></li>
     <li><a href="#entries">Using a converted time for entries</a></li>
-    <li><a href="#chart">Conversion chart</a></li>
+    <li><a href="#chart">SC to LC conversion chart</a></li>
+    <li><a href="#lc-sc">Convert long course to short course</a></li>
     <li><a href="#faq">Frequently asked questions</a></li>
   </ol>
 </aside>
@@ -260,6 +261,9 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
 </table>
 <p>For a club swimmer the two systems can be most of a second apart on a 100, and more on a 400. If you have been converting your times with an American calculator and wondering why the number never matched your club's, that is why.</p>
 
+<h3 id="example">Worked example: convert short course to long course</h3>
+<p>A 100 freestyle in 1:00.0 in a 25-metre pool. The turn factor is 42.245 and (d/100)² is 1. So LCM = [60 + √(60² + 8 × 42.245)] ÷ 2 = 61.4 seconds, which is 1:01.40 long course.</p>
+
 <h2 id="factors">Turn factors by event</h2>
 <p>The factor is fixed per event. Larger means the turns are worth more, which is why breaststroke dominates the table.</p>
 <table>
@@ -282,13 +286,46 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
 <p>A converted time gets you seeded. It does not become a personal best, it does not appear as a result on the Swim England rankings, and it cannot be used where a meet explicitly asks for a time achieved in that course.</p>
 <p>Before entering anything that matters, check the meet conditions and run the time through the official converter on the Swim England rankings site. This page implements the published algorithm and matches those converters, but the official source is the one that counts.</p>
 
-<h2 id="chart">Conversion chart</h2>
+<h2 id="chart">Swim time conversion chart: short course to long course</h2>
 <p>Short course metres to long course metres, rounded to a tenth.</p>
 <table>
   <caption>Common events, SCM to LCM.</caption>
   <thead><tr><th>Event</th><th>SCM</th><th>LCM</th><th>Added</th></tr></thead>
   <tbody id="chartbody"></tbody>
 </table>
+
+<h3 id="chart-more">Swim times conversion: 50s and distance events</h3>
+<table>
+  <caption>More events, short course metres to long course metres.</caption>
+  <thead><tr><th>Event</th><th>SCM</th><th>LCM</th><th>Added</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">50 Freestyle</th><td>28.00</td><td>28.70</td><td>+0.7 s</td></tr>
+    <tr><th scope="row">50 Backstroke</th><td>33.00</td><td>33.60</td><td>+0.6 s</td></tr>
+    <tr><th scope="row">50 Breaststroke</th><td>36.00</td><td>36.90</td><td>+0.9 s</td></tr>
+    <tr><th scope="row">50 Butterfly</th><td>31.00</td><td>31.60</td><td>+0.6 s</td></tr>
+    <tr><th scope="row">800 Freestyle</th><td>10:00.00</td><td>10:09.60</td><td>+9.6 s</td></tr>
+    <tr><th scope="row">1500 Freestyle</th><td>19:00.00</td><td>19:18.00</td><td>+18.0 s</td></tr>
+    <tr><th scope="row">400 Individual Medley</th><td>5:20.00</td><td>5:25.40</td><td>+5.4 s</td></tr>
+  </tbody>
+</table>
+
+<h2 id="lc-sc">Convert long course to short course</h2>
+<p>For the other direction the algorithm takes time off for the extra turns: SC = LC − (TF ÷ LC) × (d/100)² × 2. These are common long course times and their 25-metre equivalents.</p>
+<table>
+  <caption>Long course metres to short course metres.</caption>
+  <thead><tr><th>Event</th><th>LCM</th><th>SCM</th><th>Taken off</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">50 Freestyle</th><td>29.00</td><td>28.30</td><td>−0.7 s</td></tr>
+    <tr><th scope="row">100 Freestyle</th><td>1:02.00</td><td>1:00.60</td><td>−1.4 s</td></tr>
+    <tr><th scope="row">200 Freestyle</th><td>2:18.00</td><td>2:15.50</td><td>−2.5 s</td></tr>
+    <tr><th scope="row">400 Freestyle</th><td>4:55.00</td><td>4:50.20</td><td>−4.8 s</td></tr>
+    <tr><th scope="row">100 Backstroke</th><td>1:10.00</td><td>1:08.80</td><td>−1.2 s</td></tr>
+    <tr><th scope="row">100 Breaststroke</th><td>1:20.00</td><td>1:18.40</td><td>−1.6 s</td></tr>
+    <tr><th scope="row">100 Butterfly</th><td>1:06.00</td><td>1:04.80</td><td>−1.2 s</td></tr>
+    <tr><th scope="row">200 Individual Medley</th><td>2:35.00</td><td>2:32.40</td><td>−2.6 s</td></tr>
+  </tbody>
+</table>
+
 
 <h2 id="faq">Frequently asked questions</h2>
 <div class="faq">
@@ -309,6 +346,10 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
 
   <details><summary><h3 id="q6">Which direction loses time?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
   <p>Going from short course to long course always makes the time slower, because you lose walls. A 25-metre pool gives twice as many turns as a 50-metre pool over the same distance, and a push-off is faster than swimming.</p></details>
+  <details><summary><h3 id="q7">How do I convert long course to short course with the UK method?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Choose LCM as the starting course and SCM as the target. The algorithm subtracts twice the turn factor divided by your long course time, multiplied by the squared distance in hundreds.</p></details>
+  <details><summary><h3 id="q8">Is this a Swim England swim time converter?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>It is an independent swim time conversion calculator that applies the British Swimming equivalent time algorithm. It is not run by or endorsed by Swim England, so check official entries against the source named in your meet conditions.</p></details>
 </div>
 
 <div class="related"><p class="rh">More tools</p><ul>
@@ -434,7 +475,9 @@ sync();
 {"@type":"Question","name":"Why does my club's converter give a different number to an American one?","acceptedAnswer":{"@type":"Answer","text":"They use different models. USA Swimming adds a flat number of seconds per wall regardless of speed. British Swimming scales the turn advantage with your speed, so slower swimmers get less of it. On a 100 freestyle the two can differ by half a second or more."}},
 {"@type":"Question","name":"Can I convert a yards time with this?","acceptedAnswer":{"@type":"Answer","text":"No. The British algorithm covers 25-metre and 50-metre pools only. For a 25-yard time, use the main swim time converter, which handles all three courses with the American method."}},
 {"@type":"Question","name":"Does a converted time count as a personal best?","acceptedAnswer":{"@type":"Answer","text":"No. It is an estimate used for entry and seeding where the meet conditions allow it. Only a time actually swum in that course is a personal best."}},
-{"@type":"Question","name":"Which direction loses time?","acceptedAnswer":{"@type":"Answer","text":"Going from short course to long course always makes the time slower, because you lose walls. A 25-metre pool gives twice as many turns as a 50-metre pool over the same distance."}}
+{"@type":"Question","name":"Which direction loses time?","acceptedAnswer":{"@type":"Answer","text":"Going from short course to long course always makes the time slower, because you lose walls. A 25-metre pool gives twice as many turns as a 50-metre pool over the same distance."}},
+{"@type":"Question","name":"How do I convert long course to short course with the UK method?","acceptedAnswer":{"@type":"Answer","text":"Choose LCM as the starting course and SCM as the target. The algorithm subtracts twice the turn factor divided by your long course time, multiplied by the squared distance in hundreds."}},
+{"@type":"Question","name":"Is this a Swim England swim time converter?","acceptedAnswer":{"@type":"Answer","text":"It is an independent swim time conversion calculator that applies the British Swimming equivalent time algorithm. It is not run by or endorsed by Swim England, so check official entries against the source named in your meet conditions."}}
 ]}]}
 </script>
 </body></html>

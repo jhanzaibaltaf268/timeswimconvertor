@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Swim Pace Calculator — Pace per 100, Speed &amp; Splits</title>
-<meta name="description" content="Work out your swim pace per 100 from any distance and time. Metres or yards, speed in m/s and km/h, split projections and a critical swim speed test. Free.">
+<meta name="description" content="Free swim pace calculator: calculate swimming pace per 100 m or yd, see speed and splits, use the swim pace chart and the critical swim speed (CSS) test.">
 <link rel="canonical" href="https://timeswimconvertor.com/swim-pace-calculator">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="theme-color" content="#0b2b45">
@@ -244,9 +244,9 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
   <ol id="toc-list">
     <li><a href="#what">What swim pace is</a>
       <ol><li><a href="#per100">Why pace is quoted per 100</a></li><li><a href="#speed">Pace versus speed</a></li></ol></li>
-    <li><a href="#work-out">How to work out your pace</a></li>
+    <li><a href="#work-out">How to calculate swimming pace</a></li>
     <li><a href="#chart">Swim pace chart</a></li>
-    <li><a href="#css">Critical swim speed test</a>
+    <li><a href="#css">Critical swim speed calculator (CSS)</a>
       <ol><li><a href="#css-calc">Work out your CSS</a></li><li><a href="#css-use">Training at CSS</a></li></ol></li>
     <li><a href="#drift">Why your pace slows over distance</a></li>
     <li><a href="#faq">Frequently asked questions</a></li>
@@ -270,7 +270,7 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
 </div>
 <p>Swimmers think in pace because sets are written in pace. Triathletes and open water swimmers often think in speed, because it compares directly with the bike and the run. The calculator shows both so you do not have to pick.</p>
 
-<h2 id="work-out">How to work out your pace</h2>
+<h2 id="work-out">How to calculate swimming pace</h2>
 <p>Three steps, and you can do it on the pool deck.</p>
 <ul class="plain">
   <li><strong>Turn the time into seconds.</strong> A 6:12 400 is 372 seconds.</li>
@@ -294,7 +294,52 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
   </tbody>
 </table>
 
-<h2 id="css">Critical swim speed test</h2>
+<h3 id="chart-yards">Swim pace chart for yards pools</h3>
+<p>The same idea for a 25-yard pool, using pace per 100 yards and the common yard distances.</p>
+<table>
+  <caption>Pace per 100 yards and the times it gives.</caption>
+  <thead><tr><th>Pace / 100 y</th><th>100 y</th><th>500 y</th><th>1000 y</th><th>1650 y</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">1:10</th><td>1:10</td><td>5:50</td><td>11:40</td><td>19:15</td></tr>
+    <tr><th scope="row">1:20</th><td>1:20</td><td>6:40</td><td>13:20</td><td>22:00</td></tr>
+    <tr><th scope="row">1:30</th><td>1:30</td><td>7:30</td><td>15:00</td><td>24:45</td></tr>
+    <tr><th scope="row">1:40</th><td>1:40</td><td>8:20</td><td>16:40</td><td>27:30</td></tr>
+    <tr><th scope="row">1:50</th><td>1:50</td><td>9:10</td><td>18:20</td><td>30:15</td></tr>
+    <tr><th scope="row">2:00</th><td>2:00</td><td>10:00</td><td>20:00</td><td>33:00</td></tr>
+  </tbody>
+</table>
+
+<h3 id="yd-m">Pace per 100 yards to pace per 100 metres</h3>
+<p>For the same speed in the water, divide the yards pace by 0.9144. This converts distance only; it does not account for the extra turns in a shorter pool.</p>
+<table>
+  <caption>Same speed, two units.</caption>
+  <thead><tr><th>Per 100 yards</th><th>Per 100 metres</th><th>Per 50 metres</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">1:10</th><td>1:16.6</td><td>38.3 s</td></tr>
+    <tr><th scope="row">1:20</th><td>1:27.5</td><td>43.7 s</td></tr>
+    <tr><th scope="row">1:30</th><td>1:38.4</td><td>49.2 s</td></tr>
+    <tr><th scope="row">1:40</th><td>1:49.4</td><td>54.7 s</td></tr>
+    <tr><th scope="row">1:50</th><td>2:00.3</td><td>60.1 s</td></tr>
+    <tr><th scope="row">2:00</th><td>2:11.2</td><td>65.6 s</td></tr>
+  </tbody>
+</table>
+
+<h3 id="tri">Triathlon and open water swim pace chart</h3>
+<p>Finish times for the usual triathlon swim distances at an even pace per 100 m. Open water times also depend on currents, waves, sighting and how straight you swim, so treat these as pool-based targets.</p>
+<table>
+  <caption>Triathlon swim times by pace per 100 m.</caption>
+  <thead><tr><th>Pace / 100 m</th><th>750 m (sprint)</th><th>1500 m (Olympic)</th><th>1.9 km (middle)</th><th>3.8 km (long)</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">1:30</th><td>11:15</td><td>22:30</td><td>28:30</td><td>57:00</td></tr>
+    <tr><th scope="row">1:45</th><td>13:08</td><td>26:15</td><td>33:15</td><td>66:30</td></tr>
+    <tr><th scope="row">2:00</th><td>15:00</td><td>30:00</td><td>38:00</td><td>76:00</td></tr>
+    <tr><th scope="row">2:15</th><td>16:53</td><td>33:45</td><td>42:45</td><td>85:30</td></tr>
+    <tr><th scope="row">2:30</th><td>18:45</td><td>37:30</td><td>47:30</td><td>95:00</td></tr>
+  </tbody>
+</table>
+
+
+<h2 id="css">Critical swim speed calculator (CSS test)</h2>
 <p>Critical swim speed, usually shortened to CSS, is an estimate of the fastest pace you can hold without fatigue running away from you. It is the swimming equivalent of a runner's threshold pace, and it is the number most distance training is built around.</p>
 <p>You find it with two all-out time trials, a 400 and a 200, swum fresh with a proper rest between them. The gap between the two tells you how much speed you lose as distance grows, and that slope is your sustainable pace.</p>
 <div class="eq">
@@ -318,6 +363,20 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
 <p>Once you have the number, most threshold sets sit right on it or a second or two either side. Long reps — 200s, 300s, 400s — with short rest, held at CSS pace, are the classic way to raise it. Sprint work sits well below it; easy aerobic swimming sits well above.</p>
 <p>Retest every six to eight weeks. If your CSS pace drops, your endurance has improved even if your race times have not caught up yet.</p>
 
+<h3 id="css-zones">Training paces from your CSS</h3>
+<p>Coaches often set sets as CSS plus or minus a few seconds per 100. The offsets below are the convention published by <a href="https://www.oxygenaddict.com/swim-pacing" rel="noopener">Oxygen Addict</a>, shown for an example CSS of 1:30. Other coaches use different bands.</p>
+<table>
+  <caption>Example training paces for a CSS of 1:30 per 100.</caption>
+  <thead><tr><th>Effort</th><th>Compared with CSS</th><th>Pace per 100</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Easy</th><td>+12 s</td><td>1:42</td></tr>
+    <tr><th scope="row">Steady</th><td>+8 s</td><td>1:38</td></tr>
+    <tr><th scope="row">Moderate</th><td>+4 s</td><td>1:34</td></tr>
+    <tr><th scope="row">Hard</th><td>CSS pace</td><td>1:30</td></tr>
+    <tr><th scope="row">Very hard</th><td>−4 s</td><td>1:26</td></tr>
+  </tbody>
+</table>
+
 <h2 id="drift">Why your pace slows over distance</h2>
 <p>Nobody holds their 100 pace for a 1500. The drop is steep at first and then flattens: most swimmers lose a lot between the 100 and the 400, and comparatively little between the 800 and the 1500.</p>
 <p>That shape is why a single pace number is only meaningful next to the distance it came from. A 1:20 per 100 taken from a 100 time trial and a 1:20 taken from a 1500 describe two completely different swimmers. When you compare paces, compare them over the same distance.</p>
@@ -330,7 +389,7 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
   <details open><summary><h3 id="q-calc">How do you calculate swim pace?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
   <p>Divide your total time in seconds by the number of hundreds in the distance. A 6:00 400 is 360 seconds over four hundreds, which is 90 seconds, or 1:30 per 100. The calculator above does it for any distance, in metres or yards.</p></details>
 
-  <details><summary><h3 id="q-good">What is a good swim pace per 100?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <details><summary><h3 id="q-good">What is a good or average swim pace per 100m?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
   <p>It depends entirely on the distance and the swimmer. As a rough guide for freestyle over a sustained swim, around 2:00 per 100 m is a comfortable lap swimmer, 1:40 is a solid club swimmer, 1:25 is competitive masters, and under 1:10 is national level. Compare yourself against the same distance, not against a sprint pace.</p></details>
 
   <details><summary><h3 id="q-css">What is critical swim speed?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
@@ -344,6 +403,10 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
 
   <details><summary><h3 id="q-improve">How much can swim pace improve?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
   <p>Newer swimmers often take ten or more seconds per 100 off within a season, because most of the gain comes from technique rather than fitness. Trained swimmers measure progress in one or two seconds per 100 over the same period. Retest with the same distance and the same rest each time.</p></details>
+  <details><summary><h3 id="q-chart">How do I use a swim pace chart?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Find your pace per 100 in the first column and read across to the distance you want. The figure is the finish time if you hold that pace the whole way. Use the metres chart for 25 m and 50 m pools and the yards chart for 25-yard pools.</p></details>
+  <details><summary><h3 id="q-tri">Can I use this swim pace calculator for triathlon or open water?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Yes. Choose a custom distance, such as 750, 1900 or 3800 metres, and enter your target or finished time. In open water, conditions and the line you swim change the result, so compare open water swims with care.</p></details>
 </div>
 
 <div class="related"><p class="rh">More tools</p><ul>
@@ -465,11 +528,13 @@ sync();
 {"@type":"VideoObject","name":"Swim pace explained — pace per 100, speed and CSS","description":"A narrated guide to swim pace: what pace per 100 means, how it differs from speed, why pace slows as the distance grows, and how the critical swim speed test sets your training pace.","thumbnailUrl":"https://timeswimconvertor.com/swim-pace-explainer-poster.jpg","uploadDate":"2026-11-26","duration":"PT1M19S","contentUrl":"https://timeswimconvertor.com/swim-pace-explainer.mp4","embedUrl":"https://timeswimconvertor.com/swim-pace-calculator#top"},
 {"@type":"FAQPage","@id":"https://timeswimconvertor.com/swim-pace-calculator#faq","mainEntity":[
 {"@type":"Question","name":"How do you calculate swim pace?","acceptedAnswer":{"@type":"Answer","text":"Divide your total time in seconds by the number of hundreds in the distance. A 6:00 400 is 360 seconds over four hundreds, which is 90 seconds, or 1:30 per 100."}},
-{"@type":"Question","name":"What is a good swim pace per 100?","acceptedAnswer":{"@type":"Answer","text":"It depends on the distance and the swimmer. As a rough guide for freestyle over a sustained swim, around 2:00 per 100 m is a comfortable lap swimmer, 1:40 is a solid club swimmer, 1:25 is competitive masters, and under 1:10 is national level."}},
+{"@type":"Question","name":"What is a good or average swim pace per 100m?","acceptedAnswer":{"@type":"Answer","text":"It depends on the distance and the swimmer. As a rough guide for freestyle over a sustained swim, around 2:00 per 100 m is a comfortable lap swimmer, 1:40 is a solid club swimmer, 1:25 is competitive masters, and under 1:10 is national level."}},
 {"@type":"Question","name":"What is critical swim speed?","acceptedAnswer":{"@type":"Answer","text":"CSS is the fastest pace you can sustain aerobically, estimated from an all-out 400 and an all-out 200. Subtract the 200 time from the 400 time and divide by two - that is your CSS pace per 100."}},
 {"@type":"Question","name":"Is pace per 100 yards the same as per 100 metres?","acceptedAnswer":{"@type":"Answer","text":"No. A hundred yards is 91.44 metres, so a yards pace covers about nine per cent less water. A 1:30 per 100 yards is roughly a 1:38 per 100 metres for the same effort."}},
 {"@type":"Question","name":"How do I turn my pace into speed?","acceptedAnswer":{"@type":"Answer","text":"Divide 100 by your pace in seconds to get metres per second. A 1:30 per 100 m is 100 divided by 90 = 1.11 m/s, which is 4.0 km/h."}},
-{"@type":"Question","name":"How much can swim pace improve?","acceptedAnswer":{"@type":"Answer","text":"Newer swimmers often take ten or more seconds per 100 off within a season, because most of the gain comes from technique. Trained swimmers measure progress in one or two seconds per 100 over the same period."}}
+{"@type":"Question","name":"How much can swim pace improve?","acceptedAnswer":{"@type":"Answer","text":"Newer swimmers often take ten or more seconds per 100 off within a season, because most of the gain comes from technique. Trained swimmers measure progress in one or two seconds per 100 over the same period."}},
+{"@type":"Question","name":"How do I use a swim pace chart?","acceptedAnswer":{"@type":"Answer","text":"Find your pace per 100 in the first column and read across to the distance you want. The figure is the finish time if you hold that pace the whole way. Use the metres chart for 25 m and 50 m pools and the yards chart for 25-yard pools."}},
+{"@type":"Question","name":"Can I use this swim pace calculator for triathlon or open water?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose a custom distance, such as 750, 1900 or 3800 metres, and enter your target or finished time. In open water, conditions and the line you swim change the result, so compare open water swims with care."}}
 ]}]}
 </script>
 </body></html>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>水泳タイム換算 — 短水路・長水路（25m・50m・ヤード）</title>
-<meta name="description" content="水泳の短水路と長水路のタイムを換算。25ヤード・25m・50mに対応し、USAスイミングの公式係数を使用。全泳法、結果はすぐに表示されます。">
+<meta name="description" content="水泳タイム換算・タイム計算ツール。短水路（25m）と長水路（50m）、25ヤードを早見表つきで換算できます。全泳法対応、無料ですぐに表示。">
 <link rel="canonical" href="https://timeswimconvertor.com/ja/">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="theme-color" content="#0b2b45">
@@ -15,12 +15,12 @@
 <meta property="og:locale" content="ja">
 <meta property="og:url" content="https://timeswimconvertor.com/ja/">
 <meta property="og:title" content="水泳タイム換算 — 短水路・長水路（25m・50m・ヤード）">
-<meta property="og:description" content="水泳の短水路と長水路のタイムを換算。25ヤード・25m・50mに対応し、USAスイミングの公式係数を使用。全泳法、結果はすぐに表示されます。">
+<meta property="og:description" content="水泳タイム換算・タイム計算ツール。短水路（25m）と長水路（50m）、25ヤードを早見表つきで換算できます。全泳法対応、無料ですぐに表示。">
 <meta property="og:image" content="https://timeswimconvertor.com/ja/explainer-poster.jpg">
 <meta property="og:image:width" content="1280"><meta property="og:image:height" content="720">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="水泳タイム換算 — 短水路・長水路（25m・50m・ヤード）">
-<meta name="twitter:description" content="水泳の短水路と長水路のタイムを換算。25ヤード・25m・50mに対応し、USAスイミングの公式係数を使用。全泳法、結果はすぐに表示されます。">
+<meta name="twitter:description" content="水泳タイム換算・タイム計算ツール。短水路（25m）と長水路（50m）、25ヤードを早見表つきで換算できます。全泳法対応、無料ですぐに表示。">
 <meta name="twitter:image" content="https://timeswimconvertor.com/ja/explainer-poster.jpg">
 <link rel="alternate" hreflang="en" href="https://timeswimconvertor.com/">
 <link rel="alternate" hreflang="it" href="https://timeswimconvertor.com/it/">
@@ -228,7 +228,10 @@ h1,h2,h3{letter-spacing:0}
     <li><a href="#why">プールが変わるとタイムが変わる理由</a></li>
     <li><a href="#factors">換算の係数</a></li>
     <li><a href="#example">計算してみる</a></li>
-    <li><a href="#chart">タイム換算早見表</a></li>
+    <li><a href="#chart">水泳タイム換算早見表</a></li>
+    <li><a href="#m25-50">短水路から長水路への換算（SCM→LCM）</a></li>
+    <li><a href="#yards">水泳タイム計算：ヤードからメートルへ</a></li>
+    <li><a href="#distances">メートルとヤードの距離換算</a></li>
     <li><a href="#accuracy">換算の精度</a></li>
     <li><a href="#faq">よくある質問</a></li>
   </ol>
@@ -257,7 +260,7 @@ h1,h2,h3{letter-spacing:0}
 <h2 id="example">計算してみる</h2>
 <div class="eq"><p><code>LCM =（SCY × 係数）+ ターン係数</code></p><p><strong>100m自由形、SCY 52.30。</strong>52.30 × 1.11 = 58.05、これが25mプールでのタイムです。失う壁は2枚なので 2 × 0.8秒 = 1.6秒を加えます。結果は <strong>59.65 LCM</strong> です。</p></div>
 <p>逆方向に換算するときは順番を入れ替えます。先にターンの秒数を引き、そのあとで係数で割ります。</p>
-<h2 id="chart">タイム換算早見表</h2>
+<h2 id="chart">水泳タイム換算早見表</h2>
 <p>よく換算される種目の目安です。これ以外は上の換算ツールをお使いください。</p>
 <table><caption>自由形の3つのプール比較。</caption>
 <thead><tr><th>種目</th><th>SCY</th><th>SCM</th><th>LCM</th></tr></thead>
@@ -268,6 +271,51 @@ h1,h2,h3{letter-spacing:0}
 <tr><th scope="row">400 / 500</th><td>5:00.00</td><td>4:21.35</td><td>4:27.75</td></tr>
 <tr><th scope="row">1500 / 1650</th><td>17:00.00</td><td>16:56.40</td><td>17:20.40</td></tr>
 </tbody></table>
+<h2 id="m25-50">短水路から長水路への換算（SCM→LCM）</h2>
+<p>短水路（25m）のタイムを長水路（50m）に換算するには、減る壁の枚数分だけターン係数を足します。以下は例となるタイムです。</p>
+<table>
+  <caption>25mプールから50mプールへの換算。</caption>
+  <thead><tr><th>種目</th><th>短水路 25m</th><th>長水路 50m</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">50m自由形</th><td>26.00</td><td>26.80</td></tr>
+    <tr><th scope="row">100m自由形</th><td>58.00</td><td>59.60</td></tr>
+    <tr><th scope="row">200m自由形</th><td>2:06.00</td><td>2:09.20</td></tr>
+    <tr><th scope="row">100m背泳ぎ</th><td>1:04.00</td><td>1:05.20</td></tr>
+    <tr><th scope="row">100m平泳ぎ</th><td>1:12.00</td><td>1:14.00</td></tr>
+    <tr><th scope="row">100mバタフライ</th><td>1:02.00</td><td>1:03.40</td></tr>
+    <tr><th scope="row">200m個人メドレー</th><td>2:20.00</td><td>2:23.20</td></tr>
+    <tr><th scope="row">400m個人メドレー</th><td>5:00.00</td><td>5:06.40</td></tr>
+  </tbody>
+</table>
+<h2 id="yards">水泳タイム計算：ヤードからメートルへ</h2>
+<p>25ヤードプールのタイムは、1.11を掛けると25mのタイムになり、そこにターン係数を足すと50mのタイムになります。ほかのタイムは上の換算ツールで計算できます。</p>
+<table>
+  <caption>25ヤードからメートルへの換算。</caption>
+  <thead><tr><th>種目</th><th>25 yd</th><th>25 m</th><th>50 m</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">50m自由形</th><td>24.00</td><td>26.64</td><td>27.44</td></tr>
+    <tr><th scope="row">100m自由形</th><td>52.00</td><td>57.72</td><td>59.32</td></tr>
+    <tr><th scope="row">100m背泳ぎ</th><td>56.00</td><td>1:02.16</td><td>1:03.36</td></tr>
+    <tr><th scope="row">100m平泳ぎ</th><td>1:03.00</td><td>1:09.93</td><td>1:11.93</td></tr>
+    <tr><th scope="row">100mバタフライ</th><td>55.00</td><td>1:01.05</td><td>1:02.45</td></tr>
+    <tr><th scope="row">200m個人メドレー</th><td>2:00.00</td><td>2:13.20</td><td>2:16.40</td></tr>
+  </tbody>
+</table>
+<h2 id="distances">メートルとヤードの距離換算</h2>
+<p>1ヤードは0.9144メートルです。この表はタイムではなく距離を換算します。</p>
+<table>
+  <caption>メートルをヤードに換算。</caption>
+  <thead><tr><th>メートル</th><th>ヤード</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">50 m</th><td>54.7 ヤード</td></tr>
+    <tr><th scope="row">100 m</th><td>109.4 ヤード</td></tr>
+    <tr><th scope="row">200 m</th><td>218.7 ヤード</td></tr>
+    <tr><th scope="row">400 m</th><td>437.4 ヤード</td></tr>
+    <tr><th scope="row">800 m</th><td>874.9 ヤード</td></tr>
+    <tr><th scope="row">1500 m</th><td>1640.4 ヤード</td></tr>
+  </tbody>
+</table>
+
 <h2 id="accuracy">換算の精度</h2>
 <p>換算タイムは推定であって、記録ではありません。この方式は泳法ごとに1つの数字をすべての選手に当てはめますが、壁1枚の価値は人によって違います。12mまで潜れる選手は、5mで浮き上がる選手よりも短水路で大きく得をします。</p>
 <p>実際に泳ぐタイムとの差は、おおむね2〜3パーセント程度と考えてください。また換算タイムは記録として認められず、選手権大会では通常、その水路で実際に出したタイムが求められます。</p>
@@ -284,6 +332,10 @@ h1,h2,h3{letter-spacing:0}
   <p>背泳ぎはターン係数がいちばん小さく、壁1枚あたり0.6秒です。泳ぐ速さがもともと潜水の速さに近いためです。平泳ぎはいちばん大きい1.0秒で、潜水が水面の泳ぎよりずっと速いからです。</p></details>
   <details><summary><h3 id="q5">換算タイムで大会にエントリーできますか。</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
   <p>組分けのためであれば、ほとんどの場合使えます。エントリーソフトが同じ換算表を使っているためです。ただし選手権大会や標準記録では、その水路で実際に出したタイムが求められるのが普通で、換算タイムが記録として認められることはありません。</p></details>
+  <details><summary><h3 id="q6">SCMとLCMのタイム換算はどう計算しますか。</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>SCM（短水路）からLCM（長水路）へは、泳法ごとのターン係数を減る壁の枚数分だけ足します。逆方向は同じ秒数を引きます。</p></details>
+  <details><summary><h3 id="q7">短水路の100m自由形1:00は長水路でどのくらいですか。</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>25mプールの100m自由形1:00.00は、50mプールではおよそ1:01.60です。壁2枚分、0.8秒ずつを加えます。</p></details>
 </div>
 </main></div>
 
@@ -378,7 +430,9 @@ sync();
 </script>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://timeswimconvertor.com/#website","url":"https://timeswimconvertor.com/","name":"TimeSwimConvertor"},{"@type":"WebPage","@id":"https://timeswimconvertor.com/ja/#webpage","url":"https://timeswimconvertor.com/ja/","name":"水泳タイム換算 — 短水路・長水路（25m・50m・ヤード）","inLanguage":"ja","isPartOf":{"@id":"https://timeswimconvertor.com/#website"},"description":"水泳の短水路と長水路のタイムを換算。25ヤード・25m・50mに対応し、USAスイミングの公式係数を使用。全泳法、結果はすぐに表示されます。"},{"@type":"WebApplication","name":"短水路・長水路 タイム換算","url":"https://timeswimconvertor.com/ja/","inLanguage":"ja","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"}},{"@type":"VideoObject","name":"短水路・長水路 タイム換算","description":"同じ泳ぎなのにタイムが3つに分かれる理由と、この換算ツールの役割。","inLanguage":"ja","thumbnailUrl":"https://timeswimconvertor.com/ja/explainer-poster.jpg","uploadDate":"2026-11-26","contentUrl":"https://timeswimconvertor.com/ja/explainer.mp4","embedUrl":"https://timeswimconvertor.com/ja/#top"},{"@type":"FAQPage","@id":"https://timeswimconvertor.com/ja/#faq","inLanguage":"ja","mainEntity":[{"@type":"Question","name":"短水路から長水路へはどう換算しますか。","acceptedAnswer":{"@type":"Answer","text":"25mから50mへは距離が変わらないので、失う壁1枚ごとにターン係数を足すだけです。100m自由形なら1.6秒を加えます。ヤードからメートルへ換算する場合は、先に1.11を掛けてから秒数を足します。"}},{"@type":"Question","name":"なぜ係数は1.11なのですか。","acceptedAnswer":{"@type":"Answer","text":"1ヤードは0.9144メートルなので、メートルのレースは約9.4パーセント長くなります。係数がそれより少し大きいのは、ヤードのプールでは100mあたりの壁も多く、その分だけヤードのタイムが距離だけでは説明できないほど速くなるためです。"}},{"@type":"Question","name":"長水路は短水路よりどれくらい遅くなりますか。","acceptedAnswer":{"@type":"Answer","text":"100mで、25mと50mの差は泳法により1〜2秒です。背泳ぎで1.2秒、自由形で1.6秒、平泳ぎで2.0秒。25ヤードと50メートルの間ではさらに大きく開きます。距離も変わるからです。"}},{"@type":"Question","name":"背泳ぎだけ数字が違うのはなぜですか。","acceptedAnswer":{"@type":"Answer","text":"背泳ぎはターン係数がいちばん小さく、壁1枚あたり0.6秒です。泳ぐ速さがもともと潜水の速さに近いためです。平泳ぎはいちばん大きい1.0秒で、潜水が水面の泳ぎよりずっと速いからです。"}},{"@type":"Question","name":"換算タイムで大会にエントリーできますか。","acceptedAnswer":{"@type":"Answer","text":"組分けのためであれば、ほとんどの場合使えます。エントリーソフトが同じ換算表を使っているためです。ただし選手権大会や標準記録では、その水路で実際に出したタイムが求められるのが普通で、換算タイムが記録として認められることはありません。"}}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://timeswimconvertor.com/#website","url":"https://timeswimconvertor.com/","name":"TimeSwimConvertor"},{"@type":"WebPage","@id":"https://timeswimconvertor.com/ja/#webpage","url":"https://timeswimconvertor.com/ja/","name":"水泳タイム換算 — 短水路・長水路（25m・50m・ヤード）","inLanguage":"ja","isPartOf":{"@id":"https://timeswimconvertor.com/#website"},"description":"水泳タイム換算・タイム計算ツール。短水路（25m）と長水路（50m）、25ヤードを早見表つきで換算できます。全泳法対応、無料ですぐに表示。"},{"@type":"WebApplication","name":"短水路・長水路 タイム換算","url":"https://timeswimconvertor.com/ja/","inLanguage":"ja","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"}},{"@type":"VideoObject","name":"短水路・長水路 タイム換算","description":"同じ泳ぎなのにタイムが3つに分かれる理由と、この換算ツールの役割。","inLanguage":"ja","thumbnailUrl":"https://timeswimconvertor.com/ja/explainer-poster.jpg","uploadDate":"2026-11-26","contentUrl":"https://timeswimconvertor.com/ja/explainer.mp4","embedUrl":"https://timeswimconvertor.com/ja/#top"},{"@type":"FAQPage","@id":"https://timeswimconvertor.com/ja/#faq","inLanguage":"ja","mainEntity":[{"@type":"Question","name":"短水路から長水路へはどう換算しますか。","acceptedAnswer":{"@type":"Answer","text":"25mから50mへは距離が変わらないので、失う壁1枚ごとにターン係数を足すだけです。100m自由形なら1.6秒を加えます。ヤードからメートルへ換算する場合は、先に1.11を掛けてから秒数を足します。"}},{"@type":"Question","name":"なぜ係数は1.11なのですか。","acceptedAnswer":{"@type":"Answer","text":"1ヤードは0.9144メートルなので、メートルのレースは約9.4パーセント長くなります。係数がそれより少し大きいのは、ヤードのプールでは100mあたりの壁も多く、その分だけヤードのタイムが距離だけでは説明できないほど速くなるためです。"}},{"@type":"Question","name":"長水路は短水路よりどれくらい遅くなりますか。","acceptedAnswer":{"@type":"Answer","text":"100mで、25mと50mの差は泳法により1〜2秒です。背泳ぎで1.2秒、自由形で1.6秒、平泳ぎで2.0秒。25ヤードと50メートルの間ではさらに大きく開きます。距離も変わるからです。"}},{"@type":"Question","name":"背泳ぎだけ数字が違うのはなぜですか。","acceptedAnswer":{"@type":"Answer","text":"背泳ぎはターン係数がいちばん小さく、壁1枚あたり0.6秒です。泳ぐ速さがもともと潜水の速さに近いためです。平泳ぎはいちばん大きい1.0秒で、潜水が水面の泳ぎよりずっと速いからです。"}},{"@type":"Question","name":"換算タイムで大会にエントリーできますか。","acceptedAnswer":{"@type":"Answer","text":"組分けのためであれば、ほとんどの場合使えます。エントリーソフトが同じ換算表を使っているためです。ただし選手権大会や標準記録では、その水路で実際に出したタイムが求められるのが普通で、換算タイムが記録として認められることはありません。"}},
+{"@type":"Question","name":"SCMとLCMのタイム換算はどう計算しますか。","acceptedAnswer":{"@type":"Answer","text":"SCM（短水路）からLCM（長水路）へは、泳法ごとのターン係数を減る壁の枚数分だけ足します。逆方向は同じ秒数を引きます。"}},
+{"@type":"Question","name":"短水路の100m自由形1:00は長水路でどのくらいですか。","acceptedAnswer":{"@type":"Answer","text":"25mプールの100m自由形1:00.00は、50mプールではおよそ1:01.60です。壁2枚分、0.8秒ずつを加えます。"}}]}]}
 </script>
 </body>
 </html>
