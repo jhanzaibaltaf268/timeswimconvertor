@@ -5,7 +5,7 @@
 <meta name="google-site-verification" content="U6kJsT6u5KuG3ZhEIP7hoMlOfhuheTTD5_P5Pb8nfq8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Swim Time Converter — SCY, SCM &amp; LCM in One Click</title>
-<meta name="description" content="Convert any swim time between 25-yard, 25-metre and 50-metre pools in one click. Official USA Swimming turn values, every stroke, instant results. Free.">
+<meta name="description" content="Free swim time converter and conversion calculator for SCY, SCM and LCM, including LCM to SCY. Official USA Swimming turn values, every stroke, instant.">
 <link rel="canonical" href="https://timeswimconvertor.com/">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="theme-color" content="#0b2b45">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://timeswimconvertor.com/">
 <meta property="og:title" content="Swim Time Converter — SCY, SCM &amp; LCM in One Click">
-<meta property="og:description" content="Convert any swim time between 25-yard, 25-metre and 50-metre pools in one click. Official USA Swimming turn values, every stroke, instant results.">
+<meta property="og:description" content="Convert any swim time between 25-yard, 25-metre and 50-metre pools in one click. Official USA Swimming turn values, every stroke, instant results. Includes LCM to SCY.">
 <meta property="og:image" content="https://timeswimconvertor.com/swim-time-converter-explainer-poster.jpg">
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
@@ -199,7 +199,7 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
 <section class="hero">
   <div class="wrap">
     <h1>Swim Time Converter</h1>
-    <p class="hero-sub">Enter one time. Get it in a 25-yard, 25-metre and 50-metre pool instantly.</p>
+    <p class="hero-sub">Enter one time. Get it in a 25-yard, 25-metre and 50-metre pool instantly. A free swimming time converter for every stroke.</p>
 
     <div class="calc">
       <form id="f" class="calc-grid" autocomplete="off">
@@ -272,6 +272,7 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
     <ol id="toc-list">
       <li><a href="#how-it-works">How the swim time converter works</a>
         <ol>
+          <li><a href="#how-to-use">How to use the calculator</a></li>
           <li><a href="#courses">SCY, SCM and LCM explained</a></li>
           <li><a href="#why-slower">Why pool length changes your time</a></li>
         </ol>
@@ -287,12 +288,21 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
         <ol>
           <li><a href="#yards-to-meters">Yards to metres (SCY to LCM)</a></li>
           <li><a href="#sc-to-lc">Short course to long course</a></li>
-          <li><a href="#lc-to-sc">Long course to short course</a></li>
+          <li><a href="#lc-to-sc">Long course to short course (LCM to SCY)</a></li>
         </ol>
       </li>
-      <li><a href="#charts">Swim time conversion charts</a></li>
+      <li><a href="#charts">Swim time conversion charts</a>
+        <ol>
+          <li><a href="#chart-100-free">100 free chart</a></li>
+          <li><a href="#chart-500-400">500 free to 400 free</a></li>
+          <li><a href="#chart-lcm-scy">LCM to SCY chart</a></li>
+          <li><a href="#chart-distance">Yards and metres distances</a></li>
+        </ol>
+      </li>
       <li><a href="#accuracy">How accurate are converted times?</a></li>
+      <li><a href="#altitude">Altitude adjustment</a></li>
       <li><a href="#accepted">When meets accept a converted time</a></li>
+      <li><a href="#method">Method, sources and limitations</a></li>
       <li><a href="#faq">Frequently asked questions</a></li>
     </ol>
   </aside>
@@ -302,6 +312,15 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
     <h2 id="how-it-works">How the swim time converter works</h2>
     <p class="lede">A 100 free in a 25-yard pool and a 100 free in a 50-metre pool are two different races. The distance is different, and so is the number of walls you get to push off. Converting a swim time means estimating what the same effort would have produced in the other pool.</p>
     <p>This tool applies the turn-value method published by USA Swimming and built into Hy-Tek Team Manager, the software that seeds most meets in the United States. It multiplies your time by a course factor to handle the change in distance, then adds or subtracts a fixed number of seconds for every wall you gain or lose.</p>
+
+    <h3 id="how-to-use">How to use this swim conversion calculator</h3>
+    <p>The swim converter at the top of the page works as you type, so there is no button to press.</p>
+    <ol>
+      <li><strong>Choose your pool:</strong> the course you actually swam in, SCY, SCM or LCM.</li>
+      <li><strong>Pick the stroke and event:</strong> freestyle distance events show as 500, 1000 and 1650 yards, or 400, 800 and 1500 metres.</li>
+      <li><strong>Type your time:</strong> minutes, seconds and hundredths.</li>
+      <li><strong>Read the results:</strong> the other courses appear next to your own time.</li>
+    </ol>
 
     <h3 id="courses">SCY, SCM and LCM explained</h3>
     <p>Competitive swimming runs in three pool sizes. Drawn to the same scale, the difference is obvious — a 50-metre pool is more than twice the length of a 25-yard one.</p>
@@ -443,6 +462,7 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
 
     <h2 id="by-hand">How to convert a swim time by hand</h2>
     <p>Work in total seconds, apply the factor, then the walls, then convert back to minutes and seconds.</p>
+    <p>A swim time conversion done this way should match the calculator, which makes it a useful check before you send in a meet entry.</p>
 
     <h3 id="yards-to-meters">Yards to metres (SCY to LCM)</h3>
     <div class="eq">
@@ -457,12 +477,14 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
       <p><strong>200 breaststroke, 2:28.40 SCM.</strong> 148.40 s + (4 walls × 1.0 s) = 152.40 s = <strong>2:32.40 LCM</strong>.</p>
     </div>
 
-    <h3 id="lc-to-sc">Long course to short course</h3>
+    <h3 id="lc-to-sc">Long course to short course (LCM to SCY)</h3>
     <p>Reverse the order: take the walls off first, then divide by the factor.</p>
     <div class="eq">
       <p><code>SCY = (LCM − turn value) ÷ factor</code></p>
       <p><strong>100 backstroke, 1:08.00 LCM.</strong> 68.00 − 1.2 = 66.80. 66.80 ÷ 1.11 = <strong>60.18 SCY</strong>.</p>
+      <p><strong>200 freestyle, 2:07.52 LCM.</strong> 127.52 − 3.2 = 124.32. 124.32 ÷ 1.11 = <strong>1:52.00 SCY</strong>.</p>
     </div>
+    <p>For short course metres instead of yards, stop after the first step: LCM minus the turn value gives SCM.</p>
 
     <h2 id="charts">Swim time conversion charts</h2>
     <p>Quick reference for the events swimmers convert most often. Use the converter above for anything not listed.</p>
@@ -488,6 +510,72 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
       </tbody>
     </table>
 
+    <h3 id="chart-100-free">100 free conversion chart</h3>
+    <p>The 100 freestyle is a common event to convert. Find your yards time and read across.</p>
+    <table>
+      <caption>100 freestyle: yards to short course and long course metres.</caption>
+      <thead><tr><th>SCY</th><th>SCM</th><th>LCM</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">45.00</th><td>49.95</td><td>51.55</td></tr>
+        <tr><th scope="row">48.00</th><td>53.28</td><td>54.88</td></tr>
+        <tr><th scope="row">50.00</th><td>55.50</td><td>57.10</td></tr>
+        <tr><th scope="row">55.00</th><td>1:01.05</td><td>1:02.65</td></tr>
+        <tr><th scope="row">1:00.00</th><td>1:06.60</td><td>1:08.20</td></tr>
+        <tr><th scope="row">1:05.00</th><td>1:12.15</td><td>1:13.75</td></tr>
+        <tr><th scope="row">1:10.00</th><td>1:17.70</td><td>1:19.30</td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="chart-500-400">500 free to 400 free conversion chart</h3>
+    <p>The 500 yard freestyle converts to the 400 metre freestyle with the 0.8925 factor, not 1.11.</p>
+    <table>
+      <caption>500 yard freestyle to 400 metre freestyle.</caption>
+      <thead><tr><th>500 y (SCY)</th><th>400 m (SCM)</th><th>400 m (LCM)</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">4:30.00</th><td>3:54.58</td><td>4:00.98</td></tr>
+        <tr><th scope="row">4:45.00</th><td>4:07.96</td><td>4:14.36</td></tr>
+        <tr><th scope="row">5:00.00</th><td>4:21.35</td><td>4:27.75</td></tr>
+        <tr><th scope="row">5:30.00</th><td>4:48.13</td><td>4:54.52</td></tr>
+        <tr><th scope="row">6:00.00</th><td>5:14.90</td><td>5:21.30</td></tr>
+        <tr><th scope="row">6:30.00</th><td>5:41.68</td><td>5:48.08</td></tr>
+        <tr><th scope="row">7:00.00</th><td>6:08.45</td><td>6:14.85</td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="chart-lcm-scy">LCM to SCY conversion chart</h3>
+    <p>For swimmers taking a summer long course time into the yards season.</p>
+    <table>
+      <caption>Long course metres to short course yards, freestyle.</caption>
+      <thead><tr><th>LCM event</th><th>LCM time</th><th>SCY event</th><th>SCY time</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">50 free</th><td>27.00</td><td>50 free</td><td>23.60</td></tr>
+        <tr><th scope="row">50 free</th><td>30.00</td><td>50 free</td><td>26.31</td></tr>
+        <tr><th scope="row">100 free</th><td>1:00.00</td><td>100 free</td><td>52.61</td></tr>
+        <tr><th scope="row">100 free</th><td>1:10.00</td><td>100 free</td><td>1:01.62</td></tr>
+        <tr><th scope="row">200 free</th><td>2:10.00</td><td>200 free</td><td>1:54.23</td></tr>
+        <tr><th scope="row">200 free</th><td>2:30.00</td><td>200 free</td><td>2:12.25</td></tr>
+        <tr><th scope="row">400 free</th><td>4:30.00</td><td>500 free</td><td>5:02.52</td></tr>
+        <tr><th scope="row">400 free</th><td>5:00.00</td><td>500 free</td><td>5:36.13</td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="chart-distance">Yards and metres distance chart</h3>
+    <p>These are straight pool distances, not time conversions. One yard is exactly 0.9144 metres.</p>
+    <table>
+      <caption>Swimming distances in yards and metres.</caption>
+      <thead><tr><th>Yards</th><th>In metres</th><th>Metres</th><th>In yards</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">25 yd</th><td>22.86 m</td><td>25 m</td><td>27.34 yd</td></tr>
+        <tr><th scope="row">50 yd</th><td>45.72 m</td><td>50 m</td><td>54.68 yd</td></tr>
+        <tr><th scope="row">100 yd</th><td>91.44 m</td><td>100 m</td><td>109.36 yd</td></tr>
+        <tr><th scope="row">200 yd</th><td>182.88 m</td><td>200 m</td><td>218.72 yd</td></tr>
+        <tr><th scope="row">500 yd</th><td>457.20 m</td><td>400 m</td><td>437.45 yd</td></tr>
+        <tr><th scope="row">1,000 yd</th><td>914.40 m</td><td>800 m</td><td>874.89 yd</td></tr>
+        <tr><th scope="row">1,650 yd</th><td>1,508.76 m</td><td>1,500 m</td><td>1,640.42 yd</td></tr>
+      </tbody>
+    </table>
+    <p>To turn a yards <em>time</em> into a metres time, see the <a href="/yards-to-meters">yards to meters swimming converter</a>.</p>
+
     <h2 id="accuracy">How accurate are converted swim times?</h2>
     <p>A converted time is an estimate, not a result. The turn-value method applies one number per stroke to every swimmer, but the value of a wall is personal: a swimmer with a 12-metre underwater gains far more from short course than one who surfaces at five metres.</p>
     <p>Expect a converted time to land within roughly two to three per cent of what you would actually swim. For context, the same swimmer in the same pool typically varies by around two per cent between meets a few weeks apart, so no conversion method can be meaningfully tighter than that.</p>
@@ -495,9 +583,33 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
       <p><strong>Where conversions drift most:</strong> strong underwater swimmers converting short course to long course, breaststrokers at any distance, and the 1650 to 1500 freestyle, where the two races are a different length as well as a different course.</p>
     </div>
 
+    <h2 id="altitude">Altitude adjustment for swim times</h2>
+    <p>Thin air slows longer races, so times swum at 3,000 feet or higher may be adjusted for some qualifying purposes. The seconds below are subtracted from the time you swam. The 50 and 100 get no adjustment.</p>
+    <table>
+      <caption>Seconds subtracted for qualifying times swum at altitude.</caption>
+      <thead><tr><th>Event</th><th>3,000–4,249 ft</th><th>4,250–6,499 ft</th><th>6,500 ft and above</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">200 y / m</th><td>0.5</td><td>1.2</td><td>1.6</td></tr>
+        <tr><th scope="row">500 y / 400 m</th><td>2.5</td><td>5.0</td><td>7.0</td></tr>
+        <tr><th scope="row">1000 y / 800 m</th><td>5.0</td><td>10.0</td><td>15.0</td></tr>
+        <tr><th scope="row">1650 y / 1500 m</th><td>11.0</td><td>23.0</td><td>32.5</td></tr>
+      </tbody>
+    </table>
+    <p>The calculator above does not apply this adjustment. Subtract it first, then convert, and only if your meet allows it. Rules differ between organisations, and the NCAA uses its own figures. Source: <a href="https://www.usms.org/fitness-and-training/articles-and-videos/articles/what-swimmers-need-to-know-about-usmss-national-qualifying-times" rel="noopener">U.S. Masters Swimming on national qualifying times</a>.</p>
+
     <h2 id="accepted">When meets accept a converted time</h2>
     <p>Entry rules belong to the meet, not to the converter. Most US club and masters meets accept converted times for seeding, because Hy-Tek produces them from this same table. Championship meets and time standards are usually stricter and want a time swum in the course they are run in.</p>
     <p>Converted times are also not records. A converted swim can seed you into a heat; it cannot set a mark. If you are entering a qualifying meet, check the meet information sheet before relying on a conversion.</p>
+
+    <h2 id="method">Method, sources and limitations</h2>
+    <p><strong>Method.</strong> A course factor handles the change in distance and a fixed turn value per stroke handles the walls. Yards results are worked through the long course figure.</p>
+    <p><strong>Source.</strong> The 1.11 factor and the turn values match the age group defaults in the <a href="https://hytek.active.com/User_Guides_HTML/SwTM7/HTML/courseconversion.htm" rel="noopener">Hy-Tek Team Manager course conversion guide</a>.</p>
+    <p><strong>Limitations.</strong></p>
+    <ul>
+      <li>It does not account for age, gender, underwater ability, taper or altitude.</li>
+      <li>Distance events between yards and short course metres can differ from other converters. Hy-Tek's guide lists separate distance factors for that pairing, so check which method your meet uses.</li>
+      <li>A converted time is not an official time and cannot set a record.</li>
+    </ul>
 
     <h2 id="faq">Frequently asked questions</h2>
     <div class="faq">
@@ -547,7 +659,23 @@ figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
           <h3 id="q-free">Is the swim time converter free?</h3>
           <svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </summary>
-        <p>Yes. There is no sign-up and no limit on conversions. Everything runs in your browser, so your times are never sent anywhere.</p>
+        <p>Yes. There is no sign-up and no limit on conversions. Everything runs in your browser, so your times are never sent anywhere. This swim time conversion tool works for freestyle, backstroke, breaststroke, butterfly and individual medley.</p>
+      </details>
+
+      <details>
+        <summary>
+          <h3 id="q-lcm-scy">Can I convert LCM to SCY with this swim converter?</h3>
+          <svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p>Yes. Choose 50 metres (LCM) as your pool, then pick the stroke and event and type your time. The yards result appears straight away. By hand, subtract the turn value and then divide by the course factor.</p>
+      </details>
+
+      <details>
+        <summary>
+          <h3 id="q-altitude">Does the swim time converter adjust for altitude?</h3>
+          <svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <p>No. The calculator converts between courses only. For altitude, subtract the adjustment from your time first, and only where your meet or governing body allows it.</p>
       </details>
 
     </div>
@@ -690,7 +818,7 @@ sync();
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebSite","@id":"https://timeswimconvertor.com/#website","url":"https://timeswimconvertor.com/","name":"TimeSwimConvertor","inLanguage":"en"},
-{"@type":"WebPage","@id":"https://timeswimconvertor.com/#webpage","url":"https://timeswimconvertor.com/","name":"Swim Time Converter — SCY, SCM & LCM in One Click","isPartOf":{"@id":"https://timeswimconvertor.com/#website"},"description":"Convert any swim time between 25-yard, 25-metre and 50-metre pools in one click.","breadcrumb":{"@id":"https://timeswimconvertor.com/#breadcrumb"}},
+{"@type":"WebPage","@id":"https://timeswimconvertor.com/#webpage","url":"https://timeswimconvertor.com/","name":"Swim Time Converter — SCY, SCM & LCM in One Click","isPartOf":{"@id":"https://timeswimconvertor.com/#website"},"description":"Free swim time converter and conversion calculator for SCY, SCM and LCM, including LCM to SCY. Official USA Swimming turn values, every stroke, instant.","breadcrumb":{"@id":"https://timeswimconvertor.com/#breadcrumb"}},
 {"@type":"BreadcrumbList","@id":"https://timeswimconvertor.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://timeswimconvertor.com/"}]},
 {"@type":"WebApplication","name":"Swim Time Converter","url":"https://timeswimconvertor.com/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
 {"@type":"VideoObject","name":"Swim Time Converter — how converting a swim time works","description":"A narrated beginner's guide: the three competition courses, why the same swim gives three different times, the turn value for each stroke, a worked conversion, the distance-event factors, and how accurate a converted time is.","thumbnailUrl":"https://timeswimconvertor.com/swim-time-converter-explainer-poster.jpg","uploadDate":"2026-11-26","duration":"PT3M12S","contentUrl":"https://timeswimconvertor.com/swim-time-converter-explainer.mp4","embedUrl":"https://timeswimconvertor.com/#top"},
@@ -700,7 +828,9 @@ sync();
 {"@type":"Question","name":"How much slower is long course than short course?","acceptedAnswer":{"@type":"Answer","text":"For a 100, roughly one to two seconds between 25-metre and 50-metre pools: 1.2 seconds for backstroke, 1.6 for freestyle, 2.0 for breaststroke. Between 25 yards and 50 metres the gap is larger, because the distance changes too."}},
 {"@type":"Question","name":"Why is backstroke different from the other strokes?","acceptedAnswer":{"@type":"Answer","text":"Backstroke carries the smallest turn value, 0.6 seconds per wall, because backstroke swimming speed is closer to underwater speed than in the other strokes. Breaststroke carries the largest, 1.0 second, since the pull-out is far faster than the stroke."}},
 {"@type":"Question","name":"Which conversion factors does this tool use?","acceptedAnswer":{"@type":"Answer","text":"The USA Swimming turn-value set used by Hy-Tek Team Manager: a 1.11 course factor for the 50, 100, 200 and 400 IM, 0.8925 for 500 yards to 400 metres and 1000 to 800, 1.02 for 1650 to 1500, and turn values of 0.8 s freestyle, 0.6 s backstroke, 1.0 s breaststroke, 0.7 s butterfly and 0.8 s IM."}},
-{"@type":"Question","name":"Is the swim time converter free?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is no sign-up and no limit on conversions. Everything runs in your browser, so your times are never sent anywhere."}}
+{"@type":"Question","name":"Is the swim time converter free?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is no sign-up and no limit on conversions. Everything runs in your browser, so your times are never sent anywhere. This swim time conversion tool works for freestyle, backstroke, breaststroke, butterfly and individual medley."}},
+{"@type":"Question","name":"Can I convert LCM to SCY with this swim converter?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose 50 metres (LCM) as your pool, then pick the stroke and event and type your time. The yards result appears straight away. By hand, subtract the turn value and then divide by the course factor."}},
+{"@type":"Question","name":"Does the swim time converter adjust for altitude?","acceptedAnswer":{"@type":"Answer","text":"No. The calculator converts between courses only. For altitude, subtract the adjustment from your time first, and only where your meet or governing body allows it."}}
 ]}]}
 </script>
 
