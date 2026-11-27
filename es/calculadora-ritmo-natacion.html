@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora de Ritmo de Natación — por 100 m y CSS</title>
+<meta name="description" content="Calculadora de ritmos de natación: calcula el ritmo por 100 m, ritmo medio, CSS y ritmo en aguas abiertas o triatlón, con tablas. Gratis.">
+<link rel="canonical" href="https://timeswimconvertor.com/es/calculadora-ritmo-natacion">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#0b2b45">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TimeSwimConvertor">
+<meta property="og:locale" content="es">
+<meta property="og:url" content="https://timeswimconvertor.com/es/calculadora-ritmo-natacion">
+<meta property="og:title" content="Calculadora de Ritmo de Natación — por 100 m y CSS">
+<meta property="og:description" content="Calcula tu ritmo de natación por 100 m, tu velocidad y tu CSS, con tablas para piscina, triatlón y aguas abiertas.">
+<meta property="og:image" content="https://timeswimconvertor.com/es/explainer-poster.jpg">
+<meta property="og:image:width" content="1280"><meta property="og:image:height" content="720">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calculadora de Ritmo de Natación — por 100 m y CSS">
+<meta name="twitter:description" content="Calcula tu ritmo de natación por 100 m, tu velocidad y tu CSS, con tablas para piscina, triatlón y aguas abiertas.">
+<meta name="twitter:image" content="https://timeswimconvertor.com/es/explainer-poster.jpg">
+<link rel="alternate" hreflang="en" href="https://timeswimconvertor.com/swim-pace-calculator">
+<link rel="alternate" hreflang="es" href="https://timeswimconvertor.com/es/calculadora-ritmo-natacion">
+<link rel="alternate" hreflang="x-default" href="https://timeswimconvertor.com/swim-pace-calculator">
+<style>
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;font:400 17px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#15212e;background:#fff}
+h1,h2,h3{line-height:1.22;letter-spacing:-.021em;margin:0;font-weight:700}
+h1{font-size:clamp(1.85rem,4.8vw,2.85rem);letter-spacing:-.034em}
+h2{font-size:clamp(1.45rem,3.1vw,1.95rem);margin:3.1rem 0 .9rem}
+h3{font-size:clamp(1.11rem,2.1vw,1.28rem);margin:2.1rem 0 .6rem}
+p{margin:0 0 1.05rem}
+a{color:#0a6ea8}a:hover{color:#064c75}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.prose{max-width:720px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* header */
+.site-head{border-bottom:1px solid #e7ecf1;background:#fff}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:1.02rem;color:#0b2b45;text-decoration:none;letter-spacing:-.02em}
+.brand svg{display:block;flex:none}
+.nav{display:flex;gap:26px;font-size:.93rem}
+.nav a{color:#4a5b6d;text-decoration:none;font-weight:500}
+.nav a:hover{color:#0b2b45}
+.nav a[aria-current]{color:#0b2b45;font-weight:700;box-shadow:inset 0 -2px 0 #5cc5e8}@media(max-width:920px){.site-head .wrap{height:auto;display:block;padding-top:.6rem}.site-head .brand{display:inline-flex;margin-bottom:.1rem}.nav{max-width:100%;min-width:0;gap:1.15rem;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:.5rem 0 .7rem;line-height:1.1}.nav::-webkit-scrollbar{display:none}.nav{-webkit-mask-image:linear-gradient(to right,#000 88%,rgba(0,0,0,.15));mask-image:linear-gradient(to right,#000 88%,rgba(0,0,0,.15))}.nav a{white-space:nowrap;flex:none}}
+
+/* hero */
+.hero{background:linear-gradient(176deg,#0b2b45 0%,#124063 56%,#14506f 100%);color:#fff;padding:clamp(2rem,4.6vw,3.1rem) 0 clamp(2.2rem,5vw,3.2rem);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto 0 -1px 0;height:120px;background:radial-gradient(120% 100% at 50% 100%,rgba(255,255,255,.07),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{color:#fff;max-width:16ch}
+.hero-sub{margin:.75rem 0 0;max-width:52ch;color:#bcd6e9;font-size:1rem}
+
+/* calculator — compact */
+.calc{margin-top:1.5rem;max-width:860px;background:#fff;color:#15212e;border-radius:14px;padding:clamp(.85rem,2.1vw,1.2rem);box-shadow:0 1px 2px rgba(9,30,50,.1),0 14px 34px -12px rgba(5,22,38,.42)}
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:.65rem}
+.field{display:flex;flex-direction:column;gap:.26rem;min-width:0}
+.field label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#5b6d80}
+select,input[type=text]{font:inherit;font-size:.93rem;padding:.46rem .55rem;border:1.5px solid #d3dce5;border-radius:8px;background:#fff;color:#15212e;width:100%;min-width:0}
+select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%235b6d80' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .55rem center;padding-right:1.7rem}
+select:focus,input:focus,summary:focus-visible,.jump:focus-visible{outline:none;border-color:#0a6ea8;box-shadow:0 0 0 3px rgba(10,110,168,.17)}
+.time-row{display:flex;align-items:center;gap:.22rem}
+.time-row input{text-align:center;padding-left:.2rem;padding-right:.2rem;font-variant-numeric:tabular-nums}
+.time-row span{color:#8798a8;font-weight:700;font-size:.9rem}
+.calc-note{margin:.6rem 0 0;font-size:.775rem;color:#6b7c8d}
+.calc-note b{color:#15212e}
+.results{margin-top:.85rem;border-top:1px solid #e7ecf1;padding-top:.85rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:.55rem}
+.res{background:#f4f8fb;border:1px solid #e1ebf3;border-radius:9px;padding:.6rem .7rem}
+.res.is-source{background:#0b2b45;border-color:#0b2b45}
+.res-k{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#5b6d80;display:flex;align-items:center;gap:.35rem}
+.res.is-source .res-k{color:#8fb6d3}
+.res-v{font-size:clamp(1.3rem,3.2vw,1.52rem);font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin-top:.05rem;color:#0b2b45}
+.res.is-source .res-v{color:#fff}
+.res-d{font-size:.72rem;color:#6b7c8d;margin-top:.05rem}
+.res.is-source .res-d{color:#8fb6d3}
+.tag{font-size:.56rem;font-weight:700;letter-spacing:.06em;background:#dbe8f2;color:#2d5f84;padding:.08rem .3rem;border-radius:4px}
+.res.is-source .tag{background:rgba(255,255,255,.17);color:#cde3f3}
+.err{margin-top:.8rem;background:#fdf1ee;border:1px solid #f3cfc4;color:#9b3a1d;padding:.6rem .75rem;border-radius:8px;font-size:.85rem}
+
+/* video under the calculator */
+.vidwrap{max-width:860px;margin:1.1rem 0 0}
+.vidhead{display:flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#8fc0dd;margin-bottom:.55rem}
+.vidhead svg{flex:none}
+.vidwrap video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:13px;background:#07223a;box-shadow:0 14px 34px -14px rgba(5,22,38,.55)}
+.vidcap{margin:.5rem 0 0;font-size:.8rem;color:#8fb6d3}
+
+/* layout */
+.body-grid{display:grid;grid-template-columns:250px minmax(0,1fr);gap:clamp(1.5rem,4vw,3.4rem);padding-top:clamp(1.8rem,4vw,3rem);padding-bottom:3.5rem;align-items:start}
+@media(max-width:900px){.body-grid{grid-template-columns:minmax(0,1fr)}}
+.body-grid>*{min-width:0}
+
+/* TOC */
+.toc{border:1px solid #e3eaf1;border-radius:12px;background:#fafcfd;padding:1.05rem 1.15rem}
+@media(min-width:901px){.toc{position:sticky;top:18px;max-height:calc(100vh - 36px);overflow-y:auto}}
+.toc-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.toc-h{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#5b6d80;margin:0}
+.toc-toggle{flex:none;width:26px;height:26px;margin:-4px -5px -4px 0;border:0;border-radius:7px;
+ background:transparent;color:#5b6d80;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.toc-toggle:hover{background:#eef3f8;color:#0b2b45}
+.toc-toggle svg{transition:transform .2s ease}
+.toc[data-min="1"] .toc-toggle svg{transform:rotate(-90deg)}
+.toc[data-min="1"] #toc-list{display:none}
+.toc>ol{margin-top:.6rem}
+@media(prefers-reduced-motion:reduce){.toc-toggle svg{transition:none}}
+.toc ol{list-style:none;margin:0;padding:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin:0}
+.toc>ol>li>a{font-weight:600}
+.toc>ol>li>a::before{content:counter(toc) ".";color:#9aabbb;font-weight:700;margin-right:.45rem}
+.toc a{display:block;padding:.3rem 0;color:#33475c;text-decoration:none;font-size:.9rem;line-height:1.42}
+.toc a:hover{color:#0a6ea8}
+.toc ol ol{padding-left:1.15rem}
+.toc ol ol li{counter-increment:none}
+.toc ol ol a{font-size:.855rem;color:#5b6d80;padding:.2rem 0}
+.toc ol ol a::before{content:"–";margin-right:.4rem;color:#b3c1cd}
+
+/* content */
+.lede{font-size:1.1rem;color:#3b4d60}
+h2[id],h3[id]{scroll-margin-top:16px}
+table{border-collapse:collapse;width:100%;margin:1.1rem 0 1.4rem;font-size:.9rem;font-variant-numeric:tabular-nums;display:block;overflow-x:auto}
+caption{text-align:left;font-size:.84rem;color:#6b7c8d;margin-bottom:.45rem}
+th,td{border-bottom:1px solid #e7ecf1;padding:.52rem .7rem;text-align:left;white-space:nowrap}
+th{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.055em;color:#5b6d80;background:#f8fafc}
+tbody tr:hover{background:#fafcfd}
+tbody th{background:#fbfdfe;font-size:.73rem;color:#2d5f84;letter-spacing:.07em}
+.eq{background:#f4f8fb;border-left:3px solid #0a6ea8;border-radius:0 9px 9px 0;padding:.8rem 1rem;margin:1.1rem 0;font-size:.95rem}
+.eq code{font:600 .95em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#0b2b45}
+.eq p{margin:0 0 .4rem}.eq p:last-child{margin:0}
+ul.plain{padding-left:1.15rem;margin:0 0 1.1rem}
+ul.plain li{margin-bottom:.42rem}
+.callout{background:#fffaf2;border:1px solid #f0e0c6;border-radius:11px;padding:.95rem 1.1rem;margin:1.3rem 0;font-size:.94rem}
+.callout strong{color:#8a5a12}
+
+/* figures: pool diagrams */
+figure{margin:1.3rem 0 1.5rem}
+figure svg{display:block;width:100%;max-width:100%;height:auto;border-radius:11px;background:#0d3a5a}
+figcaption{font-size:.83rem;color:#6b7c8d;margin-top:.5rem}
+
+/* FAQ accordion */
+.faq{border-top:1px solid #e7ecf1}
+.faq details{border-bottom:1px solid #e7ecf1}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;gap:.8rem;padding:1rem 0}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary h3{margin:0;font-size:1.06rem;flex:1}
+.faq summary:hover h3{color:#0a6ea8}
+.chev{flex:none;margin-top:.22rem;transition:transform .2s ease}
+.faq details[open] .chev{transform:rotate(180deg)}
+.faq details>p{margin:0 0 1.1rem;padding-right:2rem;color:#3b4d60}
+@media(prefers-reduced-motion:reduce){.chev{transition:none}}
+
+/* jump arrow */
+.jump{position:fixed;right:18px;bottom:18px;z-index:40;width:46px;height:46px;border-radius:50%;
+ border:1px solid rgba(255,255,255,.18);background:#0b2b45;color:#fff;cursor:pointer;
+ display:flex;align-items:center;justify-content:center;padding:0;
+ box-shadow:0 6px 20px -4px rgba(5,22,38,.5);transition:transform .2s ease,background .2s ease}
+.jump:hover{background:#14506f;transform:translateY(-2px)}
+.jump svg{transition:transform .25s ease}
+.jump.up svg{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.jump,.jump svg{transition:none}}
+
+
+
+
+.crumb{font-size:.82rem;color:#6b7c8d;padding:.9rem 0 0}
+.crumb a{color:#4a5b6d;text-decoration:none}
+.crumb a:hover{color:#0b2b45}
+.related{border:1px solid #e3eaf1;border-radius:12px;background:#fafcfd;padding:1.1rem 1.25rem;margin:2.4rem 0 0}
+.related p.rh{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#5b6d80;margin:0 0 .6rem}
+.related ul{list-style:none;margin:0;padding:0}
+.related li{margin-bottom:.45rem}
+.related a{font-weight:600;text-decoration:none}
+.related a:hover{text-decoration:underline}
+.related span{color:#6b7c8d;font-weight:400}
+.big-res{margin-top:.9rem;border-top:1px solid #e7ecf1;padding-top:.9rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .9rem}
+.big-res .lbl{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#5b6d80;width:100%}
+.big-res .val{font-size:clamp(2rem,6vw,2.7rem);font-weight:700;letter-spacing:-.035em;font-variant-numeric:tabular-nums;color:#0b2b45;line-height:1.05}
+.big-res .unit{font-size:.9rem;color:#6b7c8d;font-weight:600}
+.big-res .delta{font-size:.85rem;font-weight:700;color:#0a6ea8;background:#eaf3f9;border-radius:6px;padding:.15rem .45rem}
+.subres{margin-top:.7rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:.5rem}
+.sr{background:#f4f8fb;border:1px solid #e1ebf3;border-radius:9px;padding:.5rem .65rem}
+.sr .k{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#5b6d80}
+.sr .v{font-size:1.08rem;font-weight:700;color:#0b2b45;font-variant-numeric:tabular-nums;margin-top:.05rem}
+.minicalc{border:1px solid #dfe8f0;border-radius:12px;background:#fafcfd;padding:1.05rem 1.15rem;margin:1.3rem 0}
+.minicalc .mh{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#5b6d80;margin:0 0 .7rem}
+.minicalc .mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.6rem}
+.minicalc .mout{margin-top:.8rem;border-top:1px solid #e7ecf1;padding-top:.7rem;font-size:.95rem}
+.minicalc .mout b{font-size:1.35rem;color:#0b2b45;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.langsel{position:relative;flex:none;margin-left:14px}.langsel>summary{list-style:none;display:flex;align-items:center;gap:6px;height:33px;padding:0 10px;border:1px solid #dbe3ea;border-radius:9px;background:#fff;color:#33465a;font-size:.84rem;font-weight:600;cursor:pointer;white-space:nowrap;-webkit-user-select:none;user-select:none}.langsel>summary::-webkit-details-marker{display:none}.langsel>summary::marker{content:""}.langsel>summary:hover,.langsel[open]>summary{border-color:#5cc5e8;color:#0b2b45}.langsel .chev{transition:transform .16s ease}.langsel[open] .chev{transform:rotate(180deg)}.langmenu{position:absolute;right:0;top:calc(100% + 7px);z-index:60;min-width:172px;padding:.34rem;background:#fff;border:1px solid #e1e8ee;border-radius:11px;box-shadow:0 16px 34px -14px rgba(11,43,69,.38)}.langmenu a{display:block;padding:.46rem .62rem;border-radius:7px;color:#4a5b6d;text-decoration:none;font-size:.88rem;line-height:1.3}.langmenu a:hover{background:#f2f7fb;color:#0b2b45}.langmenu a.cur{background:#eef6fb;color:#0b2b45;font-weight:700}.site-head .nav{margin-left:auto}@media(max-width:920px){.site-head .wrap{position:relative}.langsel{position:absolute;right:20px;top:.55rem;margin:0}}.sfoot{background:#0b2b45;color:#a9c4da;font-size:.9rem;line-height:1.55;border-top:3px solid #5cc5e8}.sfoot .sfg{display:grid;grid-template-columns:1.5fr 1.2fr 1fr .8fr;gap:2rem;padding-top:2.8rem;padding-bottom:2.2rem}.sfoot a{color:#d5e6f3;text-decoration:none}.sfoot a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}.sfoot a:focus-visible{outline:2px solid #5cc5e8;outline-offset:3px}.sfoot .sfb{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:1.08rem;color:#fff;letter-spacing:-.02em}.sfoot .sfab{margin:.8rem 0 0;max-width:34ch}.sfoot .sfh{margin:0 0 .8rem;font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#5cc5e8}.sfoot ul{list-style:none;margin:0;padding:0}.sfoot li{margin:0 0 .55rem}.sfoot [aria-current]{color:#fff;font-weight:700}.sfoot .sfl{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;padding-top:1.1rem;padding-bottom:1.1rem;border-top:1px solid rgba(255,255,255,.12)}.sfoot .sfl .sfh{margin:0 .6rem 0 0}.sfoot .sfl a{border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:.22rem .8rem;font-size:.85rem}.sfoot .sfl a:hover{border-color:#5cc5e8;text-decoration:none}.sfoot .sfl a[aria-current]{background:#fff;border-color:#fff;color:#0b2b45}.sfoot .sfn{border-top:1px solid rgba(255,255,255,.12);padding-top:1.1rem;padding-bottom:5rem;font-size:.82rem;color:#8fb0c9}.sfoot .sfn p{margin:0 0 .35rem}@media(max-width:860px){.sfoot .sfn{padding-right:78px}.sfoot .sfg{grid-template-columns:1fr 1fr;gap:1.6rem 1.2rem}.sfoot .sfa{grid-column:1/-1}}</style>
+</head>
+<body id="top">
+<header class="site-head"><div class="wrap">
+  <a class="brand" href="/es/"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0b2b45"/><path d="M4 14.4c1.6-1.5 2.9-1.5 4.5 0s2.9 1.5 4.5 0 2.9-1.5 4.5 0" stroke="#5cc5e8" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M4 10.2c1.6-1.5 2.9-1.5 4.5 0s2.9 1.5 4.5 0 2.9-1.5 4.5 0" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" opacity=".85"/></svg>TimeSwimConvertor</a>
+  <nav class="nav" aria-label="Calculadoras"><a href="/es/">Conversor</a><a href="/es/calculadora-ritmo-natacion" aria-current="page">Ritmo</a><a href="/es/calculadora-puntos-fina">Puntos FINA</a><a href="#faq">Preguntas</a></nav><details class="langsel"><summary aria-label="Idioma"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.3 9h17.4M3.3 15h17.4"/><ellipse cx="12" cy="12" rx="4.1" ry="9"/></svg><span>ES</span><svg class="chev" width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5 6 8.5l4-4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="langmenu"><a href="/swim-pace-calculator" hreflang="en">English</a><a href="/it/" hreflang="it">Italiano</a><a href="/es/calculadora-ritmo-natacion" hreflang="es" class="cur" aria-current="page">Español</a><a href="/pt/" hreflang="pt">Português</a><a href="/fr/" hreflang="fr">Français</a><a href="/ja/" hreflang="ja">日本語</a></div></details>
+</div></header><script>document.addEventListener("click",function(e){var d=document.querySelector(".langsel");if(d&&d.open&&!d.contains(e.target))d.open=false});document.addEventListener("keydown",function(e){if(e.key==="Escape"){var d=document.querySelector(".langsel");if(d)d.open=false}});</script>
+
+<section class="hero"><div class="wrap">
+  <h1>Calculadora de ritmo de natación</h1>
+  <p class="hero-sub">Escribe una distancia y un tiempo. Obtienes tu ritmo por 100, tu velocidad y los parciales.</p>
+  <div class="calc">
+    <form id="f" autocomplete="off"><div class="calc-grid">
+      <div class="field"><label for="dist">Distancia</label>
+        <select id="dist"><option value="50">50</option><option value="100">100</option><option value="200">200</option>
+        <option value="400" selected>400</option><option value="500">500</option><option value="800">800</option>
+        <option value="1000">1000</option><option value="1500">1500</option><option value="1650">1650</option>
+        <option value="custom">Otra distancia…</option></select></div>
+      <div class="field" id="customWrap" hidden><label for="customD">Otra distancia</label>
+        <input type="text" id="customD" inputmode="numeric" maxlength="6" placeholder="p. ej. 750" aria-label="Otra distancia"></div>
+      <div class="field"><label for="unit">Unidad</label>
+        <select id="unit"><option value="m" selected>Metros</option><option value="y">Yardas</option></select></div>
+      <div class="field"><label for="mm">Tu tiempo</label>
+        <div class="time-row">
+          <input type="text" id="mm" inputmode="numeric" maxlength="3" placeholder="00" aria-label="Minutos"><span>:</span>
+          <input type="text" id="ss" inputmode="numeric" maxlength="2" placeholder="00" aria-label="Segundos"><span>.</span>
+          <input type="text" id="hh" inputmode="numeric" maxlength="2" placeholder="00" aria-label="Centésimas">
+        </div></div>
+    </div></form>
+    <div id="err" class="err" hidden role="alert"></div>
+    <div id="out" class="big-res" aria-live="polite"></div>
+    <div id="sub" class="subres"></div>
+    <p class="calc-note">El ritmo es la media de todo el nado. ¿Quieres pasar una marca de piscina de 25 a 50 m? Usa el <a href="/es/" style="color:#0a6ea8">conversor de tiempos de natación</a>.</p>
+  </div>
+
+</div></section>
+
+<div class="wrap"><p class="crumb"><a href="/es/">Conversor de tiempos de natación</a> › Calculadora de ritmo de natación</p></div>
+
+<div class="wrap body-grid">
+<aside class="toc" aria-labelledby="toc-h">
+  <div class="toc-top"><p class="toc-h" id="toc-h">Índice</p>
+  <button class="toc-toggle" id="toctog" type="button" aria-expanded="true" aria-controls="toc-list" aria-label="Ocultar el índice" title="Ocultar el índice">
+    <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  <ol id="toc-list">
+    <li><a href="#what">Qué es el ritmo de natación</a><ol><li><a href="#per100">Ritmo por 100 m</a></li><li><a href="#speed">Ritmo y velocidad</a></li></ol></li>
+    <li><a href="#work-out">Cómo calcular el ritmo</a><ol><li><a href="#errores">Errores comunes</a></li></ol></li>
+    <li><a href="#chart">Tabla de ritmos</a><ol><li><a href="#nivel">Según el nivel</a></li><li><a href="#km">1 km y 2 km</a></li></ol></li>
+    <li><a href="#tri">Triatlón y aguas abiertas</a></li>
+    <li><a href="#css">Calculadora CSS</a><ol><li><a href="#css-calc">Calcula tu CSS</a></li><li><a href="#css-zones">Ritmos de entrenamiento</a></li></ol></li>
+    <li><a href="#drift">Por qué cae el ritmo</a></li>
+    <li><a href="#faq">Preguntas frecuentes</a></li>
+  </ol>
+</aside>
+
+<main class="prose">
+<h2 id="what">Qué es el ritmo de natación</h2>
+<p class="lede">El ritmo es lo que tardas en recorrer un tramo fijo. En natación ese tramo casi siempre es 100 metros (o 100 yardas): un ritmo de 1:30 por 100 significa que, de media, cada cien te ha llevado un minuto y medio.</p>
+<p>Es la cifra con la que se preparan las series, con la que se reparte una prueba de fondo y la única forma justa de comparar un 400 con un 1500. Un tiempo suelto dice cuánto estuviste en el agua; el ritmo dice lo rápido que nadaste.</p>
+
+<h3 id="per100">Ritmo de natación por 100 m</h3>
+<p>Se usa el 100 porque divide casi todas las distancias de piscina: son cuatro largos en una piscina de 25 m y dos en una de 50 m. La calculadora te da además el ritmo por 50 y por 25.</p>
+
+<h3 id="speed">Ritmo y velocidad</h3>
+<p>Son la misma información al revés. El ritmo cuenta tiempo por distancia y mejora cuando baja; la velocidad cuenta distancia por tiempo y mejora cuando sube.</p>
+<div class="eq">
+  <p><code>ritmo por 100 = tiempo total ÷ (distancia ÷ 100)</code></p>
+  <p><code>velocidad en m/s = distancia ÷ tiempo total</code></p>
+</div>
+
+<h2 id="work-out">Cómo calcular el ritmo en natación</h2>
+<p>Tres pasos que puedes hacer al borde de la piscina.</p>
+<ul class="plain">
+  <li><strong>Pasa el tiempo a segundos.</strong> Un 400 en 6:12 son 372 segundos.</li>
+  <li><strong>Divide la distancia entre 100.</strong> Un 400 son cuatro cientos.</li>
+  <li><strong>Divide lo primero entre lo segundo.</strong> 372 ÷ 4 = 93 segundos, es decir, <strong>1:33 por 100</strong>.</li>
+</ul>
+<h3 id="errores">Errores comunes al medir el ritmo</h3>
+<ul class="plain">
+  <li><strong>Mezclar yardas y metros.</strong> Un ritmo en piscina de yardas parece más rápido porque la distancia es más corta.</li>
+  <li><strong>Contar los descansos a medias.</strong> En una serie, decide si mides solo el nado o también la pausa y hazlo siempre igual.</li>
+  <li><strong>Comparar distancias distintas.</strong> El ritmo de un 100 no se puede mantener en un 1500.</li>
+  <li><strong>Comparar piscina y aguas abiertas.</strong> Sin virajes y con corriente u oleaje, el mismo esfuerzo da otro ritmo.</li>
+</ul>
+
+<h2 id="chart">Tabla de ritmos de natación</h2>
+<p>Ritmo por 100 frente a los tiempos que produce. Sirve para fijar un objetivo o comprobar si el ritmo de entrenamiento es el que pide tu prueba.</p>
+<table>
+  <caption>Ritmo por 100 m y tiempo final en cada distancia.</caption>
+  <thead><tr><th>Ritmo / 100</th><th>200</th><th>400</th><th>800</th><th>1500</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">1:10</th><td>2:20</td><td>4:40</td><td>9:20</td><td>17:30</td></tr>
+    <tr><th scope="row">1:20</th><td>2:40</td><td>5:20</td><td>10:40</td><td>20:00</td></tr>
+    <tr><th scope="row">1:30</th><td>3:00</td><td>6:00</td><td>12:00</td><td>22:30</td></tr>
+    <tr><th scope="row">1:40</th><td>3:20</td><td>6:40</td><td>13:20</td><td>25:00</td></tr>
+    <tr><th scope="row">1:50</th><td>3:40</td><td>7:20</td><td>14:40</td><td>27:30</td></tr>
+    <tr><th scope="row">2:00</th><td>4:00</td><td>8:00</td><td>16:00</td><td>30:00</td></tr>
+  </tbody>
+</table>
+
+<h3 id="chart-yards">Tabla para piscina de yardas</h3>
+<table>
+  <caption>Ritmo por 100 yardas y tiempo final.</caption>
+  <thead><tr><th>Ritmo / 100 y</th><th>100 y</th><th>500 y</th><th>1000 y</th><th>1650 y</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">1:10</th><td>1:10</td><td>5:50</td><td>11:40</td><td>19:15</td></tr>
+    <tr><th scope="row">1:20</th><td>1:20</td><td>6:40</td><td>13:20</td><td>22:00</td></tr>
+    <tr><th scope="row">1:30</th><td>1:30</td><td>7:30</td><td>15:00</td><td>24:45</td></tr>
+    <tr><th scope="row">1:40</th><td>1:40</td><td>8:20</td><td>16:40</td><td>27:30</td></tr>
+    <tr><th scope="row">1:50</th><td>1:50</td><td>9:10</td><td>18:20</td><td>30:15</td></tr>
+    <tr><th scope="row">2:00</th><td>2:00</td><td>10:00</td><td>20:00</td><td>33:00</td></tr>
+  </tbody>
+</table>
+
+<h3 id="yd-m">De ritmo por 100 yardas a ritmo por 100 metros</h3>
+<p>A la misma velocidad, divide el ritmo en yardas entre 0,9144. Solo convierte la distancia; no tiene en cuenta los virajes de una piscina más corta.</p>
+<table>
+  <caption>Misma velocidad, dos unidades.</caption>
+  <thead><tr><th>Por 100 yardas</th><th>Por 100 metros</th><th>Por 50 metros</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">1:10</th><td>1:16.6</td><td>38.3 s</td></tr>
+    <tr><th scope="row">1:20</th><td>1:27.5</td><td>43.7 s</td></tr>
+    <tr><th scope="row">1:30</th><td>1:38.4</td><td>49.2 s</td></tr>
+    <tr><th scope="row">1:40</th><td>1:49.4</td><td>54.7 s</td></tr>
+    <tr><th scope="row">1:50</th><td>2:00.3</td><td>60.1 s</td></tr>
+    <tr><th scope="row">2:00</th><td>2:11.2</td><td>65.6 s</td></tr>
+  </tbody>
+</table>
+
+<h3 id="nivel">Ritmo de natación 100 m según el nivel</h3>
+<p>Referencias orientativas en crol y nado sostenido. No son una clasificación oficial.</p>
+<table>
+  <caption>Guía aproximada de ritmos por 100 m.</caption>
+  <thead><tr><th>Perfil</th><th>Ritmo por 100 m</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Nadador de piscina que va cómodo</th><td>alrededor de 2:00</td></tr>
+    <tr><th scope="row">Buen nadador de club</th><td>1:40</td></tr>
+    <tr><th scope="row">Máster de competición</th><td>1:25</td></tr>
+    <tr><th scope="row">Nivel nacional</th><td>menos de 1:10</td></tr>
+  </tbody>
+</table>
+
+<h3 id="km">Cuánto se tarda en nadar 1 km y 2 km</h3>
+<table>
+  <caption>Tiempo con un ritmo constante por 100 m (minutos:segundos).</caption>
+  <thead><tr><th>Ritmo / 100 m</th><th>1 km</th><th>2 km</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">1:30</th><td>15:00</td><td>30:00</td></tr>
+    <tr><th scope="row">1:45</th><td>17:30</td><td>35:00</td></tr>
+    <tr><th scope="row">2:00</th><td>20:00</td><td>40:00</td></tr>
+    <tr><th scope="row">2:15</th><td>22:30</td><td>45:00</td></tr>
+    <tr><th scope="row">2:30</th><td>25:00</td><td>50:00</td></tr>
+    <tr><th scope="row">3:00</th><td>30:00</td><td>60:00</td></tr>
+  </tbody>
+</table>
+
+<h2 id="tri">Ritmo de natación en triatlón y aguas abiertas</h2>
+<p>Tiempos finales en las distancias habituales de natación en triatlón con ritmo uniforme. En aguas abiertas influyen además las corrientes, el oleaje, la orientación y lo recto que nades, así que tómalos como objetivos calculados en piscina.</p>
+<table>
+  <caption>Tiempo de natación en triatlón según el ritmo por 100 m.</caption>
+  <thead><tr><th>Ritmo / 100 m</th><th>750 m (sprint)</th><th>1500 m (olímpico)</th><th>1,9 km (media)</th><th>3,8 km (larga)</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">1:30</th><td>11:15</td><td>22:30</td><td>28:30</td><td>57:00</td></tr>
+    <tr><th scope="row">1:45</th><td>13:08</td><td>26:15</td><td>33:15</td><td>66:30</td></tr>
+    <tr><th scope="row">2:00</th><td>15:00</td><td>30:00</td><td>38:00</td><td>76:00</td></tr>
+    <tr><th scope="row">2:15</th><td>16:53</td><td>33:45</td><td>42:45</td><td>85:30</td></tr>
+    <tr><th scope="row">2:30</th><td>18:45</td><td>37:30</td><td>47:30</td><td>95:00</td></tr>
+  </tbody>
+</table>
+
+<h2 id="css">Calculadora CSS de natación (velocidad crítica)</h2>
+<p>El CSS, o velocidad crítica de nado, estima el ritmo más rápido que puedes mantener sin que la fatiga se dispare. Es la referencia de la mayoría de los entrenamientos de resistencia.</p>
+<p>Se obtiene con dos pruebas a tope, un 400 y un 200, nadadas frescas y con buen descanso entre ellas.</p>
+<div class="eq"><p><strong>CSS por 100 = (T400 − T200) ÷ 2</strong>, con los dos tiempos en segundos.</p></div>
+
+<h3 id="css-calc">Calcula tu CSS</h3>
+<div class="minicalc">
+  <p class="mh">Velocidad crítica a partir de un 400 y un 200</p>
+  <div class="mgrid">
+    <div class="field"><label for="c4m">Tiempo del 400</label>
+      <div class="time-row"><input type="text" id="c4m" inputmode="numeric" maxlength="2" placeholder="06" aria-label="Minutos del 400"><span>:</span><input type="text" id="c4s" inputmode="numeric" maxlength="2" placeholder="00" aria-label="Segundos del 400"></div></div>
+    <div class="field"><label for="c2m">Tiempo del 200</label>
+      <div class="time-row"><input type="text" id="c2m" inputmode="numeric" maxlength="2" placeholder="02" aria-label="Minutos del 200"><span>:</span><input type="text" id="c2s" inputmode="numeric" maxlength="2" placeholder="50" aria-label="Segundos del 200"></div></div>
+  </div>
+  <div class="mout" id="cssout"></div>
+</div>
+
+<h3 id="css-zones">Ritmos de entrenamiento según tu CSS</h3>
+<p>Muchos entrenadores marcan las series como CSS más o menos unos segundos por 100. Estas diferencias siguen la convención publicada por <a href="https://www.oxygenaddict.com/swim-pacing" rel="noopener">Oxygen Addict</a> (en inglés), para un CSS de ejemplo de 1:30. Otros entrenadores usan otras franjas.</p>
+<table>
+  <caption>Ritmos de ejemplo con un CSS de 1:30 por 100.</caption>
+  <thead><tr><th>Esfuerzo</th><th>Respecto al CSS</th><th>Ritmo por 100</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Suave</th><td>+12 s</td><td>1:42</td></tr>
+    <tr><th scope="row">Cómodo</th><td>+8 s</td><td>1:38</td></tr>
+    <tr><th scope="row">Medio</th><td>+4 s</td><td>1:34</td></tr>
+    <tr><th scope="row">Fuerte</th><td>Ritmo CSS</td><td>1:30</td></tr>
+    <tr><th scope="row">Muy fuerte</th><td>−4 s</td><td>1:26</td></tr>
+  </tbody>
+</table>
+<p>Repite la prueba cada seis u ocho semanas. Si el ritmo CSS baja, tu resistencia ha mejorado.</p>
+
+<h2 id="drift">Por qué el ritmo cae con la distancia</h2>
+<p>Nadie mantiene en un 1500 el ritmo de su 100. La caída es fuerte al principio y luego se suaviza: se pierde mucho entre el 100 y el 400 y bastante menos entre el 800 y el 1500. Por eso un ritmo solo significa algo junto a la distancia en la que se midió.</p>
+<div class="callout"><p><strong>Comprobación rápida:</strong> si tu ritmo en 400 es más de unos diez segundos por 100 más lento que en el 100, te limita la base aeróbica. Si son parecidos, te limita la velocidad punta.</p></div>
+
+<h2 id="faq">Preguntas frecuentes</h2>
+<div class="faq">
+  <details open><summary><h3 id="q-calc">¿Cómo se calcula el ritmo de natación?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Divide el tiempo total en segundos entre el número de cientos de la distancia. Un 400 en 6:00 son 360 segundos entre cuatro cientos: 90 segundos, es decir, 1:30 por 100. La calculadora de arriba lo hace con cualquier distancia, en metros o en yardas.</p></details>
+  <details><summary><h3 id="q-medio">¿Cuál es un buen ritmo medio de natación por 100 m?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Depende de la distancia y del nadador. Como guía orientativa en crol y en un nado sostenido: unos 2:00 por 100 m para quien nada largos con comodidad, 1:40 para un buen nadador de club, 1:25 en máster de competición y menos de 1:10 a nivel nacional.</p></details>
+  <details><summary><h3 id="q-css">¿Qué es el CSS en natación?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>El CSS (velocidad crítica de nado) es una estimación del ritmo más rápido que puedes sostener sin que la fatiga se dispare. Se calcula con un 400 y un 200 a tope: resta el tiempo del 200 al del 400 y divide entre dos para tener el ritmo CSS por 100.</p></details>
+  <details><summary><h3 id="q-km">¿Cuánto se tarda en nadar 1 km?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Son diez veces tu ritmo por 100 m. A 1:30 por 100 son 15 minutos; a 2:00 son 20 minutos; a 2:30 son 25 minutos.</p></details>
+  <details><summary><h3 id="q-2km">¿Se pueden nadar 2 km en una hora?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Sí, si mantienes de media 3:00 por 100 m o más rápido: 20 cientos a 3 minutos cada uno son exactamente 60 minutos, incluyendo los descansos que hagas.</p></details>
+  <details><summary><h3 id="q-yardas">¿Es lo mismo el ritmo por 100 yardas que por 100 metros?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>No. Cien yardas son 91,44 metros. Un 1:30 por 100 yardas equivale aproximadamente a 1:38 por 100 metros al mismo esfuerzo. Indica siempre la unidad de tu ritmo.</p></details>
+  <details><summary><h3 id="q-abiertas">¿Sirve para el ritmo en aguas abiertas o triatlón?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Sí. Elige «Otra distancia», por ejemplo 750, 1900 o 3800 metros, y escribe tu tiempo previsto o realizado. En aguas abiertas las corrientes, el oleaje y la trayectoria cambian el resultado, así que compara esos nados con cautela.</p></details>
+  <details><summary><h3 id="q-estilo">¿Cambia el ritmo según el estilo?</h3><svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" stroke="#6b7c8d" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+  <p>Sí. Cada estilo tiene velocidades distintas, así que calcula y compara tu ritmo por separado para crol, espalda, braza y mariposa.</p></details>
+</div>
+
+<div class="related"><p class="rh">Más herramientas</p><ul>
+  <li><a href="/es/">Conversor de tiempos de natación</a> <span>— piscina de 25 y 50 m, y yardas</span></li>
+  <li><a href="/es/calculadora-puntos-fina">Calculadora de puntos FINA</a> <span>— puntúa tu marca en la escala World Aquatics</span></li>
+  <li><a href="/split-calculator">Swim split calculator</a> <span>— parciales para un tiempo objetivo (en inglés)</span></li>
+  <li><a href="/laps-in-a-mile-swimming">Laps in a mile</a> <span>— largos según la piscina (en inglés)</span></li>
+  <li><a href="/swim-pace-calculator">Swim pace calculator</a> <span>— esta calculadora en inglés</span></li>
+</ul></div>
+</main></div>
+
+<footer class="sfoot" id="end">
+<div class="wrap sfg">
+<div class="sfa"><a class="sfb" href="/es/"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff"/><path d="M4 14.4c1.6-1.5 2.9-1.5 4.5 0s2.9 1.5 4.5 0 2.9-1.5 4.5 0" stroke="#0a6ea8" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M4 10.2c1.6-1.5 2.9-1.5 4.5 0s2.9 1.5 4.5 0 2.9-1.5 4.5 0" stroke="#0b2b45" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>TimeSwimConvertor</a><p class="sfab">Calculadoras de natación gratuitas. Funcionan en tu navegador: tus marcas no se envían a ningún servidor.</p></div>
+<nav aria-label="En español"><p class="sfh">En español</p><ul><li><a href="/es/">Conversor de tiempos</a></li><li><a href="/es/calculadora-ritmo-natacion" aria-current="page">Calculadora de ritmo</a></li><li><a href="/es/calculadora-puntos-fina">Calculadora de puntos FINA</a></li></ul></nav>
+<nav aria-label="Más herramientas (en inglés)"><p class="sfh">Más herramientas (en inglés)</p><ul><li><a href="/long-course-short-course-converter">Long course to short course</a></li><li><a href="/yards-to-meters">Yards to meters</a></li><li><a href="/uk-swim-converter">UK swim time converter</a></li><li><a href="/split-calculator">Swim split calculator</a></li><li><a href="/laps-in-a-mile-swimming">Laps in a mile</a></li></ul></nav>
+<nav aria-label="Sitio"><p class="sfh">Sitio</p><ul><li><a href="/es/">Inicio</a></li><li><a href="/about">Acerca de</a></li><li><a href="/privacy">Privacidad</a></li><li><a href="/contact">Contacto</a></li></ul></nav>
+</div>
+<div class="wrap sfl"><p class="sfh">Idiomas</p><a href="/swim-pace-calculator" hreflang="en" lang="en">English</a><a href="/it/" hreflang="it" lang="it">Italiano</a><a href="/es/" hreflang="es" lang="es" aria-current="true">Español</a><a href="/pt/" hreflang="pt" lang="pt">Português</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a></div>
+<div class="wrap sfn"><p>Los ritmos son medias del nado que introduces. Los ritmos de entrenamiento son una guía, no una prescripción.</p><p>&copy; 2026 TimeSwimConvertor</p></div>
+</footer>
+
+<button class="jump" id="jump" type="button" aria-label="Ir al final de la página">
+  <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.6v10.2M3.6 8.6L8 13l4.4-4.4" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+<script>
+(function(){"use strict";
+var $=function(i){return document.getElementById(i)};
+var dist=$("dist"),customD=$("customD"),customWrap=$("customWrap"),unit=$("unit"),
+    mm=$("mm"),ss=$("ss"),hh=$("hh"),out=$("out"),sub=$("sub"),err=$("err");
+function fmt(s,dp){
+  if(!isFinite(s)||s<=0)return"—";
+  dp=dp==null?2:dp; s=Math.round(s*Math.pow(10,dp))/Math.pow(10,dp);
+  var m=Math.floor(s/60),r=s-m*60,t=r.toFixed(dp);
+  if(r<10)t="0"+t;
+  return m+":"+t;
+}
+function getDist(){
+  if(dist.value==="custom"){var v=parseFloat(customD.value);return isFinite(v)?v:0}
+  return parseFloat(dist.value);
+}
+function render(){
+  customWrap.hidden = dist.value!=="custom";
+  var m=parseInt(mm.value||"0",10),s=parseInt(ss.value||"0",10),h=parseInt(hh.value||"0",10);
+  if(isNaN(m))m=0;if(isNaN(s))s=0;if(isNaN(h))h=0;
+  var total=m*60+s+h/100, D=getDist();
+  err.hidden=true; sub.innerHTML="";
+  if(total<=0||D<=0){out.innerHTML="";return}
+  if(s>59){err.textContent="Los segundos deben ser 59 o menos.";err.hidden=false;out.innerHTML="";return}
+  var U=unit.value==="y"?"yardas":"metros", short=unit.value==="y"?"y":"m";
+  var p100=total/(D/100), p50=total/(D/50);
+  var metres = unit.value==="y" ? D*0.9144 : D;
+  var mps=metres/total, kmh=mps*3.6, mph=mps*2.2369363;
+  out.innerHTML='<span class="lbl">Ritmo por 100 '+U+'</span>'+
+    '<span class="val">'+fmt(p100)+'</span>'+
+    '<span class="unit">en '+D+' '+short+' con un tiempo de '+fmt(total)+'</span>';
+  var cells=[["Por 50 "+short,fmt(p50)],["Por 25 "+short,fmt(total/(D/25))],
+             ["Velocidad",mps.toFixed(2).replace(".",",")+" m/s"],["Velocidad",kmh.toFixed(2).replace(".",",")+" km/h"],["Velocidad",mph.toFixed(2).replace(".",",")+" mph"]];
+  var html="";
+  for(var i=0;i<cells.length;i++)
+    html+='<div class="sr"><div class="k">'+cells[i][0]+'</div><div class="v">'+cells[i][1]+'</div></div>';
+  // projections at this pace
+  var proj=[200,400,800,1500].filter(function(d){return d!==D});
+  for(var j=0;j<proj.length&&j<3;j++)
+    html+='<div class="sr"><div class="k">'+proj[j]+' '+short+' a este ritmo</div><div class="v">'+fmt(p100*(proj[j]/100),0)+'</div></div>';
+  sub.innerHTML=html;
+}
+[dist,unit].forEach(function(n){n.addEventListener("change",render)});
+[customD,mm,ss,hh].forEach(function(n){
+  n.addEventListener("input",function(){n.value=n.value.replace(/\D/g,"");render()});
+});
+mm.value="6";ss.value="00";hh.value="00";render();
+
+/* CSS mini calculator */
+var c4m=$("c4m"),c4s=$("c4s"),c2m=$("c2m"),c2s=$("c2s"),cssout=$("cssout");
+function cssRender(){
+  var t4=(parseInt(c4m.value||"0",10)||0)*60+(parseInt(c4s.value||"0",10)||0);
+  var t2=(parseInt(c2m.value||"0",10)||0)*60+(parseInt(c2s.value||"0",10)||0);
+  if(t4<=0||t2<=0){cssout.innerHTML='<span style="color:#6b7c8d">Escribe los dos tiempos.</span>';return}
+  if(t4<=t2){cssout.innerHTML='<span style="color:#9b3a1d">El 400 debe ser más lento que el 200.</span>';return}
+  var css=(t4-t2)/2;
+  cssout.innerHTML='Ritmo CSS: <b>'+fmt(css)+'</b> por 100 &nbsp;·&nbsp; '+
+    '<span style="color:#6b7c8d">velocidad '+(100/css).toFixed(2).replace(".",",")+' m/s · un 1500 a este ritmo es '+fmt(css*15,0)+'</span>';
+}
+[c4m,c4s,c2m,c2s].forEach(function(n){
+  n.addEventListener("input",function(){n.value=n.value.replace(/\D/g,"");cssRender()});
+});
+c4m.value="6";c4s.value="00";c2m.value="2";c2s.value="50";cssRender();
+
+/* toc + jump */
+var toc=document.querySelector(".toc"),tog=$("toctog");
+function setToc(min){
+  toc.setAttribute("data-min",min?"1":"0");
+  tog.setAttribute("aria-expanded",min?"false":"true");
+  var lbl=(min?"Mostrar":"Ocultar")+" el índice";
+  tog.setAttribute("aria-label",lbl);tog.setAttribute("title",lbl);
+  try{localStorage.setItem("tsc-toc",min?"1":"0")}catch(e){}
+}
+try{if(localStorage.getItem("tsc-toc")==="1")setToc(true)}catch(e){}
+tog.addEventListener("click",function(){setToc(toc.getAttribute("data-min")!=="1")});
+var jump=$("jump"),up=false;
+function sync(){
+  var y=window.pageYOffset||document.documentElement.scrollTop;
+  var n=y>(document.documentElement.scrollHeight-window.innerHeight)*0.55;
+  if(n===up)return;up=n;jump.classList.toggle("up",up);
+  jump.setAttribute("aria-label",up?"Volver al principio":"Ir al final de la página");
+}
+jump.addEventListener("click",function(){window.scrollTo({top:up?0:document.body.scrollHeight,behavior:"smooth"})});
+var tick=false;
+window.addEventListener("scroll",function(){if(tick)return;tick=true;
+  window.requestAnimationFrame(function(){sync();tick=false})},{passive:true});
+sync();
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://timeswimconvertor.com/#website", "url": "https://timeswimconvertor.com/", "name": "TimeSwimConvertor"}, {"@type": "WebPage", "@id": "https://timeswimconvertor.com/es/calculadora-ritmo-natacion#webpage", "url": "https://timeswimconvertor.com/es/calculadora-ritmo-natacion", "name": "Calculadora de Ritmo de Natación — por 100 m y CSS", "inLanguage": "es", "isPartOf": {"@id": "https://timeswimconvertor.com/#website"}, "breadcrumb": {"@id": "https://timeswimconvertor.com/es/calculadora-ritmo-natacion#breadcrumb"}}, {"@type": "BreadcrumbList", "@id": "https://timeswimconvertor.com/es/calculadora-ritmo-natacion#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Conversor de tiempos de natación", "item": "https://timeswimconvertor.com/es/"}, {"@type": "ListItem", "position": 2, "name": "Calculadora de ritmo de natación", "item": "https://timeswimconvertor.com/es/calculadora-ritmo-natacion"}]}, {"@type": "WebApplication", "name": "Calculadora de ritmo de natación", "url": "https://timeswimconvertor.com/es/calculadora-ritmo-natacion", "inLanguage": "es", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo se calcula el ritmo de natación?", "acceptedAnswer": {"@type": "Answer", "text": "Divide el tiempo total en segundos entre el número de cientos de la distancia. Un 400 en 6:00 son 360 segundos entre cuatro cientos: 90 segundos, es decir, 1:30 por 100. La calculadora de arriba lo hace con cualquier distancia, en metros o en yardas."}}, {"@type": "Question", "name": "¿Cuál es un buen ritmo medio de natación por 100 m?", "acceptedAnswer": {"@type": "Answer", "text": "Depende de la distancia y del nadador. Como guía orientativa en crol y en un nado sostenido: unos 2:00 por 100 m para quien nada largos con comodidad, 1:40 para un buen nadador de club, 1:25 en máster de competición y menos de 1:10 a nivel nacional."}}, {"@type": "Question", "name": "¿Qué es el CSS en natación?", "acceptedAnswer": {"@type": "Answer", "text": "El CSS (velocidad crítica de nado) es una estimación del ritmo más rápido que puedes sostener sin que la fatiga se dispare. Se calcula con un 400 y un 200 a tope: resta el tiempo del 200 al del 400 y divide entre dos para tener el ritmo CSS por 100."}}, {"@type": "Question", "name": "¿Cuánto se tarda en nadar 1 km?", "acceptedAnswer": {"@type": "Answer", "text": "Son diez veces tu ritmo por 100 m. A 1:30 por 100 son 15 minutos; a 2:00 son 20 minutos; a 2:30 son 25 minutos."}}, {"@type": "Question", "name": "¿Se pueden nadar 2 km en una hora?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, si mantienes de media 3:00 por 100 m o más rápido: 20 cientos a 3 minutos cada uno son exactamente 60 minutos, incluyendo los descansos que hagas."}}, {"@type": "Question", "name": "¿Es lo mismo el ritmo por 100 yardas que por 100 metros?", "acceptedAnswer": {"@type": "Answer", "text": "No. Cien yardas son 91,44 metros. Un 1:30 por 100 yardas equivale aproximadamente a 1:38 por 100 metros al mismo esfuerzo. Indica siempre la unidad de tu ritmo."}}, {"@type": "Question", "name": "¿Sirve para el ritmo en aguas abiertas o triatlón?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Elige «Otra distancia», por ejemplo 750, 1900 o 3800 metros, y escribe tu tiempo previsto o realizado. En aguas abiertas las corrientes, el oleaje y la trayectoria cambian el resultado, así que compara esos nados con cautela."}}, {"@type": "Question", "name": "¿Cambia el ritmo según el estilo?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Cada estilo tiene velocidades distintas, así que calcula y compara tu ritmo por separado para crol, espalda, braza y mariposa."}}]}]}
+</script>
+</body>
+</html>
